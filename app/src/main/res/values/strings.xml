@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">UrbanClapClone</string>
+    <string name="get_otp_on_call">Get OTP On Call</string>
+    <string name="resend_code">Resend Code</string>
+    <string name="login_otp_time_elapsed">Time elapsed.</string>
+    <string name="we_have_sent_you_otp">We have sent you an OTP</string>
+    <string name="enter_verification_code">Enter Verification Code</string>
+    <string name="number_use">Your number will be used:</string>
+    <string name="mobile_number">Mobile Number</string>
+
+    <string name="filled_bullet">\u25CF</string>
+    <string name="referral">Referral code?</string>
+    <string name="referral_code">Referral code (if any)</string>
+    <string name="uc_icon_bullet">½</string>
+    <string name="login_signup">Login / SignUp</string>
+    <string name="hi_nice_to_meet_you">Hi nice to meet you..</string>
+    <string name="your_current_location">your current location</string>
+    <string name="some_other_location">Some other location..</string>
+    <string name="skip_for_now">Skip For Now</string>
+    <string name="change">Change</string>
+    <string name="heading_service_area">AREA OF SERVICE</string>
+    <string name="optional_phone_number">Optional phone number..</string>
+    <string name="home">Home</string>
+    <string name="office">Office</string>
+    <string name="other">Other</string>
+    <string name="cancel">Cancel</string>
+    <string name="select_location">Select Location</string>
+
+    <string name="uc_icon_map_greater_than">$</string>
+    <string name="heading_service_address">Heading Service Address</string>
+    <string name="hint_address">Address hint</string>
+    <string name="hint_address_landmark">Address Landmark</string>
+    <string name="nick_name">Nick Name</string>
+    <string name="save">Save</string>
+    <!--country name array-->
+    <string-array name="spinnerItems">
+        <item>IND</item>
+        <item>AFG</item>
+        <item>AQ</item>
+        <item>AG</item>
+        <item>BTN</item>
+    </string-array>
+    <!--country name array end-->
+    <!--icons-->
+
+    <string name="uc_icon_drop_down"></string>
+    <string name="uc_icon_location_marker_filled">#xf041</string>
+    <!--icons end-->
+</resources>

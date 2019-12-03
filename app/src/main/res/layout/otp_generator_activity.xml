@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/appbar"
+        android:layout_width="fill_parent"
+        android:layout_height="?android:actionBarSize"
+        android:background="@color/white"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_scrollFlags="enterAlways|scroll">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_vertical"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tv_referral_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/margin_16"
+                    android:background="@drawable/btnbground"
+                    android:elevation="@dimen/margin_4"
+                    android:fontFamily="sans-serif-medium"
+                    android:padding="@dimen/margin_10"
+                    android:text="@string/skip_for_now"
+                    android:textColor="@color/black87"
+                    android:textSize="@dimen/margin_16" />
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/margin_10"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/custom_splash" />
+
+        <include
+            android:layout_marginTop="-80dp"
+            android:id="@+id/splash_image"
+            layout="@layout/mobile_number_input_ui"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" />
+          <include
+            android:layout_margin="@dimen/margin_10"
+            android:id="@+id/secondary_login_button"
+            layout="@layout/login_button_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_48"
+            android:layout_marginTop="@dimen/margin_24"
+       />
+
+    </LinearLayout>
+</LinearLayout>

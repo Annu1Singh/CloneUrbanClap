@@ -51,5 +51,8 @@
     <string name="urbanclap_insurance_protection_program">UrbanClap Insurance Protection Program</string>
     <string name="learn_more">Learn more</string>
     <string name="skill_india_mesage">Find professionals certified by Govt of India under Skill India Missiion</string>
+    <string name="booking_services">Booking Services</string>
+    <string name="paying_for_services">Paying for services</string>
+    <string name="a_guide_to_urbanclap">A guide to UrbanClap</string>
 
 </resources>

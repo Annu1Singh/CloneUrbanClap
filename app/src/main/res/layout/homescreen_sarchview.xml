@@ -4,13 +4,10 @@
     android:id="@+id/search"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="@dimen/margin_12"
-    android:layout_marginRight="@dimen/margin_12"
-    android:layout_marginBottom="@dimen/margin_12"
     android:background="@drawable/searchbar_background"
     android:elevation="@dimen/margin_4"
     android:orientation="horizontal"
-    android:padding="10.0dip">
+    android:padding="15dp">
 
     <com.joanzapata.iconify.widget.IconTextView
         android:id="@+id/searchBtn"

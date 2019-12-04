@@ -73,5 +73,6 @@
             android:textSize="16.0sp"
             android:visibility="invisible"
             android:drawableRight="@drawable/ic_search_black" />
+
     </LinearLayout>
 </androidx.appcompat.widget.Toolbar>

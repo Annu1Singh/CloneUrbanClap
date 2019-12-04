@@ -41,9 +41,15 @@
         <item>BTN</item>
     </string-array>
     <!--country name array end-->
-    <!--icons-->
+    <string name="aboutus">UrbanClapClone helps you find the right service professionals for activities important to you. Whether you are looking to decorate your home, get candid pictures of your wedding, plan your kid’s birthday or get healthier, we are a sure shot destination for your service needs. Our vision is to use technology and smart processes to structure the highly unorganized services market in India. UrbanClap aspires to make hiring a service professional as easy and straightforward as Amazon or Flipkart have made buying products.</string>
 
-    <string name="uc_icon_drop_down"></string>
-    <string name="uc_icon_location_marker_filled">#xf041</string>
-    <!--icons end-->
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="image">Image</string>
+    <string name="searchbar_hint">Search service here..</string>
+    <string name="reviews">Reviews</string>
+    <string name="urbanclap_insurance_protection_program">UrbanClap Insurance Protection Program</string>
+    <string name="learn_more">Learn more</string>
+    <string name="skill_india_mesage">Find professionals certified by Govt of India under Skill India Missiion</string>
+
 </resources>

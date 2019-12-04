@@ -19,6 +19,13 @@
     <color name="green_confirm">#ff8bc34a</color>
     <color name="green_confirm_dark">@color/green_confirm</color>
 
+    <color name="grey_border_dark">#ffcccccc</color>
+    <color name="grey_active_slots">#ffe5e5e5</color>
+    <color name="disabled_color">#44000000</color>
+    <color name="disabled_text">#ffbdbdbd</color>
+    <color name="dull_blue">#ff85a3e0</color>
+    <color name="dull_white">#ffe0e0e0</color>
+    <color name="golden_round">#fff6a623</color>
     <!--gray-color-code-start-->
     <color name="grey_text">#ff6d6d6d</color>
     <color name="grey_bd">#ffdbdbdb</color>

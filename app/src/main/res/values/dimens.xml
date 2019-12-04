@@ -24,11 +24,13 @@
     <dimen name="margin_48">48dp</dimen>
     <dimen name="margin_100">100dp</dimen>
 
+    <dimen name="text_size_medium">14sp</dimen>
     <!--stroke dimen-->
 
     <dimen name="stroke_width">1dp</dimen>
     <!--stroke dimen end-->
 
+    <dimen name="margin_93">93dp</dimen>
    <!---text Size-->
     <dimen name="text_size_10sp">10sp</dimen>
     <dimen name="text_size_11sp">11sp</dimen>
@@ -58,6 +60,9 @@
     <dimen name="text_size_72sp">72sp</dimen>
     <dimen name="text_size_8sp">18sp</dimen>
     <dimen name="margin_38">38dp</dimen>
+    <dimen name="margin_0">0dp</dimen>
+    <dimen name="margin_3">3dp</dimen>
+    <dimen name="margin_320">320dp</dimen>
 
     <!--text size end-->
 </resources>

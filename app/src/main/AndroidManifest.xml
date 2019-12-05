@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".framelayout.FrameGuideUrbanClap"></activity>
+        <activity android:name=".framelayout.FrameDemo"></activity>
+        <activity android:name=".framelayout.FrameGuideUrbanClap" />
         <activity android:name=".framelayout.FramePayingServe" />
         <activity android:name=".framelayout.FrameBookingServe" />
         <activity android:name=".About" />

@@ -36,8 +36,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_done_black"
-                    android:padding="@dimen/margin_10"
-                    android:background="@drawable/rounded_corner_golden"/>
+                    android:padding="@dimen/margin_20"
+                    android:background="@drawable/ic_beenhere_black"/>
 
 
             </LinearLayout>

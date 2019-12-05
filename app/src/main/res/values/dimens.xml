@@ -64,6 +64,7 @@
     <dimen name="margin_3">3dp</dimen>
     <dimen name="margin_320">320dp</dimen>
     <dimen name="margin_30">30dp</dimen>
+    <dimen name="margin_80">80dp</dimen>
 
     <!--text size end-->
 </resources>

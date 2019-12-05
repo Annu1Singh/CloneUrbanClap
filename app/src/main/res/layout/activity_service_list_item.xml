@@ -10,17 +10,26 @@
     android:focusable="true"
     android:foreground="?android:selectableItemBackground"
     android:orientation="vertical">
+    
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
       <androidx.appcompat.widget.Toolbar
+          android:id="@+id/service_list_toolbar"
           android:layout_width="match_parent"
           android:layout_height="?actionBarSize"
-          app:title="Cleaning Services"
-          android:background="@color/white">
+          app:title="Custome Service list layout"
+          android:background="@color/windowBackground">
 
 
+          <SearchView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:baselineAligned="true"
+              android:id="@+id/searchBar"
+              android:layout_marginLeft="@dimen/margin_80"
+              />
       </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -41,11 +50,11 @@
         android:fontFamily="sans-serif-medium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sofa Cleaning"
+        android:text="Service list item"
         android:layout_gravity="center"
         android:ellipsize="end"
         android:gravity="top"
-        android:lineSpacingExtra="2.0dip"
+        android:lineSpacingExtra="2dp"
         android:maxWidth="@dimen/margin_93"
         android:maxLines="1"
         android:textColor="@color/black" />
@@ -68,7 +77,7 @@
             android:fontFamily="sans-serif-medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sofa Cleaning"
+            android:text="Service list item"
             android:layout_gravity="center"
             android:ellipsize="end"
             android:gravity="top"
@@ -95,7 +104,7 @@
             android:fontFamily="sans-serif-medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sofa Cleaning"
+            android:text="Service list item"
             android:layout_gravity="center"
             android:ellipsize="end"
             android:gravity="top"
@@ -122,7 +131,7 @@
             android:fontFamily="sans-serif-medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sofa Cleaning"
+            android:text="Service list item"
             android:layout_gravity="center"
             android:ellipsize="end"
             android:gravity="top"
@@ -151,7 +160,7 @@
             android:fontFamily="sans-serif-medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sofa Cleaning"
+            android:text="Service list item"
             android:layout_gravity="center"
             android:ellipsize="end"
             android:gravity="top"

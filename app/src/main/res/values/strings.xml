@@ -43,7 +43,7 @@
     <!--country name array end-->
     <string name="aboutus">UrbanClapClone helps you find the right service professionals for activities important to you. Whether you are looking to decorate your home, get candid pictures of your wedding, plan your kid’s birthday or get healthier, we are a sure shot destination for your service needs. Our vision is to use technology and smart processes to structure the highly unorganized services market in India. UrbanClap aspires to make hiring a service professional as easy and straightforward as Amazon or Flipkart have made buying products.</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="image">Image</string>
     <string name="searchbar_hint">Search service here..</string>
@@ -64,6 +64,13 @@
     <string name="payingQuery">Paying Service Query ?</string>
     <string name="query_on_guide">Query on guide ?</string>
 
-
+    <string name="sofa_cleaning_bold"><b>Sofa Cleaning</b></string>
     <string name="dummy_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet massa vitae tortor condimentum lacinia. Feugiat pretium nibh ipsum consequat nisl vel pretium. Viverra adipiscing at in tellus integer feugiat scelerisque. Dictum varius duis at consectetur lorem donec massa sapien. At augue eget arcu dictum varius duis at. Ac tortor dignissim convallis aenean. Quis eleifend quam adipiscing vitae proin sagittis. Aliquam sem fringilla ut morbi tincidunt augue interdum. Faucibus purus in massa tempor nec feugiat. Viverra aliquet eget sit amet tellus cras adipiscing enim. Adipiscing diam donec adipiscing tristique risus nec feugiat in. Faucibus pulvinar elementum integer enim neque volutpat ac. Eget arcu dictum varius duis at consectetur lorem donec massa. Cursus sit amet dictum sit amet. Mattis aliquam faucibus purus in massa tempor. Id interdum velit laoreet id donec ultrices tincidunt. Vel orci porta non pulvinar neque. Tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi. Mus mauris vitae ultricies leo integer malesuada nunc vel risus.</string>
+    <string name="urbanclap_gurantee">UrbanClap Gurantee:</string>
+    <string name="expert_message">All cleaning professional are background verified are trained</string>
+    <string name="professional_message">Cleaning is mechanized and done with professional cleaning solutions from Diversey</string>
+    <string name="cust_protect_message">Upto INR 10,000 of damage protection on each booking</string>
+    <string name="expert_clearners">Expert Clearners</string>
+    <string name="_4_7_out_of_5_stars">4.7 out of 5 stars</string>
+    <string name="average">Average rating of the service</string>
 </resources>

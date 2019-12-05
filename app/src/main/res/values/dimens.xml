@@ -63,6 +63,7 @@
     <dimen name="margin_0">0dp</dimen>
     <dimen name="margin_3">3dp</dimen>
     <dimen name="margin_320">320dp</dimen>
+    <dimen name="margin_30">30dp</dimen>
 
     <!--text size end-->
 </resources>

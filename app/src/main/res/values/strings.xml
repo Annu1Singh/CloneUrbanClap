@@ -54,5 +54,14 @@
     <string name="booking_services">Booking Services</string>
     <string name="paying_for_services">Paying for services</string>
     <string name="a_guide_to_urbanclap">A guide to UrbanClap</string>
+    <string name="customer_support">Customer Support</string>
+    <string name="my_profile">My Profile</string>
+    <string name="share_urbanclap">Share UrbanClap</string>
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="terms_and_conditions">Terms and conditions</string>
+    <string name="download_uc_partner_app">Download UC Partner app</string>
+    <string name="about_urbanclap">About UrbanClap</string>
+    <string name="payingQuery">Paying Service Query ?</string>
+    <string name="query_on_guide">Query on guide ?</string>
 
 </resources>

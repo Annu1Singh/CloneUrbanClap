@@ -9,14 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CustomerSupport"/>
-        <activity android:name=".MyBookingActivity"/>
+        <activity android:name=".framelayout.FrameGuideUrbanClap"></activity>
+        <activity android:name=".framelayout.FramePayingServe" />
+        <activity android:name=".framelayout.FrameBookingServe" />
+        <activity android:name=".About" />
+        <activity android:name=".CustomerSupport" />
+        <activity android:name=".MyBookingActivity" />
         <activity android:name=".HomeScreenActivity" />
         <activity android:name=".DashBoard" />
         <activity
             android:name=".LoginActivity"
             android:parentActivityName=".OtpGeneratorActivity" />
-        <activity android:name=".AboutUs" />
+        <activity
+            android:name=".AboutUs"
+            android:parentActivityName=".About" />
         <activity
             android:name=".OtpGeneratorActivity"
             android:screenOrientation="portrait" />

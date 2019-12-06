@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.ViewFlipper;
 
 import me.relex.circleindicator.CircleIndicator;
@@ -17,6 +18,7 @@ public class HomeScreenActivity extends AppCompatActivity {
                     R.drawable.ayushamannkhurrana
     };
 
+    ScrollView scrollView;
     private ViewFlipper viewFlipper;
     CircleIndicator indicator;
 
@@ -27,6 +29,9 @@ public class HomeScreenActivity extends AppCompatActivity {
 
         viewFlipper = findViewById(R.id.v_flipper);
         indicator = findViewById(R.id.indicator);
+        scrollView = findViewById(R.id.home_screen_scrollview);
+
+
 
         for (int image : images){
             addFilpperImage(image);

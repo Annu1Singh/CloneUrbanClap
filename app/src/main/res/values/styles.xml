@@ -37,6 +37,11 @@
         <item name="colorControlNormal">#ffe1e1e1</item>
     </style>
 
+    <style name="collapsabletoolbar" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="colorAccent">#D33535</item>
+        <item name="colorPrimary">#000000</item>
+        <item name="colorPrimaryDark">@color/grey_txt</item>
+    </style>
 
     <style name="add_address_theme" parent="@style/AppTheme">
         <item name="colorControlActivated">@color/grey_txt</item>

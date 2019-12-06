@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/grey_bg_light"
+    tools:context=".framelayout.FrameBookingServe">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar_f_booking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@color/windowBackground"
+            android:elevation="@dimen/margin_10"
+            android:minHeight="?actionBarSize">
+
+            <include layout="@layout/custom_toolbar_layout" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/appbar_f_booking"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_10">
+
+            <TextView
+                android:id="@+id/bookSerice0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:drawableRight="@drawable/ic_keyboard_arrow_right_black"
+                android:padding="@dimen/margin_8"
+                android:text="How to book a service ?"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/text_size_16sp" />
+
+            <TextView
+                android:id="@+id/bookSerice1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:drawableRight="@drawable/ic_keyboard_arrow_right_black"
+                android:padding="@dimen/margin_8"
+                android:text="How to cancel a service ?"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/text_size_16sp" />
+
+            <TextView
+                android:id="@+id/bookSerice2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:drawableRight="@drawable/ic_keyboard_arrow_right_black"
+                android:padding="@dimen/margin_8"
+                android:text="How to reschedule a booking ?"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/text_size_16sp" />
+
+            <TextView
+                android:id="@+id/bookSerice3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:drawableRight="@drawable/ic_keyboard_arrow_right_black"
+                android:padding="@dimen/margin_8"
+                android:text="How to know if my request is confirmed ?"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/text_size_16sp" />
+
+            <TextView
+                android:id="@+id/bookSerice4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:drawableRight="@drawable/ic_keyboard_arrow_right_black"
+                android:padding="@dimen/margin_8"
+                android:text="How can I contact the professional ?"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/text_size_16sp" />
+
+            <TextView
+                android:id="@+id/bookSerice5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:drawablePadding="@dimen/margin_5"
+                android:drawableRight="@drawable/ic_keyboard_arrow_right_black"
+                android:padding="@dimen/margin_8"
+                android:text="When will the professional reach for delivering service ?"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/text_size_16sp" />
+
+            <TextView
+                android:id="@+id/bookSerice6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:drawableRight="@drawable/ic_keyboard_arrow_right_black"
+                android:padding="@dimen/margin_8"
+                android:text="How can i rate and review the service of a professional ?"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/text_size_16sp" />
+
+            <TextView
+                android:id="@+id/bookSerice7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:drawableRight="@drawable/ic_keyboard_arrow_right_black"
+                android:padding="@dimen/margin_8"
+                android:text="How can I book the same professional again who delivered my last services ?"
+                android:textColor="@color/black87"
+                android:textSize="@dimen/text_size_16sp" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>

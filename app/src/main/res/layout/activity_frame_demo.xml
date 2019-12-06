@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".framelayout.FrameDemo">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_alignParentTop="true"
+            android:id="@+id/appbar_frameDemo"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize">
+
+            <include layout="@layout/custom_toolbar_layout" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <TextView
+            android:padding="@dimen/margin_10"
+            android:lineSpacingExtra="@dimen/margin_10"
+            android:layout_below="@id/appbar_frameDemo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:letterSpacing="@android:integer/config_longAnimTime"
+            android:text="@string/dummy_content" />
+    </RelativeLayout>
+</FrameLayout>

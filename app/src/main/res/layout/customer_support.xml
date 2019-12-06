@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_active_slots"
+    >
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:id="@+id/appbar_customer_support">
+
+        <include layout="@layout/custom_toolbar_layout"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout_customer_support"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_below="@id/appbar_customer_support"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="start|top"
+        >
+
+        <TextView
+            android:padding="@dimen/margin_15"
+            android:layout_width="match_parent"
+            android:textSize="@dimen/text_size_16sp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif"
+            android:text="F.A.Q."
+            />
+
+
+        <TextView
+            android:id="@+id/bookSerice1"
+            android:textSize="@dimen/text_size_16sp"
+            android:background="@color/white"
+            android:padding="@dimen/margin_15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black87"
+            android:drawableRight="@drawable/ic_keyboard_arrow_right_black"
+            android:text="@string/booking_services"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_1"/>
+        <TextView
+            android:id="@+id/payingService"
+            android:textSize="@dimen/text_size_16sp"
+            android:background="@color/white"
+            android:padding="@dimen/margin_15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black87"
+            android:drawableRight="@drawable/ic_keyboard_arrow_right_black"
+            android:text="@string/paying_for_services"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_1"/>
+        <TextView
+            android:textSize="@dimen/text_size_16sp"
+            android:id="@+id/urban_guide"
+            android:background="@color/white"
+            android:padding="@dimen/margin_15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black87"
+            android:drawableRight="@drawable/ic_keyboard_arrow_right_black"
+            android:text="@string/a_guide_to_urbanclap"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_1"/>
+    </LinearLayout>
+</RelativeLayout>

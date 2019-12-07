@@ -21,7 +21,8 @@ public class CarpenterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_carpenter);
-
+        login_tv = findViewById(R.id.login_button_text);
+        login_tv.setText("View all Cleaning Services");
 
         //setting up the title of collapsableToolbarLayout
         collapsingToolbarLayout = findViewById(R.id.collpasableToolbarLayout);

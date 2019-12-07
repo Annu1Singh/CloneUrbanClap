@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SalonAtHome"></activity>
+        <activity android:name=".OTPVerification"/>
+        <activity android:name=".LocationOnBoarding"/>
+        <activity android:name=".SalonAtHome"/>
         <activity android:name=".framelayout.FrameDemo" />
         <activity android:name=".framelayout.FrameGuideUrbanClap" />
         <activity android:name=".framelayout.FramePayingServe" />

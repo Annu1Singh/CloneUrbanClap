@@ -8,7 +8,7 @@
     <color name="light_royal_alpha">#ffd6ddfc</color>
     <color name="light_royal_blue">#ff304ffe</color>
 
-    <color name="primary_new">#EC4141</color>
+    <color name="primary_new">#252222</color>
     <color name="primary">@color/primary_new</color>
     <color name="primaryDark">#ff000000</color>
     <color name="primaryDarker">@color/primaryDark</color>

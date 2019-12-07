@@ -9,24 +9,66 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".OTPVerification"/>
-        <activity android:name=".LocationOnBoarding"/>
-        <activity android:name=".SalonAtHome"/>
-        <activity android:name=".framelayout.FrameDemo" />
-        <activity android:name=".framelayout.FrameGuideUrbanClap" />
-        <activity android:name=".framelayout.FramePayingServe" />
-        <activity android:name=".framelayout.FrameBookingServe" />
-        <activity android:name=".About" />
-        <activity android:name=".CustomerSupport" />
-        <activity android:name=".MyBookingActivity" />
-        <activity android:name=".HomeScreenActivity" />
-        <activity android:name=".DashBoard" />
+        <activity android:name=".CarpenterActivity"></activity>
+        <activity android:name=".PestControl" />
+        <activity android:name=".PlumberActivity" />
+        <activity android:name=".ElectricianActivity" />
+        <activity
+            android:name=".GuranteeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PlumberServiceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FullHomeDeepCleaning"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".KitchenCleaningActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CarpetCleanigActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BathroomCleaning"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SalonAtHome"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".framelayout.FrameDemo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".framelayout.FrameGuideUrbanClap"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".framelayout.FramePayingServe"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".framelayout.FrameBookingServe"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".About"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CustomerSupport"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MyBookingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HomeScreenActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DashBoard"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LoginActivity"
-            android:parentActivityName=".OtpGeneratorActivity" />
+            android:parentActivityName=".OtpGeneratorActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".AboutUs"
-            android:parentActivityName=".About" />
+            android:parentActivityName=".About"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".OtpGeneratorActivity"
             android:screenOrientation="portrait" />

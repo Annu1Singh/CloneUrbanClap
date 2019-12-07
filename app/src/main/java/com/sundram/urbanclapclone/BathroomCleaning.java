@@ -10,24 +10,19 @@ import android.widget.TextView;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
-public class SalonAtHome extends AppCompatActivity {
+public class BathroomCleaning extends AppCompatActivity {
 
-    TextView login_tv, grid_heading_tv;
+    TextView login_tv;
     ImageView collapseImage_bg;
     CollapsingToolbarLayout collapsingToolbarLayout;
     @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_salon_at_home);
+        setContentView(R.layout.activity_bathroom_cleaning);
         login_tv = findViewById(R.id.login_button_text);
         login_tv.setText("View all Cleaning Services");
-        grid_heading_tv = findViewById(R.id.grid_heading);
 
-        //setting up the heading of grid view
-
-        grid_heading_tv.setText("Salon At Home");
-        //end
         //setting up the title of collapsableToolbarLayout
         collapsingToolbarLayout = findViewById(R.id.collpasableToolbarLayout);
         collapsingToolbarLayout.setTitle("Bathroom Cleaning Services");
@@ -35,6 +30,6 @@ public class SalonAtHome extends AppCompatActivity {
 
         //setting collapsetoolbar bg
         collapseImage_bg = findViewById(R.id.collapse_iv);
-        collapseImage_bg.setBackgroundResource(R.drawable.homesalon);
+         collapseImage_bg.setBackgroundResource(R.drawable.bathroom);
     }
 }

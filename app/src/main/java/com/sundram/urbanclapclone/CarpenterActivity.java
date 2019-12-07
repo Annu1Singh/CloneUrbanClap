@@ -10,31 +10,27 @@ import android.widget.TextView;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
-public class SalonAtHome extends AppCompatActivity {
+public class CarpenterActivity extends AppCompatActivity {
 
-    TextView login_tv, grid_heading_tv;
+    TextView login_tv;
     ImageView collapseImage_bg;
     CollapsingToolbarLayout collapsingToolbarLayout;
+
     @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_salon_at_home);
-        login_tv = findViewById(R.id.login_button_text);
-        login_tv.setText("View all Cleaning Services");
-        grid_heading_tv = findViewById(R.id.grid_heading);
+        setContentView(R.layout.activity_carpenter);
 
-        //setting up the heading of grid view
 
-        grid_heading_tv.setText("Salon At Home");
-        //end
         //setting up the title of collapsableToolbarLayout
         collapsingToolbarLayout = findViewById(R.id.collpasableToolbarLayout);
-        collapsingToolbarLayout.setTitle("Bathroom Cleaning Services");
+        collapsingToolbarLayout.setTitle("Carpenter");
         collapsingToolbarLayout.setCollapsedTitleTextColor(ColorStateList.valueOf(R.color.white));
+        collapsingToolbarLayout.setExpandedTitleTextColor(ColorStateList.valueOf(R.color.black));
 
         //setting collapsetoolbar bg
         collapseImage_bg = findViewById(R.id.collapse_iv);
-        collapseImage_bg.setBackgroundResource(R.drawable.homesalon);
+        collapseImage_bg.setBackgroundResource(R.drawable.bathroom);
     }
 }

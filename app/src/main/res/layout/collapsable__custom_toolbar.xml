@@ -5,7 +5,7 @@
     android:layout_height="@dimen/dimen_200"
     android:clipToPadding="true"
     android:fitsSystemWindows="true"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+    android:theme="@style/AppTheme">
 
     <com.google.android.material.appbar.CollapsingToolbarLayout
         android:id="@+id/collpasableToolbarLayout"

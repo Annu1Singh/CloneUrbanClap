@@ -20,7 +20,7 @@ public class SplashActivity extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             @Override
             public void run() {
-                Intent i = new Intent(SplashActivity.this,OtpGeneratorActivity.class);
+                Intent i = new Intent(SplashActivity.this,SalonAtHome.class);
                 startActivity(i);
                 overridePendingTransition(R.anim.abc_fade_in,R.anim.abc_fade_out);
                 finish();

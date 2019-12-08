@@ -7,9 +7,7 @@
     android:background="@color/grey_bg_light"
     tools:context=".SalonAtHome">
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coordinatorLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -32,12 +30,36 @@
                 android:background="@color/grey_bg_light"
                 android:orientation="vertical">
 
-                <include layout="@layout/grid_section_beauty_service" />
 
+                <TextView
+                    android:layout_margin="@dimen/margin_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textFontWeight="600"
+                    android:fontFamily="sans-serif"
+                    android:background="@drawable/border_grey_light"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:text="What we are providing"/>
 
-                <include layout="@layout/what_users_saying_section" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_margin="@dimen/margin_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/recyclerView"
+                    />
 
-                <include layout="@layout/full_filled_section_layout" />
+                <include
+                    android:layout_margin="@dimen/margin_5"
+                    layout="@layout/what_users_saying_section"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent" />
+
+                <include
+                    android:layout_margin="@dimen/margin_5"
+                    layout="@layout/full_filled_section_layout"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent" />
 
             </LinearLayout>
 

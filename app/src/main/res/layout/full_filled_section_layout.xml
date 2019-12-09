@@ -5,11 +5,13 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/light_golden_darkgolden_border"
-        android:weightSum="1">
+        android:background="@drawable/light_golden_darkgolden_border">
+
+            />
 
         <LinearLayout
             android:id="@+id/linearLayout"

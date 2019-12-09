@@ -2,8 +2,6 @@
 
     <style name="AppTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowBackground">@color/windowBackground</item>
-        <item name="android:seekBarStyle">@style/uc_seek_bar.no_padding</item>
-        <item name="alertDialogTheme">@style/uc_alert_dialog_theme</item>
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primaryDark</item>
         <item name="windowActionBar">false</item>

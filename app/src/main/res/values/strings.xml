@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">UrbanClapClone</string>
+    <string name="app_name">RuralClap</string>
     <string name="get_otp_on_call">Get OTP On Call</string>
     <string name="resend_code">Resend Code</string>
     <string name="login_otp_time_elapsed">Time elapsed.</string>

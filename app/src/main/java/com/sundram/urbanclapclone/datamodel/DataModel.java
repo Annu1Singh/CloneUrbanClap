@@ -4,7 +4,6 @@ public class DataModel {
 
     private String serviceName;
     private int drawable;
-    public String color;
 
     public DataModel() {
     }

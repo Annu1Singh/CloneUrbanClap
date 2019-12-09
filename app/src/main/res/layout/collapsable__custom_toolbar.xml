@@ -18,13 +18,14 @@
         app:layout_scrollFlags="scroll|enterAlwaysCollapsed|exitUntilCollapsed"
         app:title="Toolbar Title">
 
+
         <ImageView
             android:id="@+id/collapse_iv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fitsSystemWindows="true"
             android:scaleType="centerCrop"
-            android:src="@drawable/bathroom"
+            android:src="@drawable/services_bg"
             app:layout_collapseMode="parallax" />
 
         <androidx.appcompat.widget.Toolbar

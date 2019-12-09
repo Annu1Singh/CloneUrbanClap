@@ -2,20 +2,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/bg_blue_gradient"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:weightSum="1">
+        android:background="@drawable/bg_blue_gradient"
+        android:weightSum="0.9">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/margin_0"
-            android:layout_weight="0.3"
+            android:layout_weight="0.2"
             android:orientation="horizontal">
 
             <RelativeLayout
@@ -37,7 +37,8 @@
                     android:layout_height="100dp"
                     android:layout_alignRight="@id/tv_what_are_u_looking"
                     android:layout_alignParentRight="true"
-                    android:src="@drawable/chat" />
+                    android:src="@drawable/ic_person_black"
+                    android:visibility="visible" />
             </RelativeLayout>
 
         </LinearLayout>
@@ -45,24 +46,20 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="@dimen/margin_0"
+            android:layout_margin="8dp"
             android:layout_weight="0.7"
             android:orientation="vertical">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:cardCornerRadius="@dimen/margin_5"
-                app:cardElevation="@dimen/margin_10">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+            <include layout="@layout/single_what_r_u_lookin_for" />
 
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
+            <include layout="@layout/single_what_r_u_lookin_for" />
+
+            <include layout="@layout/single_what_r_u_lookin_for" />
+
+            <include layout="@layout/single_what_r_u_lookin_for" />
 
         </LinearLayout>
-
 
     </LinearLayout>
 

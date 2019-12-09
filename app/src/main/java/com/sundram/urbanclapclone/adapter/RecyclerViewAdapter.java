@@ -1,6 +1,5 @@
 package com.sundram.urbanclapclone.adapter;
 
-
 import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
@@ -17,7 +16,6 @@ import com.sundram.urbanclapclone.datamodel.DataModel;
 
 import java.util.ArrayList;
 import java.util.Locale;
-
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.DataModelHolder> {
 

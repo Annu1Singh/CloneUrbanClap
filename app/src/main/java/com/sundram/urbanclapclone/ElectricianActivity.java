@@ -1,6 +1,7 @@
 package com.sundram.urbanclapclone;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.res.ColorStateList;
@@ -9,9 +10,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.sundram.urbanclapclone.adapter.AutoFitGridLayoutManager;
+import com.sundram.urbanclapclone.adapter.RecyclerViewAdapter;
+import com.sundram.urbanclapclone.datamodel.DataModel;
+
+import java.util.ArrayList;
 
 public class ElectricianActivity extends AppCompatActivity {
-
+    
+    private RecyclerView recyclerView;
+    private ArrayList<DataModel> arrayList;
+    private RecyclerViewAdapter recyclerViewAdapter;
+    private DataModel dataModel;
     TextView login_tv, grid_heading_tv,heading_why_tv;
     ImageView collapseImage_bg;
     CollapsingToolbarLayout collapsingToolbarLayout;
@@ -37,6 +47,37 @@ public class ElectricianActivity extends AppCompatActivity {
         //setting collapsetoolbar bg
         collapseImage_bg = findViewById(R.id.collapse_iv);
         collapseImage_bg.setBackgroundResource(R.drawable.homesalon);
+
+        //setting up the grid recyclerview
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        arrayList = new ArrayList<>();
+
+        AutoFitGridLayoutManager layoutManager = new AutoFitGridLayoutManager(this, 200);
+        recyclerView.setLayoutManager(layoutManager);
+
+
+        recyclerViewAdapter = new RecyclerViewAdapter(this, arrayList);
+        recyclerView.setAdapter(recyclerViewAdapter);
+        setGridSectionDetails();
+        //end
+    }
+    public void setGridSectionDetails(){
+        arrayList.add(new DataModel("Electrician Image",R.drawable.facial));
+        arrayList.add(new DataModel("Electrician Image",R.drawable.facial));
+        arrayList.add(new DataModel("Electrician Image",R.drawable.facial));
+        arrayList.add(new DataModel("Electrician Image",R.drawable.facial));
+        arrayList.add(new DataModel("Electrician Image",R.drawable.facial));
+        arrayList.add(new DataModel("Electrician Image",R.drawable.facial));
+        arrayList.add(new DataModel("Electrician Image",R.drawable.facial));
+        arrayList.add(new DataModel("Electrician Image",R.drawable.facial));
+        arrayList.add(new DataModel("Electrician Image",R.drawable.facial));
+        arrayList.add(new DataModel("Electrician Image",R.drawable.facial));
+        arrayList.add(new DataModel("Electrician Image",R.drawable.facial));
+        arrayList.add(new DataModel("Electrician Image",R.drawable.facial));
+        arrayList.add(new DataModel("Electrician Image",R.drawable.facial));
+        arrayList.add(new DataModel("Electrician Image",R.drawable.facial));
+        arrayList.add(new DataModel("Electrician Image",R.drawable.facial));
+        recyclerViewAdapter.notifyDataSetChanged();
 
     }
 }

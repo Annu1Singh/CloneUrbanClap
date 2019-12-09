@@ -14,7 +14,7 @@ public class OtpGeneratorActivity extends AppCompatActivity {
 
     TextView otpDenerator_tv, tv_skip_now;
     private final int time_out = 2000;
-
+    ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +23,7 @@ public class OtpGeneratorActivity extends AppCompatActivity {
         tv_skip_now = findViewById(R.id.tv_skip_now);
         otpDenerator_tv.setText("Generate OTP");
 
-        final ProgressDialog progressDialog = new ProgressDialog(this);
+
 
         otpDenerator_tv.setOnClickListener(new View.OnClickListener() {
             @Override

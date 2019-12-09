@@ -52,6 +52,7 @@ public class SalonAtHome extends AppCompatActivity {
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         arrayList = new ArrayList<>();
+
         AutoFitGridLayoutManager layoutManager = new AutoFitGridLayoutManager(this, 200);
         recyclerView.setLayoutManager(layoutManager);
 

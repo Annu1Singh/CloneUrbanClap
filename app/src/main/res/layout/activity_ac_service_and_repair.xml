@@ -5,17 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grey_bg_light"
-    tools:context=".ElectricianActivity">
+    tools:context=".AcServiceAndRepair">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/coordinatorLayout"
-
         android:layout_width="match_parent"
-        android:layout_marginBottom="?actionBarSize"
-        android:layout_height="match_parent"
-        tools:context=".SofaCleaning">
+        android:layout_height="match_parent">
 
         <include layout="@layout/collapsable__custom_toolbar" />
 
@@ -24,7 +21,6 @@
             android:id="@+id/nestedScrollView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="?attr/actionBarSize"
             app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
             <LinearLayout
@@ -33,12 +29,26 @@
                 android:background="@color/grey_bg_light"
                 android:orientation="vertical">
 
-                <include layout="@layout/grid_section_beauty_service"/>
+                <include layout="@layout/what_are_u_looking_for" />
 
+                <TextView
+                    android:id="@+id/heading_gurantee_section_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_5"
+                    android:background="@drawable/border_grey_light"
+                    android:fontFamily="sans-serif"
+                    android:text="Gurantee section heading"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:textFontWeight="400" />
 
-                <include layout="@layout/full_filled_section_layout"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/gurantee_gyser_recycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
-                <include layout="@layout/why_cleaning_section"/>
+                <include layout="@layout/review_sction_layout" />
             </LinearLayout>
 
         </androidx.core.widget.NestedScrollView>
@@ -49,5 +59,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/nestedScrollView"
-        android:layout_alignParentBottom="true" />
+        android:layout_alignParentBottom="true"
+        android:visibility="gone" />
 </RelativeLayout>

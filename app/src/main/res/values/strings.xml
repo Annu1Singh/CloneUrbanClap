@@ -56,7 +56,7 @@
     <string name="a_guide_to_urbanclap">A guide to UrbanClap Clone</string>
     <string name="customer_support">Customer Support</string>
     <string name="my_profile">My Profile</string>
-    <string name="share_urbanclap">Share UrbanClap Clone</string>
+    <string name="share_urbanclap">Share RuralClap Clone</string>
     <string name="privacy_policy">Privacy policy</string>
     <string name="terms_and_conditions">Terms and conditions</string>
     <string name="download_uc_partner_app">Download UCC Partner app</string>
@@ -65,7 +65,11 @@
     <string name="query_on_guide">Query on guide ?</string>
 
     <string name="sofa_cleaning_bold"><b>Sofa Cleaning</b></string>
+
     <string name="dummy_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet massa vitae tortor condimentum lacinia. Feugiat pretium nibh ipsum consequat nisl vel pretium. Viverra adipiscing at in tellus integer feugiat scelerisque. Dictum varius duis at consectetur lorem donec massa sapien. At augue eget arcu dictum varius duis at. Ac tortor dignissim convallis aenean. Quis eleifend quam adipiscing vitae proin sagittis. Aliquam sem fringilla ut morbi tincidunt augue interdum. Faucibus purus in massa tempor nec feugiat. Viverra aliquet eget sit amet tellus cras adipiscing enim. Adipiscing diam donec adipiscing tristique risus nec feugiat in. Faucibus pulvinar elementum integer enim neque volutpat ac. Eget arcu dictum varius duis at consectetur lorem donec massa. Cursus sit amet dictum sit amet. Mattis aliquam faucibus purus in massa tempor. Id interdum velit laoreet id donec ultrices tincidunt. Vel orci porta non pulvinar neque. Tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi. Mus mauris vitae ultricies leo integer malesuada nunc vel risus.</string>
+    <string name="dummy_gurantee_txt_one">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et sapien eu tortor venenatis accumsan sit amet quis elit. Quisque gravida eros sapien, sit amet finibus justo fringilla et.</string>
+
+
     <string name="urbanclap_gurantee">UrbanClap Gurantee:</string>
     <string name="expert_message">All cleaning professional are background verified are trained</string>
     <string name="professional_message">Cleaning is mechanized and done with professional cleaning solutions from Diversey</string>

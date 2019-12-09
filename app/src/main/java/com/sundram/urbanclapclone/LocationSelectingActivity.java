@@ -5,14 +5,14 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 
-public class GuranteeActivity extends AppCompatActivity {
+public class LocationSelectingActivity extends AppCompatActivity {
 
-    Toolbar toolbar;
+    private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gurantee);
-        toolbar = findViewById(R.id.gurantee_collpasableToolbar);
+        setContentView(R.layout.activity_location_selecting);
+        toolbar = findViewById(R.id.location_toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }

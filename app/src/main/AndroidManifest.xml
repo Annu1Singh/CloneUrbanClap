@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CarpenterActivity"></activity>
+        <activity android:name=".AcServiceAndRepair"/>
+        <activity android:name=".ApplianceAndEcRepair" />
+        <activity android:name=".LocationSelectingActivity" />
+        <activity android:name=".GyserServiceAndRepair" />
+        <activity android:name=".CarpenterActivity" />
         <activity android:name=".PestControl" />
         <activity android:name=".PlumberActivity" />
         <activity android:name=".ElectricianActivity" />

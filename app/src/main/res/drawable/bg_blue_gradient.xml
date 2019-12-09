@@ -7,7 +7,6 @@
         android:color="@color/windowBackground" />
     <solid android:color="@color/light_royal_blue" />
     <gradient
-        android:angle="270"
         android:endColor="@color/light_royal_alpha"
         android:startColor="@color/light_royal_blue" />
 </shape>

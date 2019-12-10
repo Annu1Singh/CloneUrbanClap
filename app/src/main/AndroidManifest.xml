@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MicroWaveRepair"></activity>
+        <activity android:name=".ViewAllServiceActivity"></activity>
+        <activity android:name=".MicroWaveRepair" />
         <activity android:name=".RefrigeratorRepair" />
         <activity android:name=".AcServiceAndRepair" />
         <activity android:name=".ApplianceAndEcRepair" />

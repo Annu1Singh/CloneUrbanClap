@@ -80,4 +80,6 @@
     <string name="login">Login</string>
     <string name="custom_toolbar">Custom Toolbar</string>
     <string name="my_booking">My Booking</string>
+    <string name="dummy_rupee"><del>Rupee 855</del></string>
+    <string name="service_list_item">Service list item</string>
 </resources>

@@ -7,14 +7,12 @@
     android:background="@color/grey_bg_light"
     tools:context=".KitchenCleaningActivity">
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coordinatorLayout"
         android:layout_width="match_parent"
         android:layout_marginBottom="?actionBarSize"
         android:layout_height="match_parent"
-        tools:context=".SofaCleaning">
+       >
 
         <include layout="@layout/collapsable__custom_toolbar" />
 

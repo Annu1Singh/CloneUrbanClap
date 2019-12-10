@@ -43,6 +43,8 @@
         <item name="colorAccent">#D33535</item>
         <item name="colorPrimary">@color/white</item>
         <item name="colorPrimaryDark">@color/white</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
     <style name="add_address_theme" parent="@style/AppTheme">

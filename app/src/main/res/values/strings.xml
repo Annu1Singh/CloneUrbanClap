@@ -77,4 +77,7 @@
     <string name="expert_clearners">Expert Clearners</string>
     <string name="_4_7_out_of_5_stars">4.7 out of 5 stars</string>
     <string name="average">Average rating of the service</string>
+    <string name="login">Login</string>
+    <string name="custom_toolbar">Custom Toolbar</string>
+    <string name="my_booking">My Booking</string>
 </resources>

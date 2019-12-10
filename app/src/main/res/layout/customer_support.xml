@@ -40,7 +40,7 @@
 
 
         <TextView
-            android:id="@+id/bookSerice1"
+            android:id="@+id/bookSerice"
             android:textSize="@dimen/text_size_16sp"
             android:background="@color/white"
             android:padding="@dimen/margin_15"

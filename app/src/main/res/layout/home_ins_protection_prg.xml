@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/home_screen_item_single_card_ui"
+    android:id="@+id/home_screen_item_single_card_ui_ins"
     android:layout_width="fill_parent"
     android:layout_height="200dp"
     android:layout_marginLeft="@dimen/margin_4"

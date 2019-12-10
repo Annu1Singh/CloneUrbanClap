@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.sundram.urbanclapclone.R;
-import com.sundram.urbanclapclone.datamodel.AnimalNames;
+import com.sundram.urbanclapclone.datamodel.ServiceName;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,15 +20,15 @@ public class ListViewAdapter extends BaseAdapter {
 
     Context mContext;
     LayoutInflater inflater;
-    private List<AnimalNames> animalNamesList = null;
-    private ArrayList<AnimalNames> arraylist;
+    private List<ServiceName> serviceNameList = null;
+    private ArrayList<ServiceName> arraylist;
 
-    public ListViewAdapter(Context context, List<AnimalNames> animalNamesList) {
+    public ListViewAdapter(Context context, List<ServiceName> serviceNameList) {
         mContext = context;
-        this.animalNamesList = animalNamesList;
+        this.serviceNameList = serviceNameList;
         inflater = LayoutInflater.from(mContext);
-        this.arraylist = new ArrayList<AnimalNames>();
-        this.arraylist.addAll(animalNamesList);
+        this.arraylist = new ArrayList<ServiceName>();
+        this.arraylist.addAll(serviceNameList);
     }
 
     public class ViewHolder {
@@ -37,12 +37,12 @@ public class ListViewAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return animalNamesList.size();
+        return serviceNameList.size();
     }
 
     @Override
-    public AnimalNames getItem(int position) {
-        return animalNamesList.get(position);
+    public ServiceName getItem(int position) {
+        return serviceNameList.get(position);
     }
 
     @Override
@@ -62,20 +62,20 @@ public class ListViewAdapter extends BaseAdapter {
             holder = (ViewHolder) view.getTag();
         }
         // Set the results into TextViews
-        holder.name.setText(animalNamesList.get(position).getAnimalName());
+        holder.name.setText(serviceNameList.get(position).getServiceName());
         return view;
     }
 
     // Filter Class
     public void filter(String charText) {
         charText = charText.toLowerCase(Locale.getDefault());
-        animalNamesList.clear();
+        serviceNameList.clear();
         if (charText.length() == 0) {
-            animalNamesList.addAll(arraylist);
+            serviceNameList.addAll(arraylist);
         } else {
-            for (AnimalNames wp : arraylist) {
-                if (wp.getAnimalName().toLowerCase(Locale.getDefault()).contains(charText)) {
-                    animalNamesList.add(wp);
+            for (ServiceName wp : arraylist) {
+                if (wp.getServiceName().toLowerCase(Locale.getDefault()).contains(charText)) {
+                    serviceNameList.add(wp);
                 }
             }
         }

@@ -7,7 +7,7 @@ import android.widget.SearchView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.sundram.urbanclapclone.adapter.ListViewAdapter;
-import com.sundram.urbanclapclone.datamodel.AnimalNames;
+import com.sundram.urbanclapclone.datamodel.ServiceName;
 
 import java.util.ArrayList;
 
@@ -18,7 +18,7 @@ public class WidgetSearch extends AppCompatActivity implements SearchView.OnQuer
     ListViewAdapter adapter;
     SearchView editsearch;
     String[] animalNameList;
-    ArrayList<AnimalNames> arraylist = new ArrayList<AnimalNames>();
+    ArrayList<ServiceName> arraylist = new ArrayList<ServiceName>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -35,9 +35,9 @@ public class WidgetSearch extends AppCompatActivity implements SearchView.OnQuer
         list = (ListView) findViewById(R.id.listview);
 
         for (int i = 0; i < animalNameList.length; i++) {
-            AnimalNames animalNames = new AnimalNames(animalNameList[i]);
+            ServiceName serviceName = new ServiceName(animalNameList[i]);
             // Binds all strings into an array
-            arraylist.add(animalNames);
+            arraylist.add(serviceName);
         }
 
         // Pass results to ListViewAdapter Class

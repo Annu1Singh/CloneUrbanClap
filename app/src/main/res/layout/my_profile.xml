@@ -11,7 +11,47 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true">
 
-        <include layout="@layout/custom_toolbar_layout" />
+        <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/custom_toolbar_wedget"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primaryDarker"
+            android:elevation="@dimen/margin_4"
+            android:fitsSystemWindows="true"
+            android:theme="@style/AppTheme1">
+
+            <TextView
+                android:id="@+id/textView_projectname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:text="@string/custom_toolbar"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_22sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/custome_toolbar_loginbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/margin_10"
+                    android:background="@drawable/round_corner_black_4"
+                    android:elevation="@dimen/margin_10"
+                    android:padding="@dimen/margin_10"
+                    android:text="@string/login"
+                    android:textColor="@color/white"
+                    android:visibility="invisible" />
+
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -26,6 +66,8 @@
             android:id="@+id/downloadUrbanClap"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/round_corner_active_slots"
             android:drawableLeft="@drawable/hand_shake"
             android:drawablePadding="@dimen/margin_16"
             android:fontFamily="sans-serif-medium"
@@ -37,6 +79,8 @@
             android:id="@+id/aboutUs_myProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_5"
+            android:background="@drawable/round_corner_active_slots"
             android:drawableLeft="@drawable/ic_person_black"
             android:drawablePadding="@dimen/margin_16"
             android:fontFamily="sans-serif-medium"
@@ -48,6 +92,8 @@
             android:id="@+id/shareUrbanClap"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_5"
+            android:background="@drawable/round_corner_active_slots"
             android:drawableLeft="@drawable/ic_share_black_24dp"
             android:drawablePadding="@dimen/margin_16"
             android:fontFamily="sans-serif-medium"
@@ -57,13 +103,14 @@
 
 
         <TextView
-            android:drawableTint="@color/black"
-            android:padding="@dimen/margin_8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="@dimen/margin_10"
+            android:background="@drawable/round_corner_active_slots"
             android:drawableStart="@drawable/ic_beenhere_black"
-            android:drawableLeft="@drawable/ic_beenhere_black" />
+            android:drawableLeft="@drawable/ic_beenhere_black"
+            android:drawableTint="@color/black"
+            android:padding="@dimen/margin_8" />
     </LinearLayout>
 </RelativeLayout>

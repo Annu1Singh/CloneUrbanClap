@@ -51,11 +51,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-black"
+                    android:fontFamily="sans-serif-thin"
                     android:maxLines="2"
                     android:text="@string/urbanclap_insurance_protection_program"
                     android:textColor="@color/black87"
-                    android:textSize="@dimen/text_size_22sp"
+                    android:textSize="@dimen/text_size_20sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -70,9 +70,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_10"
-                    android:fontFamily="sans-serif-black"
                     android:text="@string/learn_more"
-                    android:textColor="@color/dull_blue" />
+                    android:textColor="#3F51B5" />
             </LinearLayout>
 
 

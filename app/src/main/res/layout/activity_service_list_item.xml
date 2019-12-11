@@ -4,23 +4,20 @@
     android:id="@+id/home_screen_item_horizontal_card_ui"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginRight="@dimen/margin_16"
-    android:layout_marginBottom="@dimen/margin_16"
     android:clickable="true"
     android:focusable="true"
-    android:foreground="?android:selectableItemBackground"
     android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         android:layout_height="wrap_content">
-
-
-
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/service_list_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?actionBarSize"
+                app:titleTextColor="@color/black"
+                app:titleTextAppearance="@style/TextAppearance.AppCompat.Small"
                 android:background="@color/windowBackground"
                 app:title="Custome Services">
 
@@ -31,6 +28,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margin_180"
                     android:baselineAligned="true"
+                    android:textSize="@dimen/text_size_12sp"
                     android:drawableRight="@drawable/ic_search_black"
                     android:drawableTint="@color/black"
                     android:padding="@dimen/margin_10" />
@@ -39,14 +37,15 @@
     </com.google.android.material.appbar.AppBarLayout>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:clickable="true"
+        android:layout_margin="@dimen/margin_5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/home_screen_item_horizontal_card_imageview"
-            android:layout_width="@dimen/margin_93"
-            android:layout_height="@dimen/margin_93"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_gravity="center_horizontal"
             android:scaleType="fitXY"
             android:src="@drawable/btnbground" />
@@ -61,7 +60,7 @@
             android:fontFamily="sans-serif-medium"
             android:gravity="top"
             android:lineSpacingExtra="2.0dip"
-            android:maxWidth="@dimen/margin_93"
+            android:maxWidth="70dp"
             android:maxLines="1"
             android:text="Sofa Cleaning"
             android:textColor="@color/black"
@@ -80,8 +79,8 @@
 
         <ImageView
             android:id="@+id/home_screen_item_horizontal_card_imageview1"
-            android:layout_width="@dimen/margin_93"
-            android:layout_height="@dimen/margin_93"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_gravity="center_horizontal"
             android:scaleType="fitXY"
             android:src="@drawable/btnbground" />
@@ -96,7 +95,7 @@
             android:fontFamily="sans-serif-medium"
             android:gravity="top"
             android:lineSpacingExtra="2.0dip"
-            android:maxWidth="@dimen/margin_93"
+            android:maxWidth="70dp"
             android:maxLines="1"
             android:text="Bathroom Deep Cleaning"
             android:textColor="@color/black"
@@ -115,8 +114,8 @@
 
         <ImageView
             android:id="@+id/home_screen_item_horizontal_card_imageview2"
-            android:layout_width="@dimen/margin_93"
-            android:layout_height="@dimen/margin_93"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_gravity="center_horizontal"
             android:scaleType="fitXY"
             android:src="@drawable/btnbground" />
@@ -131,7 +130,7 @@
             android:fontFamily="sans-serif-medium"
             android:gravity="top"
             android:lineSpacingExtra="2.0dip"
-            android:maxWidth="@dimen/margin_93"
+            android:maxWidth="70dp"
             android:maxLines="1"
             android:text="Carpet Cleaning"
             android:textColor="@color/black"
@@ -149,8 +148,8 @@
 
         <ImageView
             android:id="@+id/home_screen_item_horizontal_card_imageview3"
-            android:layout_width="@dimen/margin_93"
-            android:layout_height="@dimen/margin_93"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_gravity="center_horizontal"
             android:scaleType="fitXY"
             android:src="@drawable/btnbground" />
@@ -165,7 +164,7 @@
             android:fontFamily="sans-serif-medium"
             android:gravity="top"
             android:lineSpacingExtra="2.0dip"
-            android:maxWidth="@dimen/margin_93"
+            android:maxWidth="70dp"
             android:maxLines="1"
             android:text="Kitchen Deep Cleaning"
             android:textColor="@color/black"
@@ -183,8 +182,8 @@
 
         <ImageView
             android:id="@+id/home_screen_item_horizontal_card_imageview4"
-            android:layout_width="@dimen/margin_93"
-            android:layout_height="@dimen/margin_93"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_gravity="center_horizontal"
             android:scaleType="fitXY"
             android:src="@drawable/btnbground" />
@@ -199,7 +198,7 @@
             android:fontFamily="sans-serif-medium"
             android:gravity="top"
             android:lineSpacingExtra="2.0dip"
-            android:maxWidth="@dimen/margin_93"
+            android:maxWidth="70dp"
             android:maxLines="1"
             android:text="Full Home Deep Cleaning"
             android:textColor="@color/black"

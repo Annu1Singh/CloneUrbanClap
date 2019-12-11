@@ -5,8 +5,7 @@
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey_bg_light"
-    >
+    android:background="@color/grey_bg_light">
 
     <include
         android:id="@+id/include_toolbar"
@@ -14,23 +13,56 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/home_screen_scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/include_toolbar"
-        android:layout_marginTop="2dp">
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-        <RelativeLayout
+
+    <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <include
+            <RelativeLayout
                 android:id="@+id/include_searchView"
-                layout="@layout/homescreen_sarchview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/searchbar_background"
+                android:clipToPadding="true"
+                android:elevation="@dimen/margin_4"
+                android:orientation="horizontal"
+                android:padding="15dp">
 
+                <com.joanzapata.iconify.widget.IconTextView
+                    android:id="@+id/searchBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/ic_search_black"
+                    android:drawableTint="@color/black"
+                    android:padding="@dimen/margin_5"
+                    android:textColor="@color/grey_txt"
+                    android:textSize="@dimen/text_size_14sp" />
+
+                <TextView
+                    android:id="@+id/header_search_bar_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_8"
+                    android:layout_toRightOf="@id/searchBtn"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/searchbar_hint"
+                    android:textColor="@color/grey_txt"
+                    android:textSize="@dimen/text_size_14sp" />
+            </RelativeLayout>
 
             <LinearLayout
                 android:id="@+id/linear_layout"
@@ -39,29 +71,35 @@
                 android:layout_below="@id/include_searchView"
                 android:orientation="vertical">
 
-            <include layout="@layout/carousel_single_item"/>
+                <include layout="@layout/carousel_single_item" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_below="@id/linear_layout"
+                android:descendantFocusability="blocksDescendants"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/linear_layout"
                 android:layout_marginBottom="@dimen/margin_5"
                 android:orientation="vertical">
-                <include layout="@layout/single_service_element_home_screen"/>
-                <include layout="@layout/single_service_element_home_screen"/>
-                <include layout="@layout/single_service_element_home_screen"/>
-                <include layout="@layout/single_service_element_home_screen"/>
-                <include layout="@layout/single_service_element_home_screen"/>
-                <include layout="@layout/home_ins_protection_prg"/>
-                <include layout="@layout/what_users_saying_section"/>
-                <include layout="@layout/bottom_sheet_of_home"
-                    android:layout_marginTop="@dimen/margin_5"
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/home_screen_list_item_recyclerView"
+                    />
+
+                <include layout="@layout/home_ins_protection_prg" />
+
+                <include layout="@layout/what_users_saying_section" />
+
+                <include
+                    layout="@layout/bottom_sheet_of_home"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_width="match_parent"/>
+                    android:layout_marginTop="@dimen/margin_5" />
             </LinearLayout>
 
         </RelativeLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 </RelativeLayout>

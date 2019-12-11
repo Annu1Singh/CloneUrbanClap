@@ -5,24 +5,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="center">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_alignParentTop="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/otp_verify_appbar"
-        android:background="@android:color/transparent"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/verify_toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?actionBarSize"
-            app:titleTextColor="@color/black"
-            app:title="Otp Verifivation"
-            android:background="@android:color/transparent"/>
 
-    </com.google.android.material.appbar.AppBarLayout>
+    <TextView
+        android:clickable="true"
+        android:layout_width="wrap_content"
+        android:layout_height="?actionBarSize"
+        android:drawableLeft="@drawable/ic_arrow_back"
+        android:drawableTint="@color/black"
+        android:layout_margin="@dimen/margin_5"
+        android:drawablePadding="@dimen/margin_10"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:id="@+id/otp_verify_appbar"/>
 
     <LinearLayout
+        android:id="@+id/parent_linearLayout"
         android:gravity="center"
         android:layout_below="@id/otp_verify_appbar"
         android:layout_width="match_parent"
@@ -84,7 +81,7 @@
         android:fontFamily="sans-serif"
         android:textColor="@color/green_confirm"
         android:textSize="@dimen/text_size_14sp"
-        android:visibility="visible" />
+        android:visibility="invisible" />
 
     <LinearLayout
         android:id="@+id/fragment_otp_time_elapsed_layout"
@@ -145,4 +142,10 @@
         android:maxLength="4"
         android:textColor="#00000000" />
     </LinearLayout>
+
+    <include layout="@layout/login_button_layout"
+        android:layout_width="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/parent_linearLayout"
+        android:layout_height="wrap_content"/>
 </RelativeLayout>

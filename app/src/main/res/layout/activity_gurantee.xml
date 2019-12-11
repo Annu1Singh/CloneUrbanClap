@@ -17,7 +17,7 @@
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appBar_gurantee"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/margin_100"
+            android:layout_height="@dimen/margin_120"
             android:theme="@style/collapsabletoolbar">
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
@@ -25,9 +25,12 @@
                 android:layout_height="match_parent"
                 android:fitsSystemWindows="true"
                 app:contentScrim="@color/white"
+                app:expandedTitleMarginBottom="@dimen/margin_5"
                 app:expandedTitleGravity="left"
+                app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
                 app:layout_scrollFlags="scroll|enterAlwaysCollapsed|exitUntilCollapsed"
-                app:title="Rural Clap Gurantee">
+                app:title="Rural Clap Gurantee"
+                >
 
                 <androidx.appcompat.widget.Toolbar
                     android:elevation="@dimen/margin_10"
@@ -36,8 +39,18 @@
                     android:layout_height="?attr/actionBarSize"
                     app:layout_collapseMode="pin"
                     app:popupTheme="@style/collapsabletoolbar"
+                    >
 
-                    />
+                    <TextView
+                        android:id="@+id/tv_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_arrow_back_black"
+                        android:drawablePadding="@dimen/margin_5" />
+
+
+                </androidx.appcompat.widget.Toolbar>
+
             </com.google.android.material.appbar.CollapsingToolbarLayout>
 
 

@@ -24,11 +24,11 @@ public class SofaCleaning extends AppCompatActivity {
         login_button_text_tv.setText("View all Cleaning services");
         //setting up the title of collapsableToolbarLayout
         collapsingToolbarLayout = findViewById(R.id.collpasableToolbarLayout);
-        collapsingToolbarLayout.setTitle("Bathroom Cleaning Services");
-        collapsingToolbarLayout.setCollapsedTitleTextColor(ColorStateList.valueOf(R.color.white));
+        collapsingToolbarLayout.setTitle("Sofa Cleaning Services");
+  //      collapsingToolbarLayout.setCollapsedTitleTextColor(ColorStateList.valueOf(R.color.white));
 
         //setting collapsetoolbar bg
-        collapseImage_bg = findViewById(R.id.collapse_iv);
-        collapseImage_bg.setBackgroundResource(R.drawable.sofa_cleaning);
+//        collapseImage_bg = findViewById(R.id.collapse_iv);
+  //      collapseImage_bg.setBackgroundResource(R.drawable.sofa_cleaning);
     }
 }

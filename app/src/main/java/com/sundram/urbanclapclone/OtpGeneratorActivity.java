@@ -26,7 +26,6 @@ public class OtpGeneratorActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(OtpGeneratorActivity.this, OTPVerification.class);
-                overridePendingTransition(R.animator.fade_in_object_animator, R.animator.fade_out_object_animator);
                 startActivity(i);
                 finish();
             }
@@ -37,7 +36,6 @@ public class OtpGeneratorActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent ii = new Intent(OtpGeneratorActivity.this, LocationOnBoarding.class);
                 startActivity(ii);
-                overridePendingTransition(R.animator.fade_in_object_animator,R.animator.fade_out_object_animator);
                 finish();
             }
         });

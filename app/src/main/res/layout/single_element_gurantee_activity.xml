@@ -19,8 +19,6 @@
         android:layout_height="wrap_content"
         android:text="@string/dummy_gurantee_txt_one"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
-        android:letterSpacing="10"
-        android:autoSizeTextType="uniform"
-        android:lineSpacingExtra="@dimen/margin_8"/>
+        android:lineSpacingExtra="@dimen/margin_4"/>
 
 </RelativeLayout>

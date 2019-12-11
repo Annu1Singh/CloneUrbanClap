@@ -39,7 +39,7 @@
             android:textColor="@android:color/black" />
 
         <TextView
-            android:visibility="invisible"
+            android:visibility="gone"
             android:id="@+id/itv_country_dropdown"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

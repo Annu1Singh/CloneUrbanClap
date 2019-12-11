@@ -60,7 +60,6 @@ public class AdapterServiceList extends RecyclerView.Adapter<AdapterServiceList.
 
         void setDetails(DataModel dataModel){
             serviceName.setText(dataModel.getServiceName());
-            serviceName.setText(dataModel.getDrawable());
         }
     }
 }

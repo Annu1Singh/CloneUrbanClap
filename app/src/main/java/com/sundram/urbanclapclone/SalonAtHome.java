@@ -44,40 +44,40 @@ public class SalonAtHome extends AppCompatActivity {
         //setting up the title of collapsableToolbarLayout
         collapsingToolbarLayout = findViewById(R.id.collpasableToolbarLayout);
         collapsingToolbarLayout.setTitle("Bathroom Cleaning Services");
-        collapsingToolbarLayout.setCollapsedTitleTextColor(ColorStateList.valueOf(R.color.white));
+        //collapsingToolbarLayout.setCollapsedTitleTextColor(ColorStateList.valueOf(R.color.white));
 
         //setting collapsetoolbar bg
-        collapseImage_bg = findViewById(R.id.collapse_iv);
-        collapseImage_bg.setBackgroundResource(R.drawable.homesalon);
+  //      collapseImage_bg = findViewById(R.id.collapse_iv);
+//        collapseImage_bg.setBackgroundResource(R.drawable.homesalon);
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         arrayList = new ArrayList<>();
 
-        AutoFitGridLayoutManager layoutManager = new AutoFitGridLayoutManager(this, 200);
-        recyclerView.setLayoutManager(layoutManager);
+        // AutoFitGridLayoutManager layoutManager = new AutoFitGridLayoutManager(this, 500);
+        //recyclerView.setLayoutManager(layoutManager);
 
-
-        recyclerViewAdapter = new RecyclerViewAdapter(this, arrayList);
-        recyclerView.setAdapter(recyclerViewAdapter);
+/**
+ Simple GridLayoutManager that spans    two columns
+ **/
+            GridLayoutManager manager = new GridLayoutManager(this, 3, GridLayoutManager.VERTICAL, false);
+            recyclerView.setLayoutManager(manager);
+            recyclerViewAdapter = new RecyclerViewAdapter(this, arrayList);
+            recyclerView.setAdapter(recyclerViewAdapter);
         setGridSectionDetails();
-        /**
-         Simple GridLayoutManager that spans    two columns
-         **/
-        /*GridLayoutManager manager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
-        recyclerView.setLayoutManager(manager);*/
+
     }
 
-    public void setGridSectionDetails(){
-        arrayList.add(new DataModel("Facial Image",R.drawable.facial));
-        arrayList.add(new DataModel("Facial Image",R.drawable.facial));
-        arrayList.add(new DataModel("Facial Image",R.drawable.facial));
-        arrayList.add(new DataModel("Facial Image",R.drawable.facial));
-        arrayList.add(new DataModel("Facial Image",R.drawable.facial));
-        arrayList.add(new DataModel("Facial Image",R.drawable.facial));
-        arrayList.add(new DataModel("Facial Image",R.drawable.facial));
-        arrayList.add(new DataModel("Facial Image",R.drawable.facial));
-        arrayList.add(new DataModel("Facial Image",R.drawable.facial));
-        arrayList.add(new DataModel("Facial Image",R.drawable.facial));
+    public void setGridSectionDetails() {
+        arrayList.add(new DataModel("Facial Image", R.drawable.facial));
+        arrayList.add(new DataModel("Facial Image", R.drawable.facial));
+        arrayList.add(new DataModel("Facial Image", R.drawable.facial));
+        arrayList.add(new DataModel("Facial Image", R.drawable.facial));
+        arrayList.add(new DataModel("Facial Image", R.drawable.facial));
+        arrayList.add(new DataModel("Facial Image", R.drawable.facial));
+        arrayList.add(new DataModel("Facial Image", R.drawable.facial));
+        arrayList.add(new DataModel("Facial Image", R.drawable.facial));
+        arrayList.add(new DataModel("Facial Image", R.drawable.facial));
+        arrayList.add(new DataModel("Facial Image", R.drawable.facial));
         recyclerViewAdapter.notifyDataSetChanged();
 
     }

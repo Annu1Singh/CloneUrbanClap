@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.sundram.urbanclapclone.R;
@@ -22,7 +23,7 @@ public class ListViewAdapter extends BaseAdapter {
     LayoutInflater inflater;
     private List<ServiceName> serviceNameList = null;
     private ArrayList<ServiceName> arraylist;
-
+    private ListView listView;
     public ListViewAdapter(Context context, List<ServiceName> serviceNameList) {
         mContext = context;
         this.serviceNameList = serviceNameList;

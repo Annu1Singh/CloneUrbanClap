@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="?actionBarSize"
-        tools:context=".SofaCleaning">
+       >
 
         <include layout="@layout/collapsable__custom_toolbar" />
 
@@ -32,6 +32,7 @@
 
 
                 <TextView
+                    android:padding="@dimen/margin_5"
                     android:layout_margin="@dimen/margin_5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -43,6 +44,7 @@
                     android:text="What we are providing"/>
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:visibility="visible"
                     android:layout_margin="@dimen/margin_5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

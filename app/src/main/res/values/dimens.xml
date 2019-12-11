@@ -83,4 +83,5 @@
     <dimen name="margin_180">180dp</dimen>
     <dimen name="margin_800">800dp</dimen>
     <dimen name="fab_margin">32dp</dimen>
+    <dimen name="margin_120">120dp</dimen>
 </resources>

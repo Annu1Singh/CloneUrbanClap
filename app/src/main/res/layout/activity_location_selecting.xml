@@ -16,7 +16,7 @@
             android:id="@+id/location_toolbar"
             android:layout_width="match_parent"
             android:layout_height="@dimen/margin_100"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+            app:popupTheme="@style/ThemeOverlay.AppCompat.ActionBar">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -26,7 +26,7 @@
                     android:id="@+id/search_edittext"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Search for society, landmark, locality.."
+                    android:hint="Search for society.."
                     android:textColorHint="@color/white" />
 
                 <TextView

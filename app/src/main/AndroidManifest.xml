@@ -9,6 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".ServiceListItem"
+            android:parentActivityName=".DashBoard"
+            android:screenOrientation="portrait" />
+        <activity android:name=".SofaCleaning" />
+        <activity
+            android:name=".WidgetSearch"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LocationOnBoarding"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".OTPVerification"
+            android:screenOrientation="portrait" />
         <activity android:name=".ViewAllServiceActivity"></activity>
         <activity android:name=".MicroWaveRepair" />
         <activity android:name=".RefrigeratorRepair" />
@@ -22,6 +36,7 @@
         <activity android:name=".ElectricianActivity" />
         <activity
             android:name=".GuranteeActivity"
+            android:parentActivityName=".DashBoard"
             android:screenOrientation="portrait" />
         <activity
             android:name=".PlumberServiceActivity"

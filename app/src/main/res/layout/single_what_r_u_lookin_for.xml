@@ -15,7 +15,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Geyser Service"
+                android:text="Name of Service"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:id="@+id/what_r_u_tv1"/>
         <TextView

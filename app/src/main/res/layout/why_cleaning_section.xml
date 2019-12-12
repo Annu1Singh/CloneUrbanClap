@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:textFontWeight="20"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-            android:text="Why ucc cleaning service ?"/>
+            android:text="Why RC cleaning service ?"/>
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"

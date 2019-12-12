@@ -1,5 +1,8 @@
 package com.sundram.urbanclapclone;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Build;
@@ -10,29 +13,29 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
-public class WashingmachineRepair extends AppCompatActivity implements View.OnClickListener {
+public class RoandWaterActivity extends AppCompatActivity implements View.OnClickListener {
+
     CollapsingToolbarLayout collapsingToolbarLayout;
-    TextView back_tv,login_tv;
-    Toolbar toolbar;
     private VideoView mVideoView;
     MediaController mediaController;
+    TextView back_tv,login_tv;
+    Toolbar toolbar;
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_washing_machine_service);
-        toolbar = findViewById(R.id.collpasableToolbar);
-        setSupportActionBar(toolbar);
+        setContentView(R.layout.activity_roand_water);
+
         login_tv = findViewById(R.id.login_button_text);
         login_tv.setText("View all Cleaning Services");
 
         back_tv = findViewById(R.id.back_tv);
         back_tv.setOnClickListener(this);
+
+        toolbar = findViewById(R.id.collpasableToolbar);
+        setSupportActionBar(toolbar);
+
         //setting up the mediaController and videoView
         mVideoView = findViewById(R.id.videoView);
         mediaController = new MediaController(this);
@@ -41,18 +44,18 @@ public class WashingmachineRepair extends AppCompatActivity implements View.OnCl
         mVideoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
-                Toast.makeText(WashingmachineRepair.this, "Thank you for watching..",
+                Toast.makeText(RoandWaterActivity.this, "Thank you for watching..",
                         Toast.LENGTH_SHORT).show();
                 mVideoView.start();
             }
         });
 
+        //setting up the collapsing toolbar
 
         //setting up the title of collapsableToolbarLayout
         collapsingToolbarLayout = findViewById(R.id.collpasableToolbarLayout);
-        collapsingToolbarLayout.setTitle("Washing Machine Service");
+        collapsingToolbarLayout.setTitle("RO Service and Repair");
     }
-
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.back_tv:
@@ -60,13 +63,8 @@ public class WashingmachineRepair extends AppCompatActivity implements View.OnCl
                 break;
         }
     }
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        Intent back = new Intent(WashingmachineRepair.this,ApplianceAndEcRepair.class);
-        startActivity(back);
-        finish();
-    }
+
+
     private void initializePlayer() {
         mVideoView.setVideoPath("android.resource://" + getPackageName() + "/" + R.raw.confounding);
         mediaController.setAnchorView(mVideoView);
@@ -99,5 +97,13 @@ public class WashingmachineRepair extends AppCompatActivity implements View.OnCl
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
             mVideoView.pause();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent back = new Intent(RoandWaterActivity.this,ApplianceAndEcRepair.class);
+        startActivity(back);
+        finish();
     }
 }

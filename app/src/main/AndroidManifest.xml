@@ -6,14 +6,32 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".RoandWaterActivity"></activity>
+        <activity
+            android:name=".WashingmachineRepair"
+            android:screenOrientation="portrait"
+            android:theme="@style/collapsabletoolbar" />
+        <activity
+            android:name=".CarpenterActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/collapsabletoolbar" />
+        <activity
+            android:name=".PECActivity"
+            android:parentActivityName=".DashBoard"
+            android:theme="@style/collapsabletoolbar" />
         <activity
             android:name=".ServiceListItem"
             android:parentActivityName=".DashBoard"
+            android:screenOrientation="portrait"
+            android:theme="@style/collapsabletoolbar" />
+        <activity
+            android:name=".SofaCleaning"
+            android:parentActivityName=".DashBoard"
             android:screenOrientation="portrait" />
-        <activity android:name=".SofaCleaning" />
         <activity
             android:name=".WidgetSearch"
             android:screenOrientation="portrait" />
@@ -23,30 +41,42 @@
         <activity
             android:name=".OTPVerification"
             android:screenOrientation="portrait" />
-        <activity android:name=".ViewAllServiceActivity"></activity>
-        <activity android:name=".MicroWaveRepair" />
-        <activity android:name=".RefrigeratorRepair" />
+        <activity android:name=".ViewAllServiceActivity" />
+        <activity
+            android:name=".MicroWaveRepair"
+            android:screenOrientation="portrait"
+            android:theme="@style/collapsabletoolbar" />
+        <activity
+            android:name=".RefrigeratorRepair"
+            android:screenOrientation="portrait"
+            android:theme="@style/collapsabletoolbar" />
         <activity android:name=".AcServiceAndRepair" />
-        <activity android:name=".ApplianceAndEcRepair" />
+        <activity
+            android:name=".ApplianceAndEcRepair"
+            android:screenOrientation="portrait"
+            android:theme="@style/collapsabletoolbar" />
         <activity android:name=".LocationSelectingActivity" />
         <activity android:name=".GyserServiceAndRepair" />
-        <activity android:name=".CarpenterActivity" />
         <activity android:name=".PestControl" />
         <activity android:name=".PlumberActivity" />
-        <activity android:name=".ElectricianActivity" />
+        <activity
+            android:name=".ElectricianActivity"
+            android:parentActivityName=".PECActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/collapsabletoolbar" />
         <activity
             android:name=".GuranteeActivity"
             android:parentActivityName=".DashBoard"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PlumberServiceActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".FullHomeDeepCleaning"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/collapsabletoolbar" />
         <activity
             android:name=".KitchenCleaningActivity"
-            android:screenOrientation="portrait" />
+            android:parentActivityName=".ServiceListItem"
+            android:screenOrientation="portrait"
+            android:theme="@style/collapsabletoolbar" />
         <activity
             android:name=".CarpetCleanigActivity"
             android:screenOrientation="portrait" />
@@ -55,7 +85,8 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".SalonAtHome"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/collapsabletoolbar" />
         <activity
             android:name=".framelayout.FrameDemo"
             android:screenOrientation="portrait" />

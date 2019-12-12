@@ -23,7 +23,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
+import com.sundram.urbanclapclone.ApplianceAndEcRepair;
 import com.sundram.urbanclapclone.GuranteeActivity;
+import com.sundram.urbanclapclone.PECActivity;
+import com.sundram.urbanclapclone.PestControl;
 import com.sundram.urbanclapclone.R;
 import com.sundram.urbanclapclone.SalonAtHome;
 import com.sundram.urbanclapclone.ServiceListItem;
@@ -46,9 +49,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
     private ViewFlipper viewFlipper;
     private CircleIndicator indicator;
     private CardView cardView, isn_cardview;
+
     RecyclerView home_screen_list_item_recyclerView;
     AdapterHomeScreenServiceListItem homeScreeenListAdapter;
     ArrayList<ServiceName> arrayList;
+
     private int images[] = {R.drawable.service_bgs,
             R.drawable.carpet_cleaning,
             R.drawable.bathroom,
@@ -172,7 +177,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
         homeScreeenListAdapter.notifyDataSetChanged();
 
     }
-
+//onClick for recyclerView item
     @Override
     public void onClick(int position) {
         ///Toast.makeText(getActivity(),"position"+position,Toast.LENGTH_LONG).show();
@@ -188,11 +193,20 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
                 getActivity().finish();
                 break;
             case 2:
-                Intent pecService = new Intent(getActivity(), ServiceListItem.class);
+                Intent pecService = new Intent(getActivity(), PECActivity.class);
                 startActivity(pecService);
                 getActivity().finish();
                 break;
-
+            case 3:
+                Intent applianceService = new Intent(getActivity(), ApplianceAndEcRepair.class);
+                startActivity(applianceService);
+                getActivity().finish();
+                break;
+            case 4:
+                Intent pestControl = new Intent(getActivity(), PestControl.class);
+                startActivity(pestControl);
+                getActivity().finish();
+                break;
         }
     }
 

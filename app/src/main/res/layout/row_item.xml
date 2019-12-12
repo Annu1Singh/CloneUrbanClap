@@ -4,10 +4,13 @@
     android:padding="10dp">
 
     <TextView
+        android:drawablePadding="@dimen/margin_5"
+        android:drawableTint="@color/grey_text"
+        android:drawableLeft="@drawable/ic_verified_user_black_24dp"
         android:id="@+id/nameLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Animal : " />
+        android:text="Services : " />
 
     <TextView
         android:id="@+id/name"

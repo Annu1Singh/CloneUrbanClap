@@ -49,6 +49,7 @@
     <!--start the black shades -->
 
     <color name="black87">#de000000</color>
+    <color name="yellow">#FFE605</color>
     <!--end the black shades -->
 
 </resources>

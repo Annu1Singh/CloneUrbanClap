@@ -2,10 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
   <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appbar_customer_support"
+        android:id="@+id/appBar_Layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true">
@@ -18,7 +19,7 @@
             android:background="@color/primaryDarker"
             android:elevation="@dimen/margin_4"
             android:fitsSystemWindows="true"
-            app:title="Customer Support"
+            app:title="My Booking"
             app:titleTextColor="@color/white"
             android:theme="@style/AppTheme1">
         </androidx.appcompat.widget.Toolbar>

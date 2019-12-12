@@ -6,7 +6,7 @@
     android:clipToPadding="true"
     android:fitsSystemWindows="true"
     android:background="@color/white"
-    android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+    android:theme="@style/collapsabletoolbar">
 
     <com.google.android.material.appbar.CollapsingToolbarLayout
         android:id="@+id/collpasableToolbarLayout"
@@ -37,9 +37,10 @@
             android:layout_height="?attr/actionBarSize"
             android:minHeight="?attr/actionBarSize"
             app:layout_collapseMode="pin"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.ActionBar">
+            app:popupTheme="@style/collapsabletoolbar">
 
             <TextView
+                android:id="@+id/back_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_arrow_back_black"

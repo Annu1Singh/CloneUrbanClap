@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:theme="@style/collapsabletoolbar"
     android:background="@color/grey_bg_light"
     tools:context=".KitchenCleaningActivity">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coordinatorLayout"
         android:layout_width="match_parent"
-        android:layout_marginBottom="?actionBarSize"
         android:layout_height="match_parent"
        >
 

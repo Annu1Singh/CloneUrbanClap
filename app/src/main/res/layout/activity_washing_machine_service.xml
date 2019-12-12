@@ -25,6 +25,7 @@
             app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
             <LinearLayout
+                android:descendantFocusability="blocksDescendants"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/grey_bg_light"
@@ -35,6 +36,19 @@
                 <include layout="@layout/full_filled_section_layout"/>
 
                 <include layout="@layout/video_sction_item"/>
+                <TextView
+                    android:padding="@dimen/margin_10"
+                    android:id="@+id/heading_review_section_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_2"
+                    android:background="@color/black87"
+                    android:fontFamily="sans-serif-thin"
+                    android:textColor="@color/yellow"
+                    android:maxEms="10"
+                    android:text="Why user choose us..?"
+                    android:textAlignment="center"/>
+
                 <include layout="@layout/why_cleaning_section" />
             </LinearLayout>
 

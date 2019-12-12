@@ -51,12 +51,19 @@
             android:orientation="vertical">
 
 
-            <include layout="@layout/single_what_r_u_lookin_for" />
+            <include layout="@layout/single_what_r_u_lookin_for"
+                android:layout_marginBottom="@dimen/margin_5"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" />
 
-            <include layout="@layout/single_what_r_u_lookin_for" />
-
-            <include layout="@layout/single_what_r_u_lookin_for" />
-
+            <include layout="@layout/single_what_r_u_lookin_for"
+                android:layout_marginBottom="@dimen/margin_5"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" />
+            <include layout="@layout/single_what_r_u_lookin_for"
+                android:layout_marginBottom="@dimen/margin_5"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" />
             <include layout="@layout/single_what_r_u_lookin_for" />
 
         </LinearLayout>

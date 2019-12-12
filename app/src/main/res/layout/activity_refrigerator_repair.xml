@@ -19,20 +19,35 @@
 
         <androidx.core.widget.NestedScrollView
             android:id="@+id/nestedScrollView"
-            android:layout_marginBottom="80dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="?attr/actionBarSize"
             app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
             <LinearLayout
+                android:descendantFocusability="blocksDescendants"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/grey_bg_light"
                 android:orientation="vertical">
 
                 <include layout="@layout/what_are_u_looking_for" />
+                <TextView
+                    android:padding="@dimen/margin_10"
+                    android:id="@+id/heading_review_section_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_5"
+                    android:background="@color/black87"
+                    android:fontFamily="sans-serif-thin"
+                    android:textColor="@color/yellow"
+                    android:maxEms="10"
+                    android:layout_marginBottom="@dimen/margin_5"
+                    android:text="Why user choose our services ?"
+                    android:textAlignment="center"/>
 
-             <include
+
+                <include
                  android:layout_marginBottom="@dimen/margin_5"
                  android:layout_marginTop="@dimen/margin_5"
                  layout="@layout/full_filled_section_layout"
@@ -40,8 +55,7 @@
                  android:layout_width="match_parent" />
 
                 <include layout="@layout/video_sction_item"/>
-
-                <include layout="@layout/why_cleaning_section"/>
+                  <include layout="@layout/why_cleaning_section"/>
             </LinearLayout>
 
         </androidx.core.widget.NestedScrollView>

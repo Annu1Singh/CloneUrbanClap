@@ -3,18 +3,21 @@ package com.sundram.urbanclapclone;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
-public class SofaCleaning extends AppCompatActivity {
+public class SofaCleaning extends AppCompatActivity implements View.OnClickListener{
 
-    TextView login_button_text_tv;
+    TextView login_button_text_tv, back_tv;
     CollapsingToolbarLayout collapsingToolbarLayout;
     ImageView collapseImage_bg;
+
     @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +28,24 @@ public class SofaCleaning extends AppCompatActivity {
         //setting up the title of collapsableToolbarLayout
         collapsingToolbarLayout = findViewById(R.id.collpasableToolbarLayout);
         collapsingToolbarLayout.setTitle("Sofa Cleaning Services");
-  //      collapsingToolbarLayout.setCollapsedTitleTextColor(ColorStateList.valueOf(R.color.white));
+        back_tv = findViewById(R.id.back_tv);
+        back_tv.setOnClickListener(this);
+    }
 
-        //setting collapsetoolbar bg
-//        collapseImage_bg = findViewById(R.id.collapse_iv);
-  //      collapseImage_bg.setBackgroundResource(R.drawable.sofa_cleaning);
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent back = new Intent(SofaCleaning.this,ServiceListItem.class);
+        startActivity(back);
+        finish();
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.back_tv:
+                onBackPressed();
+                break;
+        }
     }
 }

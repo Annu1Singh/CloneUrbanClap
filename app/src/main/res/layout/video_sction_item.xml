@@ -14,6 +14,7 @@
         android:orientation="vertical">
 
         <RelativeLayout
+            android:id="@+id/videoWrapper"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/margin_10">
@@ -30,6 +31,7 @@
 
 
             <VideoView
+                android:focusableInTouchMode="true"
                 android:id="@+id/videoView"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
@@ -40,12 +42,18 @@
                 android:layout_marginEnd="@dimen/margin_5"
                 android:layout_marginRight="@dimen/margin_5"
                 android:layout_marginBottom="@dimen/margin_5"
-                android:background="@drawable/btnbground"
                 android:clickable="false"
-                android:foreground="@drawable/videoerror"
                 android:elevation="@dimen/margin_5"
-                android:keepScreenOn="true" />
+                android:keepScreenOn="true" >
+                <requestFocus/>
 
+            </VideoView>
+
+            <FrameLayout
+                android:layout_below="@id/videoView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/videoViewWrapper"/>
         </RelativeLayout>
     </LinearLayout>
 

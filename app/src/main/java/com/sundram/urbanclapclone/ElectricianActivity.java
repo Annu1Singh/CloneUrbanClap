@@ -1,11 +1,14 @@
 package com.sundram.urbanclapclone;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,14 +19,16 @@ import com.sundram.urbanclapclone.datamodel.DataModel;
 
 import java.util.ArrayList;
 
-public class ElectricianActivity extends AppCompatActivity {
+public class ElectricianActivity extends AppCompatActivity implements View.OnClickListener {
     
     private RecyclerView recyclerView;
     private ArrayList<DataModel> arrayList;
     private RecyclerViewAdapter recyclerViewAdapter;
-    private DataModel dataModel;
-    TextView login_tv, grid_heading_tv,heading_why_tv;
+
+    TextView login_tv, heading_why_tv,back_tv;
     ImageView collapseImage_bg;
+
+    GridLayoutManager manager;
     CollapsingToolbarLayout collapsingToolbarLayout;
     @SuppressLint("ResourceAsColor")
     @Override
@@ -32,52 +37,52 @@ public class ElectricianActivity extends AppCompatActivity {
         setContentView(R.layout.activity_electrician);
         login_tv = findViewById(R.id.login_button_text);
         login_tv.setText("View all Cleaning Services");
-        grid_heading_tv = findViewById(R.id.grid_heading);
         heading_why_tv = findViewById(R.id.heading_why);
-        //setting up the heading of grid view
-
-        grid_heading_tv.setText("Please Select");
-        heading_why_tv.setText("Please Note :-");
-        //end
-        //setting up the title of collapsableToolbarLayout
-        collapsingToolbarLayout = findViewById(R.id.collpasableToolbarLayout);
-        collapsingToolbarLayout.setTitle("Bathroom Cleaning Services");
-        collapsingToolbarLayout.setCollapsedTitleTextColor(ColorStateList.valueOf(R.color.white));
-
-        //setting collapsetoolbar bg
-        collapseImage_bg = findViewById(R.id.collapse_iv);
-        collapseImage_bg.setBackgroundResource(R.drawable.homesalon);
+        back_tv = findViewById(R.id.back_tv);
+        back_tv.setOnClickListener(this);
+         heading_why_tv.setText("Please Note :-");
+         collapsingToolbarLayout = findViewById(R.id.collpasableToolbarLayout);
+         collapsingToolbarLayout.setTitle("Electronics");
 
         //setting up the grid recyclerview
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         arrayList = new ArrayList<>();
 
-        AutoFitGridLayoutManager layoutManager = new AutoFitGridLayoutManager(this, 200);
-        recyclerView.setLayoutManager(layoutManager);
-
-
+        manager = new GridLayoutManager(this, 3, GridLayoutManager.VERTICAL, false);
+        recyclerView.setLayoutManager(manager);
         recyclerViewAdapter = new RecyclerViewAdapter(this, arrayList);
         recyclerView.setAdapter(recyclerViewAdapter);
         setGridSectionDetails();
+
         //end
     }
     public void setGridSectionDetails(){
-        arrayList.add(new DataModel("Electrician Image",R.drawable.facial));
-        arrayList.add(new DataModel("Electrician Image",R.drawable.facial));
-        arrayList.add(new DataModel("Electrician Image",R.drawable.facial));
-        arrayList.add(new DataModel("Electrician Image",R.drawable.facial));
-        arrayList.add(new DataModel("Electrician Image",R.drawable.facial));
-        arrayList.add(new DataModel("Electrician Image",R.drawable.facial));
-        arrayList.add(new DataModel("Electrician Image",R.drawable.facial));
-        arrayList.add(new DataModel("Electrician Image",R.drawable.facial));
-        arrayList.add(new DataModel("Electrician Image",R.drawable.facial));
-        arrayList.add(new DataModel("Electrician Image",R.drawable.facial));
-        arrayList.add(new DataModel("Electrician Image",R.drawable.facial));
-        arrayList.add(new DataModel("Electrician Image",R.drawable.facial));
-        arrayList.add(new DataModel("Electrician Image",R.drawable.facial));
-        arrayList.add(new DataModel("Electrician Image",R.drawable.facial));
-        arrayList.add(new DataModel("Electrician Image",R.drawable.facial));
+        arrayList.add(new DataModel("electronic Image",R.drawable.electronic));
+        arrayList.add(new DataModel("electronic Image",R.drawable.electronic));
+        arrayList.add(new DataModel("electronic Image",R.drawable.electronic));
+        arrayList.add(new DataModel("electronic Image",R.drawable.electronic));
+        arrayList.add(new DataModel("electronic Image",R.drawable.electronic));
+        arrayList.add(new DataModel("electronic Image",R.drawable.electronic));
+        arrayList.add(new DataModel("electronic Image",R.drawable.electronic));
+        arrayList.add(new DataModel("electronic Image",R.drawable.electronic));
         recyclerViewAdapter.notifyDataSetChanged();
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent back = new Intent(ElectricianActivity.this,PECActivity.class);
+        startActivity(back);
+        finish();
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.back_tv:
+                onBackPressed();
+                break;
+        }
     }
 }

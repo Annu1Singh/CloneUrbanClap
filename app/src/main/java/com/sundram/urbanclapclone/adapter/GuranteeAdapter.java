@@ -53,14 +53,14 @@ public class GuranteeAdapter extends RecyclerView.Adapter<GuranteeAdapter.Gurant
             super(itemView);
 
 
-            txt = itemView.findViewById(R.id.gurantee_iv);
-            subtitle_txt = itemView.findViewById(R.id.gurantee_tv_subtitle);
+       //     txt = itemView.findViewById(R.id.gurantee_iv);
+      //      subtitle_txt = itemView.findViewById(R.id.gurantee_tv_subtitle);
         }
 
         void setGuranteeDetails(dataModelGuranteeSection data){
 
-            txt.setText(data.getGurantee_tv1());
-            subtitle_txt.setText(data.getGurantee_subtile_tv());
+       //     txt.setText(data.getGurantee_tv1());
+       //     subtitle_txt.setText(data.getGurantee_subtile_tv());
         }
     }
 }

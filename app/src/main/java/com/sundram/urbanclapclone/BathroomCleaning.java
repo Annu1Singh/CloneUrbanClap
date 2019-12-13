@@ -38,10 +38,10 @@ public class BathroomCleaning extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         Intent back = new Intent(BathroomCleaning.this,ServiceListItem.class);
         startActivity(back);
         finish();
+        super.onBackPressed();
     }
 
     @Override

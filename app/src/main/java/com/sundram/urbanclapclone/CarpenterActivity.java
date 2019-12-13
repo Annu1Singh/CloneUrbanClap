@@ -69,9 +69,9 @@ public class CarpenterActivity extends AppCompatActivity implements View.OnClick
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         Intent back = new Intent(CarpenterActivity.this,PECActivity.class);
         startActivity(back);
         finish();
+        super.onBackPressed();
     }
 }

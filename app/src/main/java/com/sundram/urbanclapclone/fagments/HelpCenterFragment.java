@@ -1,7 +1,5 @@
 package com.sundram.urbanclapclone.fagments;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,17 +10,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.sundram.urbanclapclone.R;
-
-import org.w3c.dom.Text;
 
 public class HelpCenterFragment extends Fragment implements View.OnClickListener {
 
     private Toolbar toolbar;
-    private TextView bookSerice1, payingService, urban_guide;
-    private OnFragmentInteractionListener mListener;
+    private TextView bookSerice1, payingService, urban_guide,tx_arror_back,textView_projectname;
     private View helpCenterFragment;
 
     public HelpCenterFragment() {}
@@ -44,7 +38,10 @@ public class HelpCenterFragment extends Fragment implements View.OnClickListener
         bookSerice1 = helpCenterFragment.findViewById(R.id.bookSerice);
         payingService = helpCenterFragment.findViewById(R.id.payingService);
         urban_guide = helpCenterFragment.findViewById(R.id.urban_guide);
-
+        tx_arror_back = helpCenterFragment.findViewById(R.id.tx_arror_back);
+        textView_projectname = helpCenterFragment.findViewById(R.id.textView_projectname);
+        textView_projectname.setText("Customer Support");
+        tx_arror_back.setVisibility(View.GONE);
         bookSerice1.setOnClickListener(this);
         payingService.setOnClickListener(this);
         urban_guide.setOnClickListener(this);
@@ -52,31 +49,30 @@ public class HelpCenterFragment extends Fragment implements View.OnClickListener
         return helpCenterFragment;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
-
     //getting all method in this onClick method
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.bookSerice:
-                Toast.makeText(getActivity(), "Not avialable yet..", Toast.LENGTH_LONG).show();
+                loadFragment(new FrameBookFragment());
                 break;
             case R.id.payingService:
-                Toast.makeText(getActivity(), "Not avialable yet..", Toast.LENGTH_LONG).show();
+                loadFragment(new FramePayingFragment());
                 break;
             case R.id.urban_guide:
-                Toast.makeText(getActivity(), "Not avialable yet..", Toast.LENGTH_LONG).show();
+                loadFragment(new FrameGuideFragment());
                 break;
         }
     }
-
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+    private boolean loadFragment(Fragment fragment) {
+        //switching fragment
+        if (fragment != null) {
+            getFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.nav_host_fragment, fragment)
+                    .commit();
+            return true;
+        }
+        return false;
     }
 }

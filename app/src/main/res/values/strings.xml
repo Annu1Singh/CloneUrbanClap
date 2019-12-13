@@ -7,7 +7,7 @@
     <string name="enter_verification_code">Enter Verification Code</string>
     <string name="number_use">Your number will be used:</string>
     <string name="mobile_number">Mobile Number</string>
-
+    <string name="prompat">Please select country..</string>
     <string name="filled_bullet">\u25CF</string>
     <string name="referral">Referral code?</string>
     <string name="referral_code">Referral code (if any)</string>
@@ -82,4 +82,5 @@
     <string name="my_booking">My Booking</string>
     <string name="dummy_rupee"><del>Rupee 855</del></string>
     <string name="service_list_item">Service list item</string>
+    <string name="booking_txt">You can start a new booking by the <b>home icon on bottom navigation..</b></string>
 </resources>

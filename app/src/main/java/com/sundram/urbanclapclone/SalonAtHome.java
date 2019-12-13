@@ -86,10 +86,10 @@ public class SalonAtHome extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         Intent ii = new Intent(SalonAtHome.this,DashBoard.class);
         startActivity(ii);
         finish();
+        super.onBackPressed();
     }
 
     @Override

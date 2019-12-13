@@ -62,17 +62,20 @@ public class WidgetSearch extends AppCompatActivity implements SearchView.OnQuer
     @Override
     public boolean onQueryTextChange(String newText) {
         String text = newText;
+        if (!text.equals("")) {
             adapter.filter(text);
             list.setVisibility(View.VISIBLE);
-
+        }else
+        {
+            list.setVisibility(View.GONE);
+        }
         return false;
     }
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         Intent back = new Intent(WidgetSearch.this, DashBoard.class);
         startActivity(back);
-        finish();
+        super.onBackPressed();
     }
 }

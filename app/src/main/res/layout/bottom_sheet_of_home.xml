@@ -6,7 +6,6 @@
     android:layout_height="340dp"
     android:layout_marginLeft="@dimen/margin_4"
     android:layout_marginRight="@dimen/margin_4"
-    android:clickable="true"
     android:foreground="?android:selectableItemBackground"
     app:cardCornerRadius="5dp"
     app:cardElevation="3dp"

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sundram.urbanclapclone">
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -55,10 +54,15 @@
             android:name=".ApplianceAndEcRepair"
             android:screenOrientation="portrait"
             android:theme="@style/collapsabletoolbar" />
-        <activity android:name=".LocationSelectingActivity" />
-        <activity android:name=".GyserServiceAndRepair" />
-        <activity android:name=".PestControl" />
-        <activity android:name=".PlumberActivity" />
+        <activity android:name=".LocationSelectingActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".GyserServiceAndRepair"
+            android:screenOrientation="portrait" />
+        <activity android:name=".PestControl"
+            android:screenOrientation="portrait" />
+        <activity android:name=".PlumberActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ElectricianActivity"
             android:parentActivityName=".PECActivity"
@@ -87,28 +91,11 @@
             android:name=".SalonAtHome"
             android:screenOrientation="portrait"
             android:theme="@style/collapsabletoolbar" />
-        <activity
-            android:name=".framelayout.FrameDemo"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".framelayout.FrameGuideUrbanClap"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".framelayout.FramePayingServe"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".framelayout.FrameBookingServe"
-            android:screenOrientation="portrait" />
-        <activity
+         <activity
             android:name=".About"
+            android:parentActivityName=".DashBoard"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".CustomerSupport"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".MyBookingActivity"
-            android:screenOrientation="portrait" />
-        <activity
+          <activity
             android:name=".HomeScreenActivity"
             android:screenOrientation="portrait" />
         <activity
@@ -116,7 +103,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".LoginActivity"
-            android:parentActivityName=".OtpGeneratorActivity"
+            android:parentActivityName=".DashBoard"
             android:screenOrientation="portrait" />
         <activity
             android:name=".AboutUs"

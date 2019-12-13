@@ -29,10 +29,10 @@ public class PestControl extends AppCompatActivity implements View.OnClickListen
     }
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         Intent back = new Intent(PestControl.this,DashBoard.class);
         startActivity(back);
         finish();
+        super.onBackPressed();
     }
 
     @Override

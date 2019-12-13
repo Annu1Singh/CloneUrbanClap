@@ -30,7 +30,19 @@
                 android:background="@color/grey_bg_light"
                 android:orientation="vertical"
                 android:padding="@dimen/margin_5">
-
+                <TextView
+                    android:padding="@dimen/margin_12"
+                    android:id="@+id/heading_review_section_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_2"
+                    android:layout_marginBottom="@dimen/margin_2"
+                    android:background="@color/black87"
+                    android:fontFamily="sans-serif-thin"
+                    android:textColor="@color/yellow"
+                    android:maxEms="10"
+                    android:text="We assure about the gurantee of our service ..."
+                    android:textAlignment="center"/>
                 <include layout="@layout/gurantee_section" />
 
                 <include layout="@layout/what_users_saying_section" />

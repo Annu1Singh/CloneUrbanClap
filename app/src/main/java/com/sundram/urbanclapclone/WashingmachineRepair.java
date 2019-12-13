@@ -62,10 +62,10 @@ public class WashingmachineRepair extends AppCompatActivity implements View.OnCl
     }
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         Intent back = new Intent(WashingmachineRepair.this,ApplianceAndEcRepair.class);
         startActivity(back);
         finish();
+        super.onBackPressed();
     }
     private void initializePlayer() {
         mVideoView.setVideoPath("android.resource://" + getPackageName() + "/" + R.raw.confounding);

@@ -58,7 +58,7 @@ public class MyBookingFragment extends Fragment implements View.OnClickListener 
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.bookASerice_btn:
-               // getFragmentManager().beginTransaction().add(R.id.nav_host_fragment,new HomeFragment()).commit();
+               //getFragmentManager().beginTransaction().add(R.id.nav_host_fragment,new HomeFragment()).commit();
                 loadFragment(new HomeFragment());
         }
     }

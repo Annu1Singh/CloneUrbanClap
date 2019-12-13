@@ -34,10 +34,10 @@ public class SofaCleaning extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         Intent back = new Intent(SofaCleaning.this,ServiceListItem.class);
         startActivity(back);
         finish();
+        super.onBackPressed();
     }
 
     @Override

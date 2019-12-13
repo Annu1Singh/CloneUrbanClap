@@ -49,9 +49,10 @@ public class GyserServiceAndRepair extends AppCompatActivity implements View.OnC
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         Intent ii = new Intent(GyserServiceAndRepair.this,ApplianceAndEcRepair.class);
         startActivity(ii);
+        finish();
+        super.onBackPressed();
     }
 
     @Override

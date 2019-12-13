@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grey_bg_light"
-    tools:context=".framelayout.FramePayingServe">
+    android:orientation="vertical">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -15,54 +15,61 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:background="@color/windowBackground"
-            android:elevation="@dimen/margin_10"
             android:minHeight="?actionBarSize">
 
             <include layout="@layout/custom_toolbar_layout" />
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+        <androidx.core.widget.NestedScrollView
             android:layout_below="@id/appbar_f_booking"
-            android:orientation="vertical"
-           >
-
-            <TextView
-                android:id="@+id/bookSerice0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:drawableRight="@drawable/ic_keyboard_arrow_right_black"
-                android:padding="@dimen/margin_15"
-                android:text="How to pay for the service ?"
-                android:textColor="@color/black87"
-                android:textSize="@dimen/text_size_16sp" />
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/bookSerice1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:drawableRight="@drawable/ic_keyboard_arrow_right_black"
-                android:padding="@dimen/margin_15"
-                android:text="How to use UC credits ?"
-                android:textColor="@color/black87"
-                android:textSize="@dimen/text_size_16sp" />
-
-            <TextView
-                android:id="@+id/bookSerice2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:drawableRight="@drawable/ic_keyboard_arrow_right_black"
-                android:padding="@dimen/margin_15"
-                android:text="Refund policy"
-                android:textColor="@color/black87"
-                android:textSize="@dimen/text_size_16sp" />
-
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/bookSerice0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:drawableRight="@drawable/ic_keyboard_arrow_right_black"
+                    android:padding="@dimen/margin_15"
+                    android:text="How to pay for the service ?"
+                    android:textColor="@color/black87"
+                    android:textSize="@dimen/text_size_16sp" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_1"/>
+                <TextView
+                    android:id="@+id/bookSerice1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:drawableRight="@drawable/ic_keyboard_arrow_right_black"
+                    android:padding="@dimen/margin_15"
+                    android:text="How to use RC credit ?"
+                    android:textColor="@color/black87"
+                    android:textSize="@dimen/text_size_16sp" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_1"/>
+                <TextView
+                    android:id="@+id/bookSerice2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:drawableRight="@drawable/ic_keyboard_arrow_right_black"
+                    android:padding="@dimen/margin_15"
+                    android:text="Refund policy..."
+                    android:textColor="@color/black87"
+                    android:textSize="@dimen/text_size_16sp" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_1"/>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
     </RelativeLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

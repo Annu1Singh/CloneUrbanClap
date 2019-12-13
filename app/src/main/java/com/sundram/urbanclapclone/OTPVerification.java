@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +14,7 @@ import androidx.appcompat.widget.Toolbar;
 public class OTPVerification extends AppCompatActivity implements View.OnClickListener {
 
 
+    ViewDialog viewDialog;
     TextView login_button_text_tv,otp_verify_appbar_tv;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -24,15 +26,14 @@ public class OTPVerification extends AppCompatActivity implements View.OnClickLi
         //setting up the onclick method
         otp_verify_appbar_tv.setOnClickListener(this);
         login_button_text_tv.setOnClickListener(this);
+        viewDialog = new ViewDialog(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.login_button_text:
-                Intent otp_Vierify = new Intent(OTPVerification.this,DashBoard.class);
-                startActivity(otp_Vierify);
-                finish();
+                otpVerifyBTN();
                 break;
             case R.id.otp_verify_appbar:
                 onBackPressed();
@@ -41,11 +42,25 @@ public class OTPVerification extends AppCompatActivity implements View.OnClickLi
         }
     }
 
+    public void otpVerifyBTN(){
+        viewDialog.showDialog();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent i = new Intent(OTPVerification.this, DashBoard.class);
+                startActivity(i);
+                Toast.makeText(OTPVerification.this, "OTP verified..", Toast.LENGTH_LONG).show();
+                finish();
+            }
+        }, 5000);
+    }
+
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         Intent ii = new Intent(OTPVerification.this,OtpGeneratorActivity.class);
         startActivity(ii);
         finish();
+        super.onBackPressed();
     }
 }

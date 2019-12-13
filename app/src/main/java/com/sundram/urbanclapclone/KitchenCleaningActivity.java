@@ -109,10 +109,10 @@ public class KitchenCleaningActivity extends AppCompatActivity implements View.O
     }
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         Intent back = new Intent(KitchenCleaningActivity.this, ServiceListItem.class);
         startActivity(back);
         finish();
+        super.onBackPressed();
     }
 
 }

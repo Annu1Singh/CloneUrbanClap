@@ -49,10 +49,10 @@ public class ApplianceAndEcRepair extends AppCompatActivity implements View.OnCl
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         Intent back = new Intent(ApplianceAndEcRepair.this, DashBoard.class);
         startActivity(back);
         finish();
+        super.onBackPressed();
     }
 
     @Override
@@ -77,9 +77,9 @@ public class ApplianceAndEcRepair extends AppCompatActivity implements View.OnCl
                 finish();
                 break;
             case R.id.ro_repair_ll:
-                // Intent iiii = new Intent(ApplianceAndEcRepair.this,.class);
-                //startActivity(iiii);
-                //finish();
+                Intent iiii = new Intent(ApplianceAndEcRepair.this,RoandWaterActivity.class);
+                startActivity(iiii);
+                finish();
                 break;
             case R.id.microwave_repair_ll:
                 Intent iiiii = new Intent(ApplianceAndEcRepair.this, MicroWaveRepair.class);

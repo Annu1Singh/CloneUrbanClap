@@ -2,8 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/windowBackground"
-    >
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".About"
+    android:background="@color/windowBackground">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -29,7 +30,7 @@
         android:gravity="start|top"
         >
         <TextView
-            android:id="@+id/aboutUs"
+            android:id="@+id/aboutUss"
             android:textSize="@dimen/text_size_16sp"
             android:background="@color/white"
             android:padding="@dimen/margin_15"

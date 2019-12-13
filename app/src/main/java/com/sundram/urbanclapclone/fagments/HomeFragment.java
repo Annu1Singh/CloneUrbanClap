@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,13 +25,16 @@ import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.sundram.urbanclapclone.ApplianceAndEcRepair;
+import com.sundram.urbanclapclone.DashBoard;
 import com.sundram.urbanclapclone.GuranteeActivity;
+import com.sundram.urbanclapclone.OTPVerification;
 import com.sundram.urbanclapclone.PECActivity;
 import com.sundram.urbanclapclone.PestControl;
 import com.sundram.urbanclapclone.R;
 import com.sundram.urbanclapclone.SalonAtHome;
 import com.sundram.urbanclapclone.ServiceListItem;
 import com.sundram.urbanclapclone.SofaCleaning;
+import com.sundram.urbanclapclone.ViewDialog;
 import com.sundram.urbanclapclone.WidgetSearch;
 import com.sundram.urbanclapclone.adapter.AdapterHomeScreenServiceListItem;
 import com.sundram.urbanclapclone.adapter.RecyclerViewAdapter;
@@ -44,12 +48,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
 
     private Toolbar toolbar;
     private RelativeLayout include_searchView;
-    private OnFragmentInteractionListener mListener;
     private View thisFragment;
     private ViewFlipper viewFlipper;
     private CircleIndicator indicator;
-    private CardView cardView, isn_cardview;
-
+    private CardView isn_cardview;
+    ViewDialog viewDialog;
     RecyclerView home_screen_list_item_recyclerView;
     AdapterHomeScreenServiceListItem homeScreeenListAdapter;
     ArrayList<ServiceName> arrayList;
@@ -77,41 +80,45 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
 
         thisFragment = LayoutInflater.from(getActivity()).inflate(R.layout.activity_home_screen, null);
         //getting the ids of all views
-        toolbar = thisFragment.findViewById(R.id.toolbar_home_screen);
-        cardView = thisFragment.findViewById(R.id.home_screen_item_single_card_ui);
-        isn_cardview = thisFragment.findViewById(R.id.home_screen_item_single_card_ui_ins);
-        include_searchView = thisFragment.findViewById(R.id.include_searchView);
-        viewFlipper = thisFragment.findViewById(R.id.v_flipper);
-        home_screen_list_item_recyclerView = thisFragment.findViewById(R.id.home_screen_list_item_recyclerView);
+        initVar();
         //end
         //setting up the toolbar
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
         //end
 
         //setting up the carusel in home fragment
-        indicator = thisFragment.findViewById(R.id.indicator);
+
         for (int image : images) {
             addFilpperImage(image);
 
         }
         //end
-
+        viewDialog = new ViewDialog(getActivity());
         //setting up the listners
         isn_cardview.setOnClickListener(this);
-        cardView.setOnClickListener(this);
         include_searchView.setOnClickListener(this);
         //end
         //setting up the recycler view
         arrayList = new ArrayList<ServiceName>();
 
         home_screen_list_item_recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        homeScreeenListAdapter = new AdapterHomeScreenServiceListItem(getActivity(), arrayList,this);
+        homeScreeenListAdapter = new AdapterHomeScreenServiceListItem(getActivity(), arrayList, this);
         home_screen_list_item_recyclerView.setAdapter(homeScreeenListAdapter);
         setDataServiceListItem();
         //end
 
 
         return thisFragment;
+    }
+
+    //getting ids of all the view
+    public void initVar() {
+        toolbar = thisFragment.findViewById(R.id.toolbar_home_screen);
+        isn_cardview = thisFragment.findViewById(R.id.home_screen_item_single_card_ui_ins);
+        include_searchView = thisFragment.findViewById(R.id.include_searchView);
+        viewFlipper = thisFragment.findViewById(R.id.v_flipper);
+        home_screen_list_item_recyclerView = thisFragment.findViewById(R.id.home_screen_list_item_recyclerView);
+        indicator = thisFragment.findViewById(R.id.indicator);
     }
 
     public void addFilpperImage(int image) {
@@ -126,20 +133,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
         viewFlipper.setOutAnimation(thisFragment.getContext(), android.R.anim.slide_out_right);
     }
 
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.home_screen_item_single_card_ui:
-                Intent cleaningService = new Intent(getContext(), SofaCleaning.class);
-                startActivity(cleaningService);
-                getActivity().finish();
-                break;
             case R.id.home_screen_item_single_card_ui_ins:
                 Intent gurantee = new Intent(getContext(), GuranteeActivity.class);
                 startActivity(gurantee);
@@ -149,6 +146,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
                 Intent searchView = new Intent(getActivity(), WidgetSearch.class);
                 startActivity(searchView);
                 getActivity().finish();
+                break;
         }
     }
 
@@ -177,41 +175,97 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
         homeScreeenListAdapter.notifyDataSetChanged();
 
     }
-//onClick for recyclerView item
+
+    //onClick for recyclerView item
     @Override
     public void onClick(int position) {
         ///Toast.makeText(getActivity(),"position"+position,Toast.LENGTH_LONG).show();
-        switch (position){
+        switch (position) {
             case 0:
-                Intent salonAtHome = new Intent(getActivity(), SalonAtHome.class);
-                startActivity(salonAtHome);
-                getActivity().finish();
+                salonAtHome();
                 break;
             case 1:
-                Intent cleaningService = new Intent(getActivity(), ServiceListItem.class);
-                startActivity(cleaningService);
-                getActivity().finish();
+                cleaningService();
                 break;
             case 2:
-                Intent pecService = new Intent(getActivity(), PECActivity.class);
-                startActivity(pecService);
-                getActivity().finish();
+                pecService();
                 break;
             case 3:
-                Intent applianceService = new Intent(getActivity(), ApplianceAndEcRepair.class);
-                startActivity(applianceService);
-                getActivity().finish();
+                applianceService();
                 break;
             case 4:
-                Intent pestControl = new Intent(getActivity(), PestControl.class);
-                startActivity(pestControl);
-                getActivity().finish();
+                pestControlService();
                 break;
         }
     }
 
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+    //salon at home intent
+    public void salonAtHome() {
+        viewDialog.showDialog();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent i = new Intent(getActivity(), SalonAtHome.class);
+                startActivity(i);
+                getActivity().finish();
+            }
+        }, 3000);
+    }
+
+    //Cleaning Service intent
+    public void cleaningService() {
+        viewDialog.showDialog();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent i = new Intent(getActivity(), ServiceListItem.class);
+                startActivity(i);
+                getActivity().finish();
+            }
+        }, 3000);
+    }
+
+    //PEC Service intent
+    public void pecService() {
+        viewDialog.showDialog();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent i = new Intent(getActivity(), PECActivity.class);
+                startActivity(i);
+                getActivity().finish();
+            }
+        }, 3000);
+    }
+
+    //appliance Service intent
+    public void applianceService() {
+        viewDialog.showDialog();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent i = new Intent(getActivity(), ApplianceAndEcRepair.class);
+                startActivity(i);
+                getActivity().finish();
+            }
+        }, 3000);
+    }
+
+    //Cleaning Service intent
+    public void pestControlService() {
+        viewDialog.showDialog();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent i = new Intent(getActivity(), PestControl.class);
+                startActivity(i);
+                getActivity().finish();
+            }
+        }, 3000);
     }
 }

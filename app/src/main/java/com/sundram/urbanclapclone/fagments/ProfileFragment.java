@@ -1,6 +1,5 @@
 package com.sundram.urbanclapclone.fagments;
 
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -17,16 +16,16 @@ import android.widget.TextView;
 
 import com.sundram.urbanclapclone.About;
 import com.sundram.urbanclapclone.LoginActivity;
-import com.sundram.urbanclapclone.MyProfile;
 import com.sundram.urbanclapclone.R;
 
 public class ProfileFragment extends Fragment implements View.OnClickListener {
     private Toolbar toolbar;
-    private Button loginBtn;
-    private TextView aboutUs_myProfile_tv, shareUrbanClap_tv, downloadUrbanClap_tv;
+    private TextView loginBtn;
+    private TextView aboutUs_myProfile_tv, shareUrbanClap_tv, downloadUrbanClap_tv,custome_toolbar_loginbtn;
 
     private OnFragmentInteractionListener mListener;
     private View profileFragmentView;
+
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -35,6 +34,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //getActivity().setContentView(R.layout.my_profile);
     }
 
     @Override
@@ -53,7 +53,9 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         aboutUs_myProfile_tv = profileFragmentView.findViewById(R.id.aboutUs_myProfile);
         shareUrbanClap_tv = profileFragmentView.findViewById(R.id.shareUrbanClap);
         downloadUrbanClap_tv = profileFragmentView.findViewById(R.id.downloadUrbanClap);
+        custome_toolbar_loginbtn = profileFragmentView.findViewById(R.id.custome_toolbar_loginbtn);
 
+        custome_toolbar_loginbtn.setOnClickListener(this);
         aboutUs_myProfile_tv.setOnClickListener(this);
         shareUrbanClap_tv.setOnClickListener(this);
         downloadUrbanClap_tv.setOnClickListener(this);

@@ -42,10 +42,10 @@ public class ServiceListItem extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         Intent back = new Intent(ServiceListItem.this, DashBoard.class);
         startActivity(back);
         finish();
+        super.onBackPressed();
     }
 
     @Override

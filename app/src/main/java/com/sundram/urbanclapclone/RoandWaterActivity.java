@@ -101,9 +101,9 @@ public class RoandWaterActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         Intent back = new Intent(RoandWaterActivity.this,ApplianceAndEcRepair.class);
         startActivity(back);
         finish();
+        super.onBackPressed();
     }
 }

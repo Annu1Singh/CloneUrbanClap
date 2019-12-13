@@ -24,7 +24,10 @@
             android:layout_marginTop="@dimen/margin_18"
             android:layout_marginBottom="@dimen/margin_16" />
 
+
         <Spinner
+            android:prompt="@string/prompat"
+            android:spinnerMode="dropdown"
             android:entries="@array/spinnerItems"
             android:id="@+id/tv_country_calling_code"
             android:layout_width="wrap_content"
@@ -61,7 +64,7 @@
         android:id="@+id/mobile_number_text"
         style="@style/login_edittext"
         android:digits="\ 0123456789"
-        android:hint="@string/mobile_number"
+        android:hint="Enter Your Mobile Number"
         android:imeOptions="actionNext"
         android:includeFontPadding="false"
         android:inputType="phone"

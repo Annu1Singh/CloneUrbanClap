@@ -122,9 +122,9 @@ public class CarpetCleanigActivity extends AppCompatActivity implements View.OnC
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         Intent back = new Intent(CarpetCleanigActivity.this,ServiceListItem.class);
         startActivity(back);
         finish();
+        super.onBackPressed();
     }
 }

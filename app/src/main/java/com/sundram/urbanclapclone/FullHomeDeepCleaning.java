@@ -105,9 +105,9 @@ public class FullHomeDeepCleaning extends AppCompatActivity implements View.OnCl
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         Intent back = new Intent(FullHomeDeepCleaning.this,ServiceListItem.class);
         startActivity(back);
         finish();
+        super.onBackPressed();
     }
 }

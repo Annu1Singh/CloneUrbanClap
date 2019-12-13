@@ -71,10 +71,10 @@ public class ElectricianActivity extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         Intent back = new Intent(ElectricianActivity.this,PECActivity.class);
         startActivity(back);
         finish();
+        super.onBackPressed();
     }
 
     @Override

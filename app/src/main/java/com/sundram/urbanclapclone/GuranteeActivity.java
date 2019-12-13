@@ -33,9 +33,9 @@ public class GuranteeActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         Intent ii = new Intent(GuranteeActivity.this,DashBoard.class);
         startActivity(ii);
         finish();
+        super.onBackPressed();
     }
 }

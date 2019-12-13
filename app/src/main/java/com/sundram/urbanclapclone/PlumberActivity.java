@@ -85,9 +85,9 @@ public class PlumberActivity extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         Intent back = new Intent(PlumberActivity.this,PECActivity.class);
         startActivity(back);
         finish();
+        super.onBackPressed();
     }
 }

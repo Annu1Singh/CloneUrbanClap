@@ -36,12 +36,14 @@ public class MyBookingFragment extends Fragment implements View.OnClickListener 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         myBookingView = LayoutInflater.from(getActivity()).inflate(R.layout.my_booking_layout,null);
-       //setting up the toolbar
+
+        //setting up the toolbar
         toolbar = myBookingView.findViewById(R.id.custom_toolbar_wedget);
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
-        //((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+       // ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setTitle(getString(R.string.my_booking));
         //end
+
         bookASerice_btn= myBookingView.findViewById(R.id.bookASerice_btn);
         bookASerice_btn.setOnClickListener(this);
         return myBookingView;

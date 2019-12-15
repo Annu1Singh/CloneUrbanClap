@@ -25,6 +25,7 @@
             android:weightSum="2">
 
             <LinearLayout
+                android:id="@+id/ins_linearlayout"
                 android:layout_margin="@dimen/margin_8"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"

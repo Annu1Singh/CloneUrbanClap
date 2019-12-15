@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sundram.urbanclapclone">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +16,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RoandWaterActivity"></activity>
+        <activity android:name=".SofaCleaning"></activity>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity android:name=".MyLocationUsingLocationAPI" />
+        <activity android:name=".RoandWaterActivity" />
         <activity
             android:name=".WashingmachineRepair"
             android:screenOrientation="portrait"
@@ -27,10 +41,6 @@
             android:parentActivityName=".DashBoard"
             android:screenOrientation="portrait"
             android:theme="@style/collapsabletoolbar" />
-        <activity
-            android:name=".SofaCleaning"
-            android:parentActivityName=".DashBoard"
-            android:screenOrientation="portrait" />
         <activity
             android:name=".WidgetSearch"
             android:screenOrientation="portrait" />
@@ -54,14 +64,17 @@
             android:name=".ApplianceAndEcRepair"
             android:screenOrientation="portrait"
             android:theme="@style/collapsabletoolbar" />
-        <activity android:name=".LocationSelectingActivity"
-            android:screenOrientation="portrait"
-            />
-        <activity android:name=".GyserServiceAndRepair"
+        <activity
+            android:name=".LocationSelectingActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".PestControl"
+        <activity
+            android:name=".GyserServiceAndRepair"
             android:screenOrientation="portrait" />
-        <activity android:name=".PlumberActivity"
+        <activity
+            android:name=".PestControl"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PlumberActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ElectricianActivity"
@@ -91,11 +104,11 @@
             android:name=".SalonAtHome"
             android:screenOrientation="portrait"
             android:theme="@style/collapsabletoolbar" />
-         <activity
+        <activity
             android:name=".About"
             android:parentActivityName=".DashBoard"
             android:screenOrientation="portrait" />
-          <activity
+        <activity
             android:name=".HomeScreenActivity"
             android:screenOrientation="portrait" />
         <activity

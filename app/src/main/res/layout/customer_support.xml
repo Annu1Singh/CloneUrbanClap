@@ -2,84 +2,89 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey_active_slots"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/grey_active_slots">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_customer_support"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:id="@+id/appbar_customer_support">
+        android:layout_alignParentTop="true">
 
-        <include layout="@layout/custom_toolbar_layout"/>
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/custom_toolbar_wedget"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primaryDarker"
+            android:elevation="@dimen/margin_4"
+            android:fitsSystemWindows="true"
+            app:title="Customer Support"
+            app:titleTextColor="@color/white"
+            android:theme="@style/AppTheme1">
+        </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <FrameLayout
-        android:id="@+id/frameLayout_customer_support"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
     <LinearLayout
-        android:layout_below="@id/appbar_customer_support"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
+        android:layout_below="@id/appbar_customer_support"
         android:gravity="start|top"
-        >
+        android:orientation="vertical">
 
         <TextView
-            android:padding="@dimen/margin_15"
             android:layout_width="match_parent"
-            android:textSize="@dimen/text_size_16sp"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
             android:fontFamily="sans-serif"
+            android:padding="@dimen/margin_15"
             android:text="F.A.Q."
-            />
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_16sp" />
 
 
         <TextView
             android:id="@+id/bookSerice"
-            android:textSize="@dimen/text_size_16sp"
-            android:background="@color/white"
-            android:padding="@dimen/margin_15"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/black87"
+            android:background="@color/white"
             android:drawableRight="@drawable/ic_keyboard_arrow_right_black"
+            android:padding="@dimen/margin_15"
             android:text="@string/booking_services"
-            />
+            android:textColor="@color/black87"
+            android:textSize="@dimen/text_size_16sp" />
+
         <View
             android:layout_width="match_parent"
-            android:layout_height="@dimen/margin_1"/>
+            android:layout_height="@dimen/margin_1" />
+
         <TextView
             android:id="@+id/payingService"
-            android:textSize="@dimen/text_size_16sp"
-            android:background="@color/white"
-            android:padding="@dimen/margin_15"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/black87"
+            android:background="@color/white"
             android:drawableRight="@drawable/ic_keyboard_arrow_right_black"
+            android:padding="@dimen/margin_15"
             android:text="@string/paying_for_services"
-            />
+            android:textColor="@color/black87"
+            android:textSize="@dimen/text_size_16sp" />
+
         <View
             android:layout_width="match_parent"
-            android:layout_height="@dimen/margin_1"/>
+            android:layout_height="@dimen/margin_1" />
+
         <TextView
-            android:textSize="@dimen/text_size_16sp"
             android:id="@+id/urban_guide"
-            android:background="@color/white"
-            android:padding="@dimen/margin_15"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/black87"
+            android:background="@color/white"
             android:drawableRight="@drawable/ic_keyboard_arrow_right_black"
+            android:padding="@dimen/margin_15"
             android:text="@string/a_guide_to_urbanclap"
-            />
+            android:textColor="@color/black87"
+            android:textSize="@dimen/text_size_16sp" />
+
         <View
             android:layout_width="match_parent"
-            android:layout_height="@dimen/margin_1"/>
+            android:layout_height="@dimen/margin_1" />
     </LinearLayout>
 </RelativeLayout>

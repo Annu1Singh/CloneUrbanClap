@@ -17,6 +17,12 @@ public class OtpGeneratorActivity extends AppCompatActivity implements View.OnCl
     TextView otpDenerator_tv, tv_skip_now;
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        overridePendingTransition(R.anim.fadein,R.anim.fadeout);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.otp_generator_activity);
@@ -52,7 +58,8 @@ public class OtpGeneratorActivity extends AppCompatActivity implements View.OnCl
                 startActivity(i);
                 Toast.makeText(OtpGeneratorActivity.this, "OTP sent on your mobile number", Toast.LENGTH_LONG).show();
                 finish();
+                viewDialog.hideDialog();
             }
-        }, 5000);
+        }, 3000);
     }
 }

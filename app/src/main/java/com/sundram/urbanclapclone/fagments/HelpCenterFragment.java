@@ -38,10 +38,6 @@ public class HelpCenterFragment extends Fragment implements View.OnClickListener
         bookSerice1 = helpCenterFragment.findViewById(R.id.bookSerice);
         payingService = helpCenterFragment.findViewById(R.id.payingService);
         urban_guide = helpCenterFragment.findViewById(R.id.urban_guide);
-        tx_arror_back = helpCenterFragment.findViewById(R.id.tx_arror_back);
-        textView_projectname = helpCenterFragment.findViewById(R.id.textView_projectname);
-        textView_projectname.setText("Customer Support");
-        tx_arror_back.setVisibility(View.GONE);
         bookSerice1.setOnClickListener(this);
         payingService.setOnClickListener(this);
         urban_guide.setOnClickListener(this);

@@ -2,29 +2,29 @@ package com.sundram.urbanclapclone;
 
 import android.Manifest;
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
+import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
 import com.google.android.gms.common.api.PendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
@@ -34,28 +34,27 @@ import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResult;
 import com.google.android.gms.location.LocationSettingsStates;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
-import com.joanzapata.iconify.Icon;
-import com.joanzapata.iconify.widget.IconTextView;
-import com.sundram.urbanclapclone.LocationUtil.LocationHelper;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
-import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
 import com.sundram.urbanclapclone.LocationUtil.PermissionUtils;
-import com.sundram.urbanclapclone.fagments.HomeFragment;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class LocationOnBoarding extends AppCompatActivity implements ConnectionCallbacks,
-        OnConnectionFailedListener, ActivityCompat.OnRequestPermissionsResultCallback, PermissionUtils.PermissionResultCallback {
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
-    IconTextView iconTextView;
-    RelativeLayout location_onboarding_select_city, location_onboarding_auto_detect_view;
-    String currentLocation;
-    TextView textView2;
-    LocationHelper locationHelper;
+public class MyLocationUsingLocationAPI extends AppCompatActivity implements ConnectionCallbacks,
+        OnConnectionFailedListener, ActivityCompat.OnRequestPermissionsResultCallback,
+        PermissionUtils.PermissionResultCallback {
+
+
+    @BindView(R.id.btnLocation)Button btnProceed;
+    @BindView(R.id.tvAddress)TextView tvAddress;
+    @BindView(R.id.tvEmpty)TextView tvEmpty;
+    @BindView(R.id.rlPickLocation)RelativeLayout rlPick;
+
+
     // LogCat tag
     private static final String TAG = MyLocationUsingHelper.class.getSimpleName();
 
@@ -73,82 +72,80 @@ public class LocationOnBoarding extends AppCompatActivity implements ConnectionC
 
     // list of permissions
 
-    ArrayList<String> permissions = new ArrayList<>();
+    ArrayList<String> permissions=new ArrayList<>();
     PermissionUtils permissionUtils;
 
     boolean isPermissionGranted;
-    ProgressDialog progressDialog;
+
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_location_onboarding);
-        iconTextView = findViewById(R.id.location_onboarding_back_back_btn);
-        location_onboarding_select_city = findViewById(R.id.location_onboarding_select_city);
-        location_onboarding_auto_detect_view = findViewById(R.id.location_onboarding_auto_detect_view);
+        setContentView(R.layout.activity_location_service);
 
-        textView2 = findViewById(R.id.textView2);
-        locationHelper = new LocationHelper(this);
-        locationHelper.checkpermission();
+        ButterKnife.bind(this);
 
-        permissionUtils = new PermissionUtils(LocationOnBoarding.this);
+        permissionUtils=new PermissionUtils(MyLocationUsingLocationAPI.this);
 
         permissions.add(Manifest.permission.ACCESS_FINE_LOCATION);
         permissions.add(Manifest.permission.ACCESS_COARSE_LOCATION);
 
-        permissionUtils.check_permission(permissions, "Need GPS permission for getting your location", 1);
+        permissionUtils.check_permission(permissions,"Need GPS permission for getting your location",1);
 
-        progressDialog = new ProgressDialog(this);
-        location_onboarding_auto_detect_view.setOnClickListener(new View.OnClickListener() {
+
+        rlPick.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 getLocation();
 
                 if (mLastLocation != null) {
-                    progressDialog.setCancelable(false);
-                    progressDialog.setCanceledOnTouchOutside(false);
-                    progressDialog.setTitle("Please wait..");
-                    progressDialog.show();
-                    startActivity(new Intent(LocationOnBoarding.this,DashBoard.class)
-                            .putExtra("address",currentLocation));
-                    longitude = mLastLocation.getLongitude();
                     latitude = mLastLocation.getLatitude();
+                    longitude = mLastLocation.getLongitude();
                     getAddress();
-                    finish();
-                }else {
-                    Toast.makeText(LocationOnBoarding.this,
-                            "Couldn't get the location. Make sure location is enabled on the device for this application",
-                            Toast.LENGTH_SHORT).show();
+
+                } else {
+
+                    if(btnProceed.isEnabled())
+                        btnProceed.setEnabled(false);
+
+                    showToast("Couldn't get the location. Make sure location is enabled on the device");
                 }
-
-                progressDialog.dismiss();
             }
         });
 
-        iconTextView.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+
+
+        btnProceed.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent back = new Intent(LocationOnBoarding.this, OtpGeneratorActivity.class);
-                startActivity(back);
-                finish();
+            public void onClick(View view) {
+                showToast("Proceed to the next step");
             }
         });
+
         // check availability of play services
         if (checkPlayServices()) {
+
             // Building the GoogleApi client
             buildGoogleApiClient();
         }
 
     }
 
+
+    /**
+     * Method to display the location on UI
+     * */
+
     private void getLocation() {
 
         if (isPermissionGranted) {
 
-            try {
+            try
+            {
                 mLastLocation = LocationServices.FusedLocationApi
                         .getLastLocation(mGoogleApiClient);
-            } catch (SecurityException e) {
+            }
+            catch (SecurityException e)
+            {
                 e.printStackTrace();
             }
 
@@ -156,13 +153,14 @@ public class LocationOnBoarding extends AppCompatActivity implements ConnectionC
 
     }
 
-    public Address getAddress(double latitude, double longitude) {
+    public Address getAddress(double latitude,double longitude)
+    {
         Geocoder geocoder;
         List<Address> addresses;
         geocoder = new Geocoder(this, Locale.getDefault());
 
         try {
-            addresses = geocoder.getFromLocation(latitude, longitude, 1); // Here 1 represent max location result to returned, by documents it recommended 1 to 5
+            addresses = geocoder.getFromLocation(latitude,longitude, 1); // Here 1 represent max location result to returned, by documents it recommended 1 to 5
             return addresses.get(0);
 
         } catch (IOException e) {
@@ -173,11 +171,14 @@ public class LocationOnBoarding extends AppCompatActivity implements ConnectionC
 
     }
 
-    public void getAddress() {
 
-        Address locationAddress = getAddress(latitude, longitude);
+    public void getAddress()
+    {
 
-        if (locationAddress != null) {
+        Address locationAddress=getAddress(latitude,longitude);
+
+        if(locationAddress!=null)
+        {
             String address = locationAddress.getAddressLine(0);
             String address1 = locationAddress.getAddressLine(1);
             String city = locationAddress.getLocality();
@@ -185,37 +186,51 @@ public class LocationOnBoarding extends AppCompatActivity implements ConnectionC
             String country = locationAddress.getCountryName();
             String postalCode = locationAddress.getPostalCode();
 
+            String currentLocation;
 
-
-            if (!TextUtils.isEmpty(address)) {
-                currentLocation = address;
+            if(!TextUtils.isEmpty(address))
+            {
+                currentLocation=address;
 
                 if (!TextUtils.isEmpty(address1))
-                    currentLocation += "\n" + address1;
+                    currentLocation+="\n"+address1;
 
-                if (!TextUtils.isEmpty(city)) {
-                    currentLocation += "\n" + city;
+                if (!TextUtils.isEmpty(city))
+                {
+                    currentLocation+="\n"+city;
 
                     if (!TextUtils.isEmpty(postalCode))
-                        currentLocation += " - " + postalCode;
-                } else {
+                        currentLocation+=" - "+postalCode;
+                }
+                else
+                {
                     if (!TextUtils.isEmpty(postalCode))
-                        currentLocation += "\n" + postalCode;
+                        currentLocation+="\n"+postalCode;
                 }
 
                 if (!TextUtils.isEmpty(state))
-                    currentLocation += "\n" + state;
+                    currentLocation+="\n"+state;
 
                 if (!TextUtils.isEmpty(country))
-                    currentLocation += "\n" + country;
+                    currentLocation+="\n"+country;
 
-                //textView2.setText(currentLocation);
+                tvEmpty.setVisibility(View.GONE);
+                tvAddress.setText(currentLocation);
+                tvAddress.setVisibility(View.VISIBLE);
+
+                if(!btnProceed.isEnabled())
+                    btnProceed.setEnabled(true);
+
 
             }
 
         }
 
     }
+
+    /**
+     * Creating google api client object
+     * */
 
     protected synchronized void buildGoogleApiClient() {
         mGoogleApiClient = new GoogleApiClient.Builder(this)
@@ -251,7 +266,7 @@ public class LocationOnBoarding extends AppCompatActivity implements ConnectionC
                         try {
                             // Show the dialog by calling startResolutionForResult(),
                             // and check the result in onActivityResult().
-                            status.startResolutionForResult(LocationOnBoarding.this, REQUEST_CHECK_SETTINGS);
+                            status.startResolutionForResult(MyLocationUsingLocationAPI.this, REQUEST_CHECK_SETTINGS);
 
                         } catch (IntentSender.SendIntentException e) {
                             // Ignore the error.
@@ -263,7 +278,15 @@ public class LocationOnBoarding extends AppCompatActivity implements ConnectionC
             }
         });
 
+
     }
+
+
+
+
+    /**
+     * Method to verify google play services on the device
+     * */
 
     private boolean checkPlayServices() {
 
@@ -273,7 +296,7 @@ public class LocationOnBoarding extends AppCompatActivity implements ConnectionC
 
         if (resultCode != ConnectionResult.SUCCESS) {
             if (googleApiAvailability.isUserResolvableError(resultCode)) {
-                googleApiAvailability.getErrorDialog(this, resultCode,
+                googleApiAvailability.getErrorDialog(this,resultCode,
                         PLAY_SERVICES_REQUEST).show();
             } else {
                 Toast.makeText(getApplicationContext(),
@@ -285,6 +308,7 @@ public class LocationOnBoarding extends AppCompatActivity implements ConnectionC
         }
         return true;
     }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -306,6 +330,7 @@ public class LocationOnBoarding extends AppCompatActivity implements ConnectionC
                 break;
         }
     }
+
 
     @Override
     protected void onResume() {
@@ -376,4 +401,6 @@ public class LocationOnBoarding extends AppCompatActivity implements ConnectionC
     }
 
 
+
 }
+

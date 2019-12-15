@@ -19,6 +19,12 @@ public class DashBoard extends AppCompatActivity implements BottomNavigationView
     Fragment fragment;
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash_board);

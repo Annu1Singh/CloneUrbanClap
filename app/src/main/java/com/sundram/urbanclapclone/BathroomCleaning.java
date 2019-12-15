@@ -26,6 +26,7 @@ public class BathroomCleaning extends AppCompatActivity implements View.OnClickL
         login_tv.setText("View all Cleaning Services");
         back_tv = findViewById(R.id.back_tv);
         back_tv.setOnClickListener(this);
+        login_tv.setOnClickListener(this);
         //setting up the title of collapsableToolbarLayout
         collapsingToolbarLayout = findViewById(R.id.collpasableToolbarLayout);
         collapsingToolbarLayout.setTitle("Bathroom Cleaning Services");
@@ -49,6 +50,10 @@ public class BathroomCleaning extends AppCompatActivity implements View.OnClickL
         switch (v.getId()){
             case R.id.back_tv:
                 onBackPressed();
+                break;
+            case R.id.login_button_text:
+                startActivity(new Intent(BathroomCleaning.this,ViewAllServiceActivity.class));
+                finish();
                 break;
         }
     }

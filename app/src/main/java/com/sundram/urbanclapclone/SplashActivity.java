@@ -22,7 +22,7 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
                 Intent i = new Intent(SplashActivity.this,OtpGeneratorActivity.class);
                 startActivity(i);
-                overridePendingTransition(R.anim.abc_fade_in,R.anim.abc_fade_out);
+                overridePendingTransition(R.anim.fadein,R.anim.fadeout);
                 finish();
             }
         },timeOut);

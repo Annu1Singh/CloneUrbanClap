@@ -7,12 +7,10 @@
     android:background="@color/grey_bg_light"
     tools:context=".BathroomCleaning">
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_marginBottom="?attr/actionBarSize"
         android:id="@+id/coordinatorLayout"
         android:layout_width="match_parent"
-        android:layout_marginBottom="?actionBarSize"
         android:layout_height="match_parent"
         tools:context=".SofaCleaning">
 
@@ -20,10 +18,10 @@
 
 
         <androidx.core.widget.NestedScrollView
+            android:layout_marginBottom="?attr/actionBarSize"
             android:id="@+id/nestedScrollView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="?attr/actionBarSize"
             app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
             <LinearLayout
@@ -32,6 +30,8 @@
                 android:background="@color/grey_bg_light"
                 android:orientation="vertical">
 
+                <include layout="@layout/vertical_divider"/>
+                <include layout="@layout/vertical_divider"/>
                 <include layout="@layout/full_filled_section_layout" />
 
 

@@ -1,43 +1,33 @@
 package com.sundram.urbanclapclone.fagments;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Handler;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.sundram.urbanclapclone.ApplianceAndEcRepair;
-import com.sundram.urbanclapclone.DashBoard;
 import com.sundram.urbanclapclone.GuranteeActivity;
-import com.sundram.urbanclapclone.OTPVerification;
 import com.sundram.urbanclapclone.PECActivity;
 import com.sundram.urbanclapclone.PestControl;
 import com.sundram.urbanclapclone.R;
 import com.sundram.urbanclapclone.SalonAtHome;
 import com.sundram.urbanclapclone.ServiceListItem;
-import com.sundram.urbanclapclone.SofaCleaning;
 import com.sundram.urbanclapclone.ViewDialog;
 import com.sundram.urbanclapclone.WidgetSearch;
 import com.sundram.urbanclapclone.adapter.AdapterHomeScreenServiceListItem;
-import com.sundram.urbanclapclone.adapter.RecyclerViewAdapter;
 import com.sundram.urbanclapclone.datamodel.ServiceName;
 
 import java.util.ArrayList;
@@ -68,6 +58,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
         // Required empty public constructor
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        getActivity().overridePendingTransition(R.anim.fadein,R.anim.fadeout);
+    }
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -209,8 +204,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
                 Intent i = new Intent(getActivity(), SalonAtHome.class);
                 startActivity(i);
                 getActivity().finish();
+                viewDialog.hideDialog();
             }
-        }, 3000);
+        }, 2000);
     }
 
     //Cleaning Service intent
@@ -223,8 +219,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
                 Intent i = new Intent(getActivity(), ServiceListItem.class);
                 startActivity(i);
                 getActivity().finish();
+                viewDialog.hideDialog();
             }
-        }, 3000);
+        }, 2000);
     }
 
     //PEC Service intent
@@ -237,8 +234,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
                 Intent i = new Intent(getActivity(), PECActivity.class);
                 startActivity(i);
                 getActivity().finish();
+                viewDialog.hideDialog();
             }
-        }, 3000);
+        }, 2000);
     }
 
     //appliance Service intent
@@ -251,8 +249,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
                 Intent i = new Intent(getActivity(), ApplianceAndEcRepair.class);
                 startActivity(i);
                 getActivity().finish();
+                viewDialog.hideDialog();
             }
-        }, 3000);
+        }, 2000);
     }
 
     //Cleaning Service intent
@@ -265,7 +264,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
                 Intent i = new Intent(getActivity(), PestControl.class);
                 startActivity(i);
                 getActivity().finish();
+                viewDialog.hideDialog();
             }
-        }, 3000);
+        }, 2000);
     }
 }

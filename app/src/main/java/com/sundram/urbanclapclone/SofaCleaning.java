@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
-public class SofaCleaning extends AppCompatActivity implements View.OnClickListener{
+public class SofaCleaning extends AppCompatActivity implements View.OnClickListener {
 
     TextView login_button_text_tv, back_tv;
     CollapsingToolbarLayout collapsingToolbarLayout;
@@ -25,6 +25,7 @@ public class SofaCleaning extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_sofa_cleaning);
         login_button_text_tv = findViewById(R.id.login_button_text);
         login_button_text_tv.setText("View all Cleaning services");
+        login_button_text_tv.setOnClickListener(this);
         //setting up the title of collapsableToolbarLayout
         collapsingToolbarLayout = findViewById(R.id.collpasableToolbarLayout);
         collapsingToolbarLayout.setTitle("Sofa Cleaning Services");
@@ -34,7 +35,7 @@ public class SofaCleaning extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onBackPressed() {
-        Intent back = new Intent(SofaCleaning.this,ServiceListItem.class);
+        Intent back = new Intent(SofaCleaning.this, ServiceListItem.class);
         startActivity(back);
         finish();
         super.onBackPressed();
@@ -42,9 +43,13 @@ public class SofaCleaning extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.back_tv:
                 onBackPressed();
+                break;
+            case R.id.login_button_text:
+                startActivity(new Intent(this, ViewAllServiceActivity.class));
+                finish();
                 break;
         }
     }

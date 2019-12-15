@@ -16,6 +16,13 @@ public class OTPVerification extends AppCompatActivity implements View.OnClickLi
 
     ViewDialog viewDialog;
     TextView login_button_text_tv,otp_verify_appbar_tv;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        overridePendingTransition(R.anim.fadein,R.anim.fadeout);
+    }
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,8 +59,9 @@ public class OTPVerification extends AppCompatActivity implements View.OnClickLi
                 startActivity(i);
                 Toast.makeText(OTPVerification.this, "OTP verified..", Toast.LENGTH_LONG).show();
                 finish();
+                viewDialog.hideDialog();
             }
-        }, 5000);
+        }, 3000);
     }
 
     @Override

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">RuralClap</string>
+    <string name="app_name">App Name</string>
     <string name="get_otp_on_call">Get OTP On Call</string>
     <string name="resend_code">Resend Code</string>
     <string name="login_otp_time_elapsed">Time elapsed.</string>
@@ -41,26 +41,26 @@
         <item>BTN</item>
     </string-array>
     <!--country name array end-->
-    <string name="aboutus">RuraClap helps you find the right service professionals for activities important to you. Whether you are looking to decorate your home, get candid pictures of your wedding, plan your kid’s birthday or get healthier, we are a sure shot destination for your service needs. Our vision is to use technology and smart processes to structure the highly unorganized services market in India. UrbanClap aspires to make hiring a service professional as easy and straightforward as Amazon or Flipkart have made buying products.</string>
+    <string name="aboutus">RuraClap helps you find the right service professionals for activities important to you. Whether you are looking to decorate your home, get candid pictures of your wedding, plan your kid’s birthday or get healthier, we are a sure shot destination for your service needs. Our vision is to use technology and smart processes to structure the highly unorganized services market in India. App Name aspires to make hiring a service professional as easy and straightforward as Amazon or Flipkart have made buying products.</string>
 
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="image">Image</string>
     <string name="searchbar_hint">Search service here..</string>
     <string name="reviews">Reviews</string>
-    <string name="urbanclap_insurance_protection_program">RuralClap Clone Insurance Protection Program</string>
+    <string name="urbanclap_insurance_protection_program">App Name Clone Insurance Protection Program</string>
     <string name="learn_more">Learn more</string>
     <string name="skill_india_mesage">Find professionals certified by Govt of India under Skill India Missiion</string>
     <string name="booking_services">Booking Services</string>
     <string name="paying_for_services">Paying for services</string>
-    <string name="a_guide_to_urbanclap">A guide to UrbanClap Clone</string>
+    <string name="a_guide_to_urbanclap">A guide to App Name Clone</string>
     <string name="customer_support">Customer Support</string>
     <string name="my_profile">My Profile</string>
-    <string name="share_urbanclap">Share RuralClap Clone</string>
+    <string name="share_urbanclap">Share App Name Clone</string>
     <string name="privacy_policy">Privacy policy</string>
     <string name="terms_and_conditions">Terms and conditions</string>
-    <string name="download_uc_partner_app">Download UCC Partner app</string>
-    <string name="about_urbanclap">About UrbanClap Clone</string>
+    <string name="download_uc_partner_app">Download App Name Client app</string>
+    <string name="about_urbanclap">About App Name Clone</string>
     <string name="payingQuery">Paying Service Query ?</string>
     <string name="query_on_guide">Query on guide ?</string>
 
@@ -70,7 +70,7 @@
     <string name="dummy_gurantee_txt_one">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et sapien eu tortor venenatis accumsan sit amet quis elit. Quisque gravida eros sapien, sit amet finibus justo fringilla et.</string>
 
 
-    <string name="urbanclap_gurantee">UrbanClap Gurantee:</string>
+    <string name="urbanclap_gurantee">App Name Gurantee:</string>
     <string name="expert_message">All cleaning professional are background verified are trained</string>
     <string name="professional_message">Cleaning is mechanized and done with professional cleaning solutions from Diversey</string>
     <string name="cust_protect_message">Upto INR 10,000 of damage protection on each booking</string>

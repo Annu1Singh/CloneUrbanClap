@@ -24,13 +24,14 @@ public class SofaCleaning extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sofa_cleaning);
         login_button_text_tv = findViewById(R.id.login_button_text);
-        login_button_text_tv.setText("View all Cleaning services");
+        login_button_text_tv.setText("View all Sofa services");
         login_button_text_tv.setOnClickListener(this);
         //setting up the title of collapsableToolbarLayout
         collapsingToolbarLayout = findViewById(R.id.collpasableToolbarLayout);
         collapsingToolbarLayout.setTitle("Sofa Cleaning Services");
         back_tv = findViewById(R.id.back_tv);
         back_tv.setOnClickListener(this);
+        login_button_text_tv.setOnClickListener(this);
     }
 
     @Override
@@ -38,7 +39,6 @@ public class SofaCleaning extends AppCompatActivity implements View.OnClickListe
         Intent back = new Intent(SofaCleaning.this, ServiceListItem.class);
         startActivity(back);
         finish();
-        super.onBackPressed();
     }
 
     @Override
@@ -48,7 +48,7 @@ public class SofaCleaning extends AppCompatActivity implements View.OnClickListe
                 onBackPressed();
                 break;
             case R.id.login_button_text:
-                startActivity(new Intent(this, ViewAllServiceActivity.class));
+                startActivity(new Intent(this, ViewAllSofaCleaningServices.class));
                 finish();
                 break;
         }

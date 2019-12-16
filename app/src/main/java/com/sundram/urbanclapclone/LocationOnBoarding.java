@@ -5,11 +5,13 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.IntentSender;
+import android.content.SharedPreferences;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -34,6 +36,7 @@ import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResult;
 import com.google.android.gms.location.LocationSettingsStates;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
+import com.google.android.material.snackbar.Snackbar;
 import com.joanzapata.iconify.Icon;
 import com.joanzapata.iconify.widget.IconTextView;
 import com.sundram.urbanclapclone.LocationUtil.LocationHelper;
@@ -104,23 +107,19 @@ public class LocationOnBoarding extends AppCompatActivity implements ConnectionC
                 getLocation();
 
                 if (mLastLocation != null) {
-                    progressDialog.setCancelable(false);
-                    progressDialog.setCanceledOnTouchOutside(false);
-                    progressDialog.setTitle("Please wait..");
-                    progressDialog.show();
-                    startActivity(new Intent(LocationOnBoarding.this,DashBoard.class)
-                            .putExtra("address",currentLocation));
-                    longitude = mLastLocation.getLongitude();
                     latitude = mLastLocation.getLatitude();
+                    longitude = mLastLocation.getLongitude();
                     getAddress();
+                  //  Toast.makeText(LocationOnBoarding.this,currentLocation,Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(LocationOnBoarding.this,DashBoard.class));
+                    SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(LocationOnBoarding.this);
+                    sp.edit().putString("address", currentLocation).apply();
                     finish();
                 }else {
                     Toast.makeText(LocationOnBoarding.this,
                             "Couldn't get the location. Make sure location is enabled on the device for this application",
                             Toast.LENGTH_SHORT).show();
                 }
-
-                progressDialog.dismiss();
             }
         });
 
@@ -131,6 +130,13 @@ public class LocationOnBoarding extends AppCompatActivity implements ConnectionC
                 Intent back = new Intent(LocationOnBoarding.this, OtpGeneratorActivity.class);
                 startActivity(back);
                 finish();
+            }
+        });
+
+        location_onboarding_select_city.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(LocationOnBoarding.this,"Not Working",Toast.LENGTH_LONG).show();
             }
         });
         // check availability of play services

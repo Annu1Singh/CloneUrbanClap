@@ -61,7 +61,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(i);
                 finish();
             }
-        }, 5000);
+        }, 1000);
     }
 
     @Override

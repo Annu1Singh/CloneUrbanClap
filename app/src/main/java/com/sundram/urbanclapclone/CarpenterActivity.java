@@ -15,7 +15,7 @@ import com.sundram.urbanclapclone.datamodel.DataModel;
 
 import java.util.ArrayList;
 
-public class CarpenterActivity extends AppCompatActivity implements View.OnClickListener {
+public class CarpenterActivity extends AppCompatActivity implements View.OnClickListener, RecyclerViewAdapter.OnServiceItemClick {
 
     RecyclerView recyclerView;
     ArrayList<DataModel> arrayList;
@@ -28,7 +28,7 @@ public class CarpenterActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_carpenter);
         login_tv = findViewById(R.id.login_button_text);
-        login_tv.setText("View all Cleaning Services");
+        login_tv.setText("View all Carpenter Services");
 
         back_tv = findViewById(R.id.back_tv);
         back_tv.setOnClickListener(this);
@@ -40,21 +40,24 @@ public class CarpenterActivity extends AppCompatActivity implements View.OnClick
         arrayList = new ArrayList<>();
         GridLayoutManager manager = new GridLayoutManager(this, 3, GridLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(manager);
-        recyclerViewAdapter = new RecyclerViewAdapter(this, arrayList);
+        recyclerViewAdapter = new RecyclerViewAdapter(this, arrayList,this);
         recyclerView.setAdapter(recyclerViewAdapter);
         setGridSectionDetailss();
     }
 
     public void setGridSectionDetailss() {
-        arrayList.add(new DataModel("Plumber Image", R.drawable.plumber));
-        arrayList.add(new DataModel("plumber Image", R.drawable.plumber));
-        arrayList.add(new DataModel("plumber Image", R.drawable.plumber));
-        arrayList.add(new DataModel("plumber Image", R.drawable.plumber));
-        arrayList.add(new DataModel("plumber Image", R.drawable.plumber));
-        arrayList.add(new DataModel("plumber Image", R.drawable.plumber));
-        arrayList.add(new DataModel("plumber Image", R.drawable.plumber));
-        arrayList.add(new DataModel("plumber Image", R.drawable.plumber));
-        arrayList.add(new DataModel("plumber Image", R.drawable.plumber));
+        arrayList.add(new DataModel("Quick Book", R.drawable.plumber));
+        arrayList.add(new DataModel("Drill & Hang", R.drawable.plumber));
+        arrayList.add(new DataModel("Door", R.drawable.plumber));
+        arrayList.add(new DataModel("Drawer & Cupboard", R.drawable.plumber));
+        arrayList.add(new DataModel("Window", R.drawable.plumber));
+        arrayList.add(new DataModel("Bed", R.drawable.plumber));
+        arrayList.add(new DataModel("Curtain Blinds", R.drawable.plumber));
+        arrayList.add(new DataModel("Furniture Repair", R.drawable.plumber));
+        arrayList.add(new DataModel("TV", R.drawable.plumber));
+        arrayList.add(new DataModel("Furniture Assembly", R.drawable.plumber));
+        arrayList.add(new DataModel("Miscellaneous", R.drawable.plumber));
+        arrayList.add(new DataModel("Looking for something else ?", R.drawable.plumber));
         recyclerViewAdapter.notifyDataSetChanged();
     }
 
@@ -73,5 +76,10 @@ public class CarpenterActivity extends AppCompatActivity implements View.OnClick
         startActivity(back);
         finish();
         super.onBackPressed();
+    }
+
+    @Override
+    public void onClick(int position) {
+
     }
 }

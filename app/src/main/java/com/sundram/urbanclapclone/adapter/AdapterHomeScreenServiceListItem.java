@@ -51,6 +51,7 @@ public class AdapterHomeScreenServiceListItem extends RecyclerView.Adapter<Adapt
         TextView service_name_tV, service_name_one_tv, service_name_two_tv, service_name_three_tv;
         CardView home_screen_item_single_card_ui;
         OnServiceItemClick onServiceItemClick;
+
         public ItemViewHolder(@NonNull View itemView,OnServiceItemClick onServiceItemClick) {
             super(itemView);
             service_name_tV = itemView.findViewById(R.id.service_name_tv);

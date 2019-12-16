@@ -19,7 +19,7 @@ import com.sundram.urbanclapclone.datamodel.DataModel;
 
 import java.util.ArrayList;
 
-public class ElectricianActivity extends AppCompatActivity implements View.OnClickListener {
+public class ElectricianActivity extends AppCompatActivity implements View.OnClickListener ,RecyclerViewAdapter.OnServiceItemClick {
     
     private RecyclerView recyclerView;
     private ArrayList<DataModel> arrayList;
@@ -36,7 +36,7 @@ public class ElectricianActivity extends AppCompatActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_electrician);
         login_tv = findViewById(R.id.login_button_text);
-        login_tv.setText("View all Cleaning Services");
+        login_tv.setText("View all Electronics Services");
         heading_why_tv = findViewById(R.id.heading_why);
         back_tv = findViewById(R.id.back_tv);
         back_tv.setOnClickListener(this);
@@ -50,21 +50,25 @@ public class ElectricianActivity extends AppCompatActivity implements View.OnCli
 
         manager = new GridLayoutManager(this, 3, GridLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(manager);
-        recyclerViewAdapter = new RecyclerViewAdapter(this, arrayList);
+        recyclerViewAdapter = new RecyclerViewAdapter(this, arrayList,this);
         recyclerView.setAdapter(recyclerViewAdapter);
         setGridSectionDetails();
 
         //end
     }
     public void setGridSectionDetails(){
-        arrayList.add(new DataModel("electronic Image",R.drawable.electronic));
-        arrayList.add(new DataModel("electronic Image",R.drawable.electronic));
-        arrayList.add(new DataModel("electronic Image",R.drawable.electronic));
-        arrayList.add(new DataModel("electronic Image",R.drawable.electronic));
-        arrayList.add(new DataModel("electronic Image",R.drawable.electronic));
-        arrayList.add(new DataModel("electronic Image",R.drawable.electronic));
-        arrayList.add(new DataModel("electronic Image",R.drawable.electronic));
-        arrayList.add(new DataModel("electronic Image",R.drawable.electronic));
+        arrayList.add(new DataModel("Quick Book",R.drawable.electronic));
+        arrayList.add(new DataModel("Switch and Socket",R.drawable.electronic));
+        arrayList.add(new DataModel("Fan",R.drawable.electronic));
+        arrayList.add(new DataModel("Light",R.drawable.electronic));
+        arrayList.add(new DataModel("Chandelier",R.drawable.electronic));
+        arrayList.add(new DataModel("MCB & Fuse",R.drawable.electronic));
+        arrayList.add(new DataModel("Inverter & Stabilizer",R.drawable.electronic));
+        arrayList.add(new DataModel("Appliance",R.drawable.electronic));
+        arrayList.add(new DataModel("Wiring",R.drawable.electronic));
+        arrayList.add(new DataModel("Door Bell",R.drawable.electronic));
+        arrayList.add(new DataModel("Room Heater",R.drawable.electronic));
+        arrayList.add(new DataModel("Looking For Something else ?",R.drawable.electronic));
         recyclerViewAdapter.notifyDataSetChanged();
 
     }
@@ -84,5 +88,10 @@ public class ElectricianActivity extends AppCompatActivity implements View.OnCli
                 onBackPressed();
                 break;
         }
+    }
+
+    @Override
+    public void onClick(int position) {
+
     }
 }

@@ -21,17 +21,19 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private Context context;
     private ArrayList<DataModel> arrayList;
+    private OnServiceItemClick onServiceItemClick;
 
-    public RecyclerViewAdapter(Context context, ArrayList<DataModel> arrayList) {
+    public RecyclerViewAdapter(Context context, ArrayList<DataModel> arrayList, OnServiceItemClick onServiceItemClick) {
         this.context = context;
         this.arrayList = arrayList;
+        this.onServiceItemClick = onServiceItemClick;
     }
 
     @NonNull
     @Override
     public DataModelHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
         View view = LayoutInflater.from(context).inflate(R.layout.grid_single_item, parent, false);
-        return new DataModelHolder(view);
+        return new DataModelHolder(view, onServiceItemClick);
     }
 
     @Override
@@ -45,20 +47,33 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return arrayList.size();
     }
 
-    class DataModelHolder extends RecyclerView.ViewHolder {
+    class DataModelHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
+        OnServiceItemClick onServiceItemClick;
         private TextView txtName;
         private ImageView imageView;
 
-        DataModelHolder(View itemView) {
+        DataModelHolder(View itemView, OnServiceItemClick onServiceItemClick) {
             super(itemView);
+
             txtName = itemView.findViewById(R.id.tv_grid_section);
             imageView = itemView.findViewById(R.id.imageView_grid_section);
+            this.onServiceItemClick = onServiceItemClick;
+            itemView.setOnClickListener(this);
         }
 
         void setDetails(DataModel DataModel) {
             txtName.setText(DataModel.getServiceName());
             imageView.setImageResource(DataModel.getDrawable());
         }
+
+        @Override
+        public void onClick(View v) {
+            onServiceItemClick.onClick(getAdapterPosition());
+        }
+    }
+
+    public static interface OnServiceItemClick {
+        public void onClick(int position);
     }
 }

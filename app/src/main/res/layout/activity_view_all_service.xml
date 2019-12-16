@@ -8,22 +8,37 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tablayout"
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_alignParentTop="true"
+            android:id="@+id/appbarViewAll"
+            android:theme="@style/collapsabletoolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            app:tabGravity="fill"
-            app:tabIndicatorColor="@color/colorAccent"
-            app:tabMode="fixed"
-            app:tabSelectedTextColor="@color/colorTextPrimary"
-            app:tabTextColor="@color/colorTextDisable" />
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarViewAll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="?attr/actionBarSize"/>
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tablayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabGravity="fill"
+                app:tabIndicatorColor="@color/colorAccent"
+                app:tabMode="scrollable"
+                android:theme="@style/AppTheme1"
+                app:tabSelectedTextColor="@color/colorTextPrimary"
+                app:tabTextColor="@color/colorTextDisable" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewpager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/tablayout"
+            android:layout_below="@+id/appbarViewAll"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     </RelativeLayout>

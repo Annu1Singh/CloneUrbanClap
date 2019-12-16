@@ -23,7 +23,7 @@ public class BathroomCleaning extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bathroom_cleaning);
         login_tv = findViewById(R.id.login_button_text);
-        login_tv.setText("View all Cleaning Services");
+        login_tv.setText("View all Bathroom Services");
         back_tv = findViewById(R.id.back_tv);
         back_tv.setOnClickListener(this);
         login_tv.setOnClickListener(this);
@@ -42,7 +42,6 @@ public class BathroomCleaning extends AppCompatActivity implements View.OnClickL
         Intent back = new Intent(BathroomCleaning.this,ServiceListItem.class);
         startActivity(back);
         finish();
-        super.onBackPressed();
     }
 
     @Override
@@ -52,8 +51,7 @@ public class BathroomCleaning extends AppCompatActivity implements View.OnClickL
                 onBackPressed();
                 break;
             case R.id.login_button_text:
-                startActivity(new Intent(BathroomCleaning.this,ViewAllServiceActivity.class));
-                finish();
+                startActivity(new Intent(BathroomCleaning.this,ViewAllBathRoomServices.class));
                 break;
         }
     }

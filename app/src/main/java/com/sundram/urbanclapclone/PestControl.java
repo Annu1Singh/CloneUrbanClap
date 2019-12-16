@@ -20,7 +20,7 @@ public class PestControl extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pest_control);
         login_tv = findViewById(R.id.login_button_text);
-        login_tv.setText("View all Cleaning Services");
+        login_tv.setText("View all Pest Control Services");
         back_tv = findViewById(R.id.back_tv);
         back_tv.setOnClickListener(this);
         collapsingToolbarLayout = findViewById(R.id.collpasableToolbarLayout);

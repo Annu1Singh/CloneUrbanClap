@@ -29,7 +29,8 @@ public class FullHomeDeepCleaning extends AppCompatActivity implements View.OnCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_full_home_deep_cleaning);
         login_tv = findViewById(R.id.login_button_text);
-        login_tv.setText("View all Cleaning Services");
+        login_tv.setText("View all Full Home Cleaning Services");
+        login_tv.setOnClickListener(this);
         back_tv = findViewById(R.id.back_tv);
         back_tv.setOnClickListener(this);
         //setting up the title of collapsableToolbarLayout
@@ -58,6 +59,9 @@ public class FullHomeDeepCleaning extends AppCompatActivity implements View.OnCl
             case R.id.back_tv:
                 onBackPressed();
                 break;
+            case R.id.login_button_text:
+                Intent jump = new Intent(FullHomeDeepCleaning.this,ViewAllHomeCleaning.class);
+                startActivity(jump);
         }
     }
 

@@ -20,16 +20,14 @@ import com.sundram.urbanclapclone.datamodel.DataModel;
 
 import java.util.ArrayList;
 
-public class SalonAtHome extends AppCompatActivity implements View.OnClickListener {
+public class SalonAtHome extends AppCompatActivity implements View.OnClickListener, RecyclerViewAdapter.OnServiceItemClick {
 
     RecyclerView recyclerView;
     ArrayList<DataModel> arrayList;
     RecyclerViewAdapter recyclerViewAdapter;
-    DataModel dataModel;
-    TextView login_tv, grid_heading_tv,back_tv;
-    ImageView collapseImage_bg;
+    TextView login_tv, grid_heading_tv, back_tv;
     CollapsingToolbarLayout collapsingToolbarLayout;
-
+    String tabNumber;
     @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +39,7 @@ public class SalonAtHome extends AppCompatActivity implements View.OnClickListen
         back_tv = findViewById(R.id.back_tv);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         collapsingToolbarLayout = findViewById(R.id.collpasableToolbarLayout);
-        login_tv.setText("View all Cleaning Services Service");
+        login_tv.setText("View all Salon Service");
         //setting up the heading of grid view
         //grid_heading_tv.setText("Salon At Home");
         //end
@@ -55,6 +53,7 @@ public class SalonAtHome extends AppCompatActivity implements View.OnClickListen
 
         //setting up the listners
         back_tv.setOnClickListener(this);
+        login_tv.setOnClickListener(this);
         //end
         arrayList = new ArrayList<>();
 
@@ -64,29 +63,30 @@ public class SalonAtHome extends AppCompatActivity implements View.OnClickListen
  **/
         GridLayoutManager manager = new GridLayoutManager(this, 3, GridLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(manager);
-        recyclerViewAdapter = new RecyclerViewAdapter(this, arrayList);
+        recyclerViewAdapter = new RecyclerViewAdapter(this, arrayList, this);
         recyclerView.setAdapter(recyclerViewAdapter);
         setGridSectionDetails();
 
     }
 
     public void setGridSectionDetails() {
-        arrayList.add(new DataModel("Facial Image", R.drawable.facial));
-        arrayList.add(new DataModel("Facial Image", R.drawable.facial));
-        arrayList.add(new DataModel("Facial Image", R.drawable.facial));
-        arrayList.add(new DataModel("Facial Image", R.drawable.facial));
-        arrayList.add(new DataModel("Facial Image", R.drawable.facial));
-        arrayList.add(new DataModel("Facial Image", R.drawable.facial));
-        arrayList.add(new DataModel("Facial Image", R.drawable.facial));
-        arrayList.add(new DataModel("Facial Image", R.drawable.facial));
-        arrayList.add(new DataModel("Facial Image", R.drawable.facial));
+        arrayList.add(new DataModel("Monthly Essential", R.drawable.facial));
+        arrayList.add(new DataModel("Free Waxing", R.drawable.facial));
+        arrayList.add(new DataModel("Free Waxing RICA", R.drawable.facial));
+        arrayList.add(new DataModel("RICA Waxing", R.drawable.facial));
+        arrayList.add(new DataModel("Honey Waxing", R.drawable.facial));
+        arrayList.add(new DataModel("Facial, Bleach & Detan", R.drawable.facial));
+        arrayList.add(new DataModel("Manicure & Pedicure", R.drawable.facial));
+        arrayList.add(new DataModel("Hair Care", R.drawable.facial));
+        arrayList.add(new DataModel("Threading", R.drawable.facial));
         recyclerViewAdapter.notifyDataSetChanged();
 
     }
 
+
     @Override
     public void onBackPressed() {
-        Intent ii = new Intent(SalonAtHome.this,DashBoard.class);
+        Intent ii = new Intent(SalonAtHome.this, DashBoard.class);
         startActivity(ii);
         finish();
         super.onBackPressed();
@@ -94,11 +94,67 @@ public class SalonAtHome extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.back_tv:
                 onBackPressed();
                 break;
-
+            case R.id.login_button_text:
+                startActivity(new Intent(SalonAtHome.this, ViewAllServiceActivity.class));
+                finish();
+                break;
         }
     }
+
+    @Override
+    public void onClick(int position) {
+        ///Toast.makeText(getActivity(),"position"+position,Toast.LENGTH_LONG).show();
+        switch (position) {
+            case 0:
+                Intent intent = new Intent(this, ViewAllServiceActivity.class);
+                intent.putExtra("TabNumber", "0");
+                startActivity(intent);
+                break;
+            case 1:
+                Intent intent1 = new Intent(this, ViewAllServiceActivity.class);
+                intent1.putExtra("TabNumber", "1");
+                startActivity(intent1);
+                break;
+            case 2:
+                Intent intent2 = new Intent(this, ViewAllServiceActivity.class);
+                intent2.putExtra("TabNumber", "2");
+                startActivity(intent2);
+                break;
+            case 3:
+                Intent intent3 = new Intent(this, ViewAllServiceActivity.class);
+                intent3.putExtra("TabNumber", "3");
+                startActivity(intent3);
+                break;
+            case 4:
+                Intent intent4 = new Intent(this, ViewAllServiceActivity.class);
+                intent4.putExtra("TabNumber", 4);
+                startActivity(intent4);
+                break;
+            case 5:
+                Intent intent5 = new Intent(this, ViewAllServiceActivity.class);
+                intent5.putExtra("TabNumber", "5");
+                startActivity(intent5);
+                break;
+            case 6:
+                Intent intent6 = new Intent(this, ViewAllServiceActivity.class);
+                intent6.putExtra("TabNumber", "6");
+                startActivity(intent6);
+                break;
+            case 7:
+                Intent intent7 = new Intent(this, ViewAllServiceActivity.class);
+                intent7.putExtra("TabNumber", "7");
+                startActivity(intent7);
+                break;
+            case 8:
+                Intent intent8 = new Intent(this, ViewAllServiceActivity.class);
+                intent8.putExtra("TabNumber", "8");
+                startActivity(intent8);
+                break;
+        }
+    }
+
 }

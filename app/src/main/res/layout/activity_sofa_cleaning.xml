@@ -40,7 +40,6 @@
 
                 <include layout="@layout/vertical_divider" />
                 <include layout="@layout/vertical_divider" />
-                <include layout="@layout/vertical_divider" />
 
                 <include layout="@layout/full_filled_section_layout" />
 

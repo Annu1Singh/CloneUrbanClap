@@ -44,7 +44,7 @@ public class FrameGuideFragment extends Fragment implements View.OnClickListener
         textView_projectname = frameguideFragment.findViewById(R.id.textView_projectname);
         tx_arror_back = frameguideFragment.findViewById(R.id.tx_arror_back);
 
-        textView_projectname.setText("RuralClap Guide");
+        textView_projectname.setText("App Name Guide");
         bookSerice0_tv = frameguideFragment.findViewById(R.id.bookSerice0);
         bookSerice1_tv = frameguideFragment.findViewById(R.id.bookSerice1);
         tx_arror_back.setOnClickListener(this);

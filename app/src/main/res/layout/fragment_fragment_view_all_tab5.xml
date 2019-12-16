@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fagments.FragmentViewAllTab5">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/view_all_section_heading"/>
+
+            <include layout="@layout/secton_view_all_service_list"/>
+            <include layout="@layout/vertical_divider"/>
+
+            <include layout="@layout/secton_view_all_service_list"/>
+            <include layout="@layout/vertical_divider"/>
+            <include layout="@layout/secton_view_all_service_list"/>
+            <include layout="@layout/vertical_divider"/>
+            <include layout="@layout/secton_view_all_service_list"/>
+            <include layout="@layout/vertical_divider"/>
+            <include layout="@layout/secton_view_all_service_list"/>
+            <include layout="@layout/vertical_divider"/>
+            <include layout="@layout/secton_view_all_service_list"/>
+            <include layout="@layout/vertical_divider"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</FrameLayout>

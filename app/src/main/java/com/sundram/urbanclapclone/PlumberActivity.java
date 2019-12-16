@@ -18,7 +18,7 @@ import com.sundram.urbanclapclone.datamodel.DataModel;
 
 import java.util.ArrayList;
 
-public class PlumberActivity extends AppCompatActivity implements View.OnClickListener {
+public class PlumberActivity extends AppCompatActivity implements View.OnClickListener ,RecyclerViewAdapter.OnServiceItemClick {
 
     RecyclerView recyclerView;
     ArrayList<DataModel> arrayList;
@@ -32,7 +32,7 @@ public class PlumberActivity extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plumber);
         login_tv = findViewById(R.id.login_button_text);
-        login_tv.setText("View all Cleaning Services");
+        login_tv.setText("View all Plumber Services");
 
         back_tv = findViewById(R.id.back_tv);
         back_tv.setOnClickListener(this);
@@ -56,21 +56,21 @@ public class PlumberActivity extends AppCompatActivity implements View.OnClickLi
  **/
         GridLayoutManager manager = new GridLayoutManager(this, 3, GridLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(manager);
-        recyclerViewAdapter = new RecyclerViewAdapter(this, arrayList);
+        recyclerViewAdapter = new RecyclerViewAdapter(this, arrayList, this);
         recyclerView.setAdapter(recyclerViewAdapter);
         setGridSectionDetailss();
     }
 
     public void setGridSectionDetailss() {
-        arrayList.add(new DataModel("Plumber Image", R.drawable.plumber));
-        arrayList.add(new DataModel("plumber Image", R.drawable.plumber));
-        arrayList.add(new DataModel("plumber Image", R.drawable.plumber));
-        arrayList.add(new DataModel("plumber Image", R.drawable.plumber));
-        arrayList.add(new DataModel("plumber Image", R.drawable.plumber));
-        arrayList.add(new DataModel("plumber Image", R.drawable.plumber));
-        arrayList.add(new DataModel("plumber Image", R.drawable.plumber));
-        arrayList.add(new DataModel("plumber Image", R.drawable.plumber));
-        arrayList.add(new DataModel("plumber Image", R.drawable.plumber));
+        arrayList.add(new DataModel("Quick Book", R.drawable.plumber));
+        arrayList.add(new DataModel("Tap & Mixers", R.drawable.plumber));
+        arrayList.add(new DataModel("Blockage", R.drawable.plumber));
+        arrayList.add(new DataModel("Bath Fitings", R.drawable.plumber));
+        arrayList.add(new DataModel("Toilet", R.drawable.plumber));
+        arrayList.add(new DataModel("Water Tank", R.drawable.plumber));
+        arrayList.add(new DataModel("Motor", R.drawable.plumber));
+        arrayList.add(new DataModel("Altered Nozzle", R.drawable.plumber));
+        arrayList.add(new DataModel("Looking For Something else ?", R.drawable.plumber));
         recyclerViewAdapter.notifyDataSetChanged();
     }
 
@@ -89,5 +89,10 @@ public class PlumberActivity extends AppCompatActivity implements View.OnClickLi
         startActivity(back);
         finish();
         super.onBackPressed();
+    }
+
+    @Override
+    public void onClick(int position) {
+
     }
 }

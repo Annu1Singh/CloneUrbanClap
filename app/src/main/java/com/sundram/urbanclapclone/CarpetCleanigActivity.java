@@ -38,11 +38,11 @@ public class CarpetCleanigActivity extends AppCompatActivity implements View.OnC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_carpet_cleanig);
         login_tv = findViewById(R.id.login_button_text);
-        login_tv.setText("View all Cleaning Services");
+        login_tv.setText("View all Carpet Services");
 
         back_tv = findViewById(R.id.back_tv);
         back_tv.setOnClickListener(this);
-
+        login_tv.setOnClickListener(this);
         toolbar = findViewById(R.id.collpasableToolbar);
         setSupportActionBar(toolbar);
 
@@ -71,11 +71,17 @@ public class CarpetCleanigActivity extends AppCompatActivity implements View.OnC
 
     @Override
     public void onClick(View v) {
-            switch (v.getId()){
-                case R.id.back_tv:
-                    onBackPressed();
-                    break;
-            }
+        switch (v.getId()) {
+            case R.id.back_tv:
+                onBackPressed();
+                break;
+            case R.id.login_button_text:
+                Intent jump = new Intent(CarpetCleanigActivity.this, ViewAllCarpetService.class);
+                startActivity(jump);
+                finish();
+                break;
+
+        }
     }
 
 
@@ -122,7 +128,7 @@ public class CarpetCleanigActivity extends AppCompatActivity implements View.OnC
 
     @Override
     public void onBackPressed() {
-        Intent back = new Intent(CarpetCleanigActivity.this,ServiceListItem.class);
+        Intent back = new Intent(CarpetCleanigActivity.this, ServiceListItem.class);
         startActivity(back);
         finish();
         super.onBackPressed();

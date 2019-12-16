@@ -1,6 +1,7 @@
 package com.sundram.urbanclapclone.fagments;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,15 +12,19 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.sundram.urbanclapclone.ApplianceAndEcRepair;
 import com.sundram.urbanclapclone.GuranteeActivity;
+import com.sundram.urbanclapclone.LocationOnBoarding;
 import com.sundram.urbanclapclone.PECActivity;
 import com.sundram.urbanclapclone.PestControl;
 import com.sundram.urbanclapclone.R;
@@ -42,6 +47,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
     private ViewFlipper viewFlipper;
     private CircleIndicator indicator;
     private CardView isn_cardview;
+    private TextView home_screen_selected_city;
     ViewDialog viewDialog;
     RecyclerView home_screen_list_item_recyclerView;
     AdapterHomeScreenServiceListItem homeScreeenListAdapter;
@@ -82,6 +88,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
         //end
 
         //setting up the carusel in home fragment
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        String value = sp.getString("address", "DefaultValue");
+        //Toast.makeText(getActivity(),value,Toast.LENGTH_LONG).show();
 
         for (int image : images) {
             addFilpperImage(image);
@@ -92,6 +101,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
         //setting up the listners
         isn_cardview.setOnClickListener(this);
         include_searchView.setOnClickListener(this);
+        home_screen_selected_city.setText(value);
         //end
         //setting up the recycler view
         arrayList = new ArrayList<ServiceName>();
@@ -114,6 +124,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
         viewFlipper = thisFragment.findViewById(R.id.v_flipper);
         home_screen_list_item_recyclerView = thisFragment.findViewById(R.id.home_screen_list_item_recyclerView);
         indicator = thisFragment.findViewById(R.id.indicator);
+        home_screen_selected_city = thisFragment.findViewById(R.id.home_screen_selected_city);
     }
 
     public void addFilpperImage(int image) {

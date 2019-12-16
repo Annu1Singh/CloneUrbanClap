@@ -34,7 +34,8 @@ public class KitchenCleaningActivity extends AppCompatActivity implements View.O
         setContentView(R.layout.activity_kitchen_cleaning);
 
         login_tv = findViewById(R.id.login_button_text);
-        login_tv.setText("View all Cleaning Services");
+        login_tv.setText("View all Kitchen Cleaning Services");
+        login_tv.setOnClickListener(this);
         back_tv = findViewById(R.id.back_tv);
         back_tv.setOnClickListener(this);
         //setting up the title of collapsableToolbarLayout
@@ -105,6 +106,10 @@ public class KitchenCleaningActivity extends AppCompatActivity implements View.O
             case R.id.back_tv:
                 onBackPressed();
                 break;
+            case R.id.login_button_text:
+                Intent jump = new Intent(KitchenCleaningActivity.this,ViewAllKitchenService.class);
+                startActivity(jump);
+                finish();
         }
     }
     @Override

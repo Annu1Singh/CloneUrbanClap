@@ -1,13 +1,21 @@
 package com.sundram.urbanclapclone;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.snackbar.Snackbar;
 import com.sundram.urbanclapclone.fagments.HelpCenterFragment;
 import com.sundram.urbanclapclone.fagments.HomeFragment;
 import com.sundram.urbanclapclone.fagments.MyBookingFragment;
@@ -32,6 +40,8 @@ public class DashBoard extends AppCompatActivity implements BottomNavigationView
         bottom_nav_view = findViewById(R.id.bottom_nav_view);
         bottom_nav_view.setOnNavigationItemSelectedListener(this);
 
+      //  String address = getIntent().getStringExtra("address");
+        //Toast.makeText(DashBoard.this,address,Toast.LENGTH_LONG).show();
         // it makes default fragment
         loadFragment(new HomeFragment());
 
@@ -67,5 +77,28 @@ public class DashBoard extends AppCompatActivity implements BottomNavigationView
             return true;
         }
         return false;
+    }
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setMessage("Are you sure you want to exit !")
+
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 }

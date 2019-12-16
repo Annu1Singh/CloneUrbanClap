@@ -3,17 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/all_service_section_cardV_one"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/white"
     android:clickable="true"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
     app:cardCornerRadius="@dimen/margin_5"
-    app:cardElevation="@dimen/margin_8">
+    app:cardElevation="@dimen/margin_5">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <TextView
             android:padding="@dimen/margin_5"
@@ -175,7 +175,7 @@
                 android:text="70 min" />
 
             <LinearLayout
-                android:elevation="@dimen/margin_8"
+                android:elevation="@dimen/margin_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -227,8 +227,8 @@
 
         </RelativeLayout>
         <TextView
-            android:elevation="@dimen/margin_8"
-            android:layout_margin="@dimen/margin_5"
+            android:elevation="@dimen/margin_2"
+            android:layout_margin="@dimen/margin_8"
             android:layout_below="@id/relativeLayout1"
             android:textAlignment="center"
             android:drawablePadding="@dimen/margin_2"

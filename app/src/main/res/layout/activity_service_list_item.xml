@@ -62,6 +62,7 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:padding="@dimen/margin_5"
                 android:id="@+id/home_screen_item_horizontal_card_imageview"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
@@ -98,6 +99,7 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:padding="@dimen/margin_5"
                 android:id="@+id/home_screen_item_horizontal_card_imageview1"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
@@ -134,6 +136,7 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:padding="@dimen/margin_5"
                 android:id="@+id/home_screen_item_horizontal_card_imageview2"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
@@ -170,6 +173,7 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:padding="@dimen/margin_5"
                 android:id="@+id/home_screen_item_horizontal_card_imageview3"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
@@ -206,6 +210,7 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:padding="@dimen/margin_5"
                 android:id="@+id/home_screen_item_horizontal_card_imageview4"
                 android:layout_width="70dp"
                 android:layout_height="70dp"

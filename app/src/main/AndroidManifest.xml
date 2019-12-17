@@ -17,21 +17,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <activity android:name=".viewallserviceactivity.pecservice.ViewAllPlumber"
+            android:screenOrientation="portrait"/>
         <activity
-            android:name=".ViewAllHomeCleaning"
+            android:name=".viewallserviceactivity.pecservice.ViewAllCarpenter"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ViewAllKitchenService"
+            android:name=".viewallserviceactivity.pecservice.ViewAllElectrician"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ViewAllCarpetService"
+            android:name=".viewallserviceactivity.cleaning.ViewAllHomeCleaning"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".viewallserviceactivity.cleaning.ViewAllKitchenService"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".viewallserviceactivity.cleaning.ViewAllCarpetService"
             android:screenOrientation="portrait" />
         <activity
             android:name=".SofaCleaning"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".ViewAllBathRoomServices"
+            android:name=".viewallserviceactivity.cleaning.ViewAllBathRoomServices"
             android:screenOrientation="portrait" />
 
         <meta-data
@@ -39,7 +48,7 @@
             android:value="@integer/google_play_services_version" />
 
         <activity
-            android:name=".ViewAllSofaCleaningServices"
+            android:name=".viewallserviceactivity.cleaning.ViewAllSofaCleaningServices"
             android:screenOrientation="portrait" />
         <activity
             android:name=".MyLocationUsingLocationAPI"
@@ -73,7 +82,7 @@
         <activity
             android:name=".OTPVerification"
             android:screenOrientation="portrait" />
-        <activity android:name=".ViewAllServiceActivity" />
+        <activity android:name=".viewallserviceactivity.salonathome.ViewAllServiceActivity" />
         <activity
             android:name=".MicroWaveRepair"
             android:screenOrientation="portrait"

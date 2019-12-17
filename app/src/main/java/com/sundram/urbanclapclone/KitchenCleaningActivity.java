@@ -4,14 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.TextView;
@@ -19,6 +15,7 @@ import android.widget.Toast;
 import android.widget.VideoView;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.sundram.urbanclapclone.viewallserviceactivity.cleaning.ViewAllKitchenService;
 
 public class KitchenCleaningActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -107,7 +104,7 @@ public class KitchenCleaningActivity extends AppCompatActivity implements View.O
                 onBackPressed();
                 break;
             case R.id.login_button_text:
-                Intent jump = new Intent(KitchenCleaningActivity.this,ViewAllKitchenService.class);
+                Intent jump = new Intent(KitchenCleaningActivity.this, ViewAllKitchenService.class);
                 startActivity(jump);
                 finish();
         }

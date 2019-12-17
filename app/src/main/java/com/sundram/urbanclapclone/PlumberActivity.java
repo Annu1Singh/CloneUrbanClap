@@ -15,6 +15,8 @@ import android.widget.TextView;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.sundram.urbanclapclone.adapter.RecyclerViewAdapter;
 import com.sundram.urbanclapclone.datamodel.DataModel;
+import com.sundram.urbanclapclone.viewallserviceactivity.pecservice.ViewAllPlumber;
+import com.sundram.urbanclapclone.viewallserviceactivity.salonathome.ViewAllServiceActivity;
 
 import java.util.ArrayList;
 
@@ -36,17 +38,10 @@ public class PlumberActivity extends AppCompatActivity implements View.OnClickLi
 
         back_tv = findViewById(R.id.back_tv);
         back_tv.setOnClickListener(this);
-
-
         //end
         //setting up the title of collapsableToolbarLayout
         collapsingToolbarLayout = findViewById(R.id.collpasableToolbarLayout);
         collapsingToolbarLayout.setTitle("Plumber");
-        //  collapsingToolbarLayout.setCollapsedTitleTextColor(ColorStateList.valueOf(R.color.white));
-
-        //setting collapsetoolbar bg
-        //collapseImage_bg = findViewById(R.id.collapse_iv);
-        // collapseImage_bg.setBackgroundResource(R.drawable.electrician);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         arrayList = new ArrayList<>();
 
@@ -62,15 +57,15 @@ public class PlumberActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     public void setGridSectionDetailss() {
-        arrayList.add(new DataModel("Quick Book", R.drawable.plumber));
+       // arrayList.add(new DataModel("Quick Book", R.drawable.plumber));
         arrayList.add(new DataModel("Tap & Mixers", R.drawable.plumber));
         arrayList.add(new DataModel("Blockage", R.drawable.plumber));
         arrayList.add(new DataModel("Bath Fitings", R.drawable.plumber));
         arrayList.add(new DataModel("Toilet", R.drawable.plumber));
         arrayList.add(new DataModel("Water Tank", R.drawable.plumber));
         arrayList.add(new DataModel("Motor", R.drawable.plumber));
-        arrayList.add(new DataModel("Altered Nozzle", R.drawable.plumber));
-        arrayList.add(new DataModel("Looking For Something else ?", R.drawable.plumber));
+     //   arrayList.add(new DataModel("Altered Nozzle", R.drawable.plumber));
+    //    arrayList.add(new DataModel("Looking For Something else ?", R.drawable.plumber));
         recyclerViewAdapter.notifyDataSetChanged();
     }
 
@@ -88,11 +83,41 @@ public class PlumberActivity extends AppCompatActivity implements View.OnClickLi
         Intent back = new Intent(PlumberActivity.this,PECActivity.class);
         startActivity(back);
         finish();
-        super.onBackPressed();
     }
 
     @Override
     public void onClick(int position) {
-
+        switch (position) {
+            case 0:
+                Intent intent = new Intent(this, ViewAllPlumber.class);
+                intent.putExtra("TabNumber", "0");
+                startActivity(intent);
+                break;
+            case 1:
+                Intent intent1 = new Intent(this, ViewAllPlumber.class);
+                intent1.putExtra("TabNumber", "1");
+                startActivity(intent1);
+                break;
+            case 2:
+                Intent intent2 = new Intent(this, ViewAllPlumber.class);
+                intent2.putExtra("TabNumber", "2");
+                startActivity(intent2);
+                break;
+            case 3:
+                Intent intent3 = new Intent(this, ViewAllPlumber.class);
+                intent3.putExtra("TabNumber", "3");
+                startActivity(intent3);
+                break;
+            case 4:
+                Intent intent4 = new Intent(this, ViewAllPlumber.class);
+                intent4.putExtra("TabNumber", 4);
+                startActivity(intent4);
+                break;
+            case 5:
+                Intent intent5 = new Intent(this, ViewAllPlumber.class);
+                intent5.putExtra("TabNumber", "5");
+                startActivity(intent5);
+                break;
+        }
     }
 }

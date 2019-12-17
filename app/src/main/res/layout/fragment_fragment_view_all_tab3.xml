@@ -3,31 +3,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fagments.FragmentViewAllTab3">
+    tools:context=".fagments.salonathomeservice.FragmentViewAllTab3">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+
         <LinearLayout
+            android:descendantFocusability="blocksDescendants"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <include layout="@layout/view_all_section_heading"/>
+            <include layout="@layout/view_all_section_heading" />
 
-            <include layout="@layout/secton_view_all_service_list"/>
-            <include layout="@layout/vertical_divider"/>
-
-            <include layout="@layout/secton_view_all_service_list"/>
-            <include layout="@layout/vertical_divider"/>
-            <include layout="@layout/secton_view_all_service_list"/>
-            <include layout="@layout/vertical_divider"/>
-            <include layout="@layout/secton_view_all_service_list"/>
-            <include layout="@layout/vertical_divider"/>
-            <include layout="@layout/secton_view_all_service_list"/>
-            <include layout="@layout/vertical_divider"/>
-            <include layout="@layout/secton_view_all_service_list"/>
-            <include layout="@layout/vertical_divider"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/fragment_tab_one_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </FrameLayout>

@@ -25,6 +25,7 @@
             app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
             <LinearLayout
+                android:descendantFocusability="blocksDescendants"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/grey_bg_light"
@@ -32,15 +33,16 @@
 
 
                 <TextView
-                    android:padding="@dimen/margin_5"
-                    android:layout_margin="@dimen/margin_5"
+                    android:id="@+id/grid_heading"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:fontFamily="sans-serif"
+                    android:layout_margin="@dimen/margin_5"
                     android:background="@drawable/border_grey_light"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                    android:text="What we are providing"/>
+                    android:fontFamily="sans-serif"
+                    android:padding="@dimen/margin_5"
+                    android:text="What we are providing"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:visibility="visible"

@@ -64,11 +64,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
         // Required empty public constructor
     }
 
-    @Override
+   /* @Override
     public void onStart() {
         super.onStart();
         getActivity().overridePendingTransition(R.anim.fadein,R.anim.fadeout);
-    }
+    }*/
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
@@ -16,6 +15,7 @@ import android.widget.Toast;
 import android.widget.VideoView;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.sundram.urbanclapclone.viewallserviceactivity.cleaning.ViewAllHomeCleaning;
 
 public class FullHomeDeepCleaning extends AppCompatActivity implements View.OnClickListener {
 
@@ -60,7 +60,7 @@ public class FullHomeDeepCleaning extends AppCompatActivity implements View.OnCl
                 onBackPressed();
                 break;
             case R.id.login_button_text:
-                Intent jump = new Intent(FullHomeDeepCleaning.this,ViewAllHomeCleaning.class);
+                Intent jump = new Intent(FullHomeDeepCleaning.this, ViewAllHomeCleaning.class);
                 startActivity(jump);
         }
     }

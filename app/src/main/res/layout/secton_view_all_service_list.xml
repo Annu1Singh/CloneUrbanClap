@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
+    android:background="@drawable/border_grey_light"
     android:layout_margin="@dimen/margin_2"
     android:elevation="@dimen/margin_5"
     android:focusable="true">
@@ -12,11 +13,12 @@
     android:layout_height="wrap_content">
 
     <ImageView
+        android:padding="@dimen/margin_2"
         android:layout_alignParentLeft="true"
         android:id="@+id/view_all_service_list_item_image"
-        android:layout_width="@dimen/margin_93"
-        android:layout_height="@dimen/margin_93"
-        android:scaleType="fitXY"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:scaleType="centerCrop"
         android:src="@drawable/round_corners"
         android:contentDescription="TODO" />
 
@@ -27,11 +29,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
-        android:text="@string/service_list_item"
+        android:maxEms="11"
+        android:text="Chimney Depp Cleaning(Without )"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size_14sp" />
 
     <TextView
+        android:drawableLeft="@drawable/rupee"
         android:layout_margin="@dimen/margin_5"
         android:layout_below="@id/title_tv"
         android:layout_toRightOf="@id/view_all_service_list_item_image"
@@ -43,6 +47,7 @@
         android:textColor="@color/black"
         android:textSize="@dimen/text_size_14sp" />
     <TextView
+        android:visibility="invisible"
         android:layout_margin="@dimen/margin_5"
         android:layout_below="@id/title_tv"
         android:layout_toRightOf="@id/price_tv"
@@ -67,7 +72,7 @@
     <TextView
         android:layout_margin="@dimen/margin_5"
         android:id="@+id/serviceTime"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/price_tv"
         android:layout_marginLeft="@dimen/margin_8"
@@ -77,9 +82,22 @@
         android:drawableTint="@color/light_royal_blue"
         android:text="70 min" />
 
+    <TextView
+        android:id="@+id/details"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Details"
+        android:textColor="@color/light_royal_blue"
+        android:drawableTint="@color/light_royal_blue"
+        android:drawableEnd="@drawable/ic_keyboard_arrow_right_black"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/price_tv"
+        android:drawableRight="@drawable/ic_keyboard_arrow_right_black" />
+
+
     <LinearLayout
         android:layout_margin="@dimen/margin_5"
-        android:elevation="@dimen/margin_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -93,7 +111,7 @@
             android:drawableLeft="@drawable/ic_remove_black"
             android:drawableTint="@color/light_royal_blue"
             android:padding="@dimen/margin_5"
-            android:visibility="visible" />
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/add_tv"

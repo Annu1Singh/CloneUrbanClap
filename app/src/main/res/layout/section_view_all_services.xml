@@ -13,10 +13,10 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:visibility="visible">
 
         <TextView
-            android:padding="@dimen/margin_5"
             android:id="@+id/hotsellerText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -24,6 +24,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:background="@color/green_confirm"
+            android:padding="@dimen/margin_5"
             android:text="Hotseller"
             android:textColor="@color/white" />
 
@@ -173,13 +174,12 @@
                 android:drawablePadding="@dimen/margin_4"
                 android:drawableTint="@color/light_royal_blue"
                 android:text="70 min" />
-
             <LinearLayout
-                android:elevation="@dimen/margin_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:background="@drawable/btn_round_blue_bg"
+                android:elevation="@dimen/margin_2"
                 android:orientation="horizontal">
 
                 <TextView
@@ -206,6 +206,7 @@
                     android:padding="@dimen/margin_5" />
             </LinearLayout>
 
+
             <View
                 android:id="@+id/divider"
                 android:layout_width="match_parent"
@@ -214,34 +215,37 @@
                 android:background="@drawable/horizontal_divider_dashed" />
 
             <LinearLayout
-                android:layout_below="@id/divider"
                 android:id="@+id/linearLayout3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/divider"
                 android:orientation="vertical">
 
-               <include layout="@layout/view_all_srvice_text"/>
-               <include layout="@layout/view_all_srvice_text"/>
-               <include layout="@layout/view_all_srvice_text"/>
+                <include layout="@layout/view_all_srvice_text" />
+
+                <include layout="@layout/view_all_srvice_text" />
+
+                <include layout="@layout/view_all_srvice_text" />
             </LinearLayout>
 
         </RelativeLayout>
+
         <TextView
-            android:elevation="@dimen/margin_2"
-            android:layout_margin="@dimen/margin_8"
-            android:layout_below="@id/relativeLayout1"
-            android:textAlignment="center"
-            android:drawablePadding="@dimen/margin_2"
-            android:padding="@dimen/margin_8"
+            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Edit this package"
-            android:textAllCaps="false"
-            android:textColor="@color/light_royal_blue"
-            android:drawableTint="@color/light_royal_blue"
-            android:drawableRight="@drawable/ic_keyboard_arrow_right_black"
+            android:layout_below="@id/relativeLayout1"
+            android:layout_margin="@dimen/margin_8"
             android:background="@drawable/rounded_white_grey_border_4"
-            />
+            android:drawableRight="@drawable/ic_keyboard_arrow_right_black"
+            android:drawablePadding="@dimen/margin_2"
+            android:drawableTint="@color/light_royal_blue"
+            android:elevation="@dimen/margin_2"
+            android:padding="@dimen/margin_8"
+            android:text="Edit this package"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/light_royal_blue" />
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

@@ -6,17 +6,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
-import com.sundram.urbanclapclone.adapter.AutoFitGridLayoutManager;
 import com.sundram.urbanclapclone.adapter.RecyclerViewAdapter;
 import com.sundram.urbanclapclone.datamodel.DataModel;
+import com.sundram.urbanclapclone.viewallserviceactivity.salonathome.ViewAllServiceActivity;
 
 import java.util.ArrayList;
 
@@ -70,12 +67,10 @@ public class SalonAtHome extends AppCompatActivity implements View.OnClickListen
     }
 
     public void setGridSectionDetails() {
-        arrayList.add(new DataModel("Monthly Essential", R.drawable.facial));
-        arrayList.add(new DataModel("Free Waxing", R.drawable.facial));
-        arrayList.add(new DataModel("Free Waxing RICA", R.drawable.facial));
+        arrayList.add(new DataModel("Waxing", R.drawable.facial));
         arrayList.add(new DataModel("RICA Waxing", R.drawable.facial));
         arrayList.add(new DataModel("Honey Waxing", R.drawable.facial));
-        arrayList.add(new DataModel("Facial, Bleach & Detan", R.drawable.facial));
+        arrayList.add(new DataModel("Facial, Bleach and Detan", R.drawable.facial));
         arrayList.add(new DataModel("Manicure & Pedicure", R.drawable.facial));
         arrayList.add(new DataModel("Hair Care", R.drawable.facial));
         arrayList.add(new DataModel("Threading", R.drawable.facial));
@@ -89,7 +84,6 @@ public class SalonAtHome extends AppCompatActivity implements View.OnClickListen
         Intent ii = new Intent(SalonAtHome.this, DashBoard.class);
         startActivity(ii);
         finish();
-        super.onBackPressed();
     }
 
     @Override
@@ -107,7 +101,6 @@ public class SalonAtHome extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void onClick(int position) {
-        ///Toast.makeText(getActivity(),"position"+position,Toast.LENGTH_LONG).show();
         switch (position) {
             case 0:
                 Intent intent = new Intent(this, ViewAllServiceActivity.class);
@@ -143,16 +136,6 @@ public class SalonAtHome extends AppCompatActivity implements View.OnClickListen
                 Intent intent6 = new Intent(this, ViewAllServiceActivity.class);
                 intent6.putExtra("TabNumber", "6");
                 startActivity(intent6);
-                break;
-            case 7:
-                Intent intent7 = new Intent(this, ViewAllServiceActivity.class);
-                intent7.putExtra("TabNumber", "7");
-                startActivity(intent7);
-                break;
-            case 8:
-                Intent intent8 = new Intent(this, ViewAllServiceActivity.class);
-                intent8.putExtra("TabNumber", "8");
-                startActivity(intent8);
                 break;
         }
     }

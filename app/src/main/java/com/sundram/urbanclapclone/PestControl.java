@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.sundram.urbanclapclone.viewallserviceactivity.pestcontrol.ViewAllPestControl;
 
 public class PestControl extends AppCompatActivity implements View.OnClickListener {
 
@@ -21,6 +22,7 @@ public class PestControl extends AppCompatActivity implements View.OnClickListen
         setContentView(R.layout.activity_pest_control);
         login_tv = findViewById(R.id.login_button_text);
         login_tv.setText("View all Pest Control Services");
+        login_tv.setOnClickListener(this);
         back_tv = findViewById(R.id.back_tv);
         back_tv.setOnClickListener(this);
         collapsingToolbarLayout = findViewById(R.id.collpasableToolbarLayout);
@@ -32,7 +34,6 @@ public class PestControl extends AppCompatActivity implements View.OnClickListen
         Intent back = new Intent(PestControl.this,DashBoard.class);
         startActivity(back);
         finish();
-        super.onBackPressed();
     }
 
     @Override
@@ -40,6 +41,10 @@ public class PestControl extends AppCompatActivity implements View.OnClickListen
         switch (v.getId()){
             case R.id.back_tv:
                 onBackPressed();
+                break;
+            case R.id.login_button_text:
+                Intent ii = new Intent(PestControl.this, ViewAllPestControl.class);
+                startActivity(ii);
                 break;
         }
     }

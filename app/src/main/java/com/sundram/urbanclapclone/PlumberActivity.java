@@ -20,14 +20,15 @@ import com.sundram.urbanclapclone.viewallserviceactivity.salonathome.ViewAllServ
 
 import java.util.ArrayList;
 
-public class PlumberActivity extends AppCompatActivity implements View.OnClickListener ,RecyclerViewAdapter.OnServiceItemClick {
+public class PlumberActivity extends AppCompatActivity implements View.OnClickListener, RecyclerViewAdapter.OnServiceItemClick {
 
     RecyclerView recyclerView;
     ArrayList<DataModel> arrayList;
     RecyclerViewAdapter recyclerViewAdapter;
     TextView login_tv, grid_heading_tv, back_tv;
-   // ImageView collapseImage_bg;
+    // ImageView collapseImage_bg;
     CollapsingToolbarLayout collapsingToolbarLayout;
+
     @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,7 @@ public class PlumberActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_plumber);
         login_tv = findViewById(R.id.login_button_text);
         login_tv.setText("View all Plumber Services");
-
+        login_tv.setOnClickListener(this);
         back_tv = findViewById(R.id.back_tv);
         back_tv.setOnClickListener(this);
         //end
@@ -57,30 +58,34 @@ public class PlumberActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     public void setGridSectionDetailss() {
-       // arrayList.add(new DataModel("Quick Book", R.drawable.plumber));
+        // arrayList.add(new DataModel("Quick Book", R.drawable.plumber));
         arrayList.add(new DataModel("Tap & Mixers", R.drawable.plumber));
         arrayList.add(new DataModel("Blockage", R.drawable.plumber));
         arrayList.add(new DataModel("Bath Fitings", R.drawable.plumber));
         arrayList.add(new DataModel("Toilet", R.drawable.plumber));
         arrayList.add(new DataModel("Water Tank", R.drawable.plumber));
         arrayList.add(new DataModel("Motor", R.drawable.plumber));
-     //   arrayList.add(new DataModel("Altered Nozzle", R.drawable.plumber));
-    //    arrayList.add(new DataModel("Looking For Something else ?", R.drawable.plumber));
+        //   arrayList.add(new DataModel("Altered Nozzle", R.drawable.plumber));
+        //    arrayList.add(new DataModel("Looking For Something else ?", R.drawable.plumber));
         recyclerViewAdapter.notifyDataSetChanged();
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.back_tv:
                 onBackPressed();
+                break;
+            case R.id.login_button_text:
+                Intent jump = new Intent(PlumberActivity.this, ViewAllPlumber.class);
+                startActivity(jump);
                 break;
         }
     }
 
     @Override
     public void onBackPressed() {
-        Intent back = new Intent(PlumberActivity.this,PECActivity.class);
+        Intent back = new Intent(PlumberActivity.this, PECActivity.class);
         startActivity(back);
         finish();
     }

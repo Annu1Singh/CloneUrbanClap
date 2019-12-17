@@ -18,8 +18,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".viewallserviceactivity.pecservice.ViewAllPlumber"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".viewallserviceactivity.pestcontrol.ViewAllPestControl"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".viewallserviceactivity.pecservice.ViewAllPlumber"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".viewallserviceactivity.pecservice.ViewAllCarpenter"
             android:screenOrientation="portrait" />

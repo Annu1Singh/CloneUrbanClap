@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:clickable="true"
     android:background="@color/grey_bg_light"
     app:cardCornerRadius="@dimen/margin_5"
     app:cardElevation="@dimen/margin_10">
@@ -26,6 +27,8 @@
             android:id="@+id/what_r_u_tv1_desc"/>
 
         <ImageView
+            android:padding="@dimen/margin_5"
+            android:clickable="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/right_arrow"

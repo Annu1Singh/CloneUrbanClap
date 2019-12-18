@@ -19,6 +19,24 @@
         android:theme="@style/AppTheme">
 
         <activity
+            android:name=".viewallserviceactivity.appliance.ViewAllRoAndWaterService"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".viewallserviceactivity.appliance.ViewAllMicrowaveRepair"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".viewallserviceactivity.appliance.ViewAllRefrigetorService"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".viewallserviceactivity.appliance.ViewAllWashingService"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".viewallserviceactivity.appliance.ViewAllGeyserService"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".viewallserviceactivity.appliance.ViewAllAcServices"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".viewallserviceactivity.pestcontrol.ViewAllPestControl"
             android:screenOrientation="portrait" />
         <activity

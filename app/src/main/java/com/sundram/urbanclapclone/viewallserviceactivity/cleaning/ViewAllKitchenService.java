@@ -39,7 +39,7 @@ public class ViewAllKitchenService extends AppCompatActivity {
         toolbarViewAll = findViewById(R.id.toolbarViewAll);
         setSupportActionBar(toolbarViewAll);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Kitchne Cleanig Services");
+        getSupportActionBar().setTitle("Kitchen Cleanig Services");
         //Initializing viewPager
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         viewPager.setOffscreenPageLimit(3);

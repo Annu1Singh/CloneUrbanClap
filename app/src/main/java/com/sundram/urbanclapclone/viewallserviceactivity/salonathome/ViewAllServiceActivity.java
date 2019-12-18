@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -14,6 +15,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 import com.sundram.urbanclapclone.R;
 import com.sundram.urbanclapclone.SalonAtHome;
+import com.sundram.urbanclapclone.adapter.SectionViewAllServiceListAdapter;
 import com.sundram.urbanclapclone.adapter.ViewPagerAdapter;
 import com.sundram.urbanclapclone.fagments.salonathomeservice.FragmentViewAllTab1;
 import com.sundram.urbanclapclone.fagments.salonathomeservice.FragmentViewAllTab2;
@@ -23,14 +25,13 @@ import com.sundram.urbanclapclone.fagments.salonathomeservice.FragmentViewAllTab
 import com.sundram.urbanclapclone.fagments.salonathomeservice.FragmentViewAllTab6;
 import com.sundram.urbanclapclone.fagments.salonathomeservice.FragmentViewAllTab7;
 
-public class ViewAllServiceActivity extends AppCompatActivity {
+public class ViewAllServiceActivity extends AppCompatActivity implements SectionViewAllServiceListAdapter.OnServiceItemClick {
 
     //This is our tablayout
     private TabLayout tabLayout;
     private Toolbar toolbarViewAll;
     //This is our viewPager
     private ViewPager viewPager;
-
     //Fragments
     FragmentViewAllTab1 fragmentViewAllTab1;
     FragmentViewAllTab2 fragmentViewAllTab2;
@@ -182,5 +183,14 @@ public class ViewAllServiceActivity extends AppCompatActivity {
     public void onBackPressed() {
         startActivity(new Intent(ViewAllServiceActivity.this,SalonAtHome.class));
         finish();
+    }
+
+    @Override
+    public void onClick(int position) {
+        switch (position){
+            case 0:
+                Toast.makeText(this,"hey",Toast.LENGTH_LONG).show();
+                break;
+        }
     }
 }

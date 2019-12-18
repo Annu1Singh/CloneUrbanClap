@@ -36,7 +36,7 @@ public class FragmentViewAllTab4 extends Fragment implements SectionViewAllServi
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        tab_four_fragment = inflater.inflate(R.layout.fragment_fragment_view_all_tab4, container, false);
+        tab_four_fragment = inflater.inflate(R.layout.fragment_fragment_view_all_tab1, container, false);
         view_section_heading = tab_four_fragment.findViewById(R.id.view_section_heading);
         view_section_heading.setText("Facial, Bleach and Detan");
         fragment_tab_one_recycler = tab_four_fragment.findViewById(R.id.fragment_tab_one_recycler);

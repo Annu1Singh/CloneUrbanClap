@@ -15,6 +15,11 @@ import com.google.android.material.tabs.TabLayout;
 import com.sundram.urbanclapclone.FullHomeDeepCleaning;
 import com.sundram.urbanclapclone.R;
 import com.sundram.urbanclapclone.adapter.ViewPagerAdapter;
+import com.sundram.urbanclapclone.fagments.cleaningservice.fullHomeDeepFragments.FiveBHK;
+import com.sundram.urbanclapclone.fagments.cleaningservice.fullHomeDeepFragments.FourBHK;
+import com.sundram.urbanclapclone.fagments.cleaningservice.fullHomeDeepFragments.OneBHK;
+import com.sundram.urbanclapclone.fagments.cleaningservice.fullHomeDeepFragments.ThreeBHK;
+import com.sundram.urbanclapclone.fagments.cleaningservice.fullHomeDeepFragments.TwoBHK;
 
 public class ViewAllHomeCleaning extends AppCompatActivity {
 
@@ -25,10 +30,20 @@ public class ViewAllHomeCleaning extends AppCompatActivity {
     private ViewPager viewPager;
 
     //Fragments
-   com.sundram.urbanclapclone.fagments.cleaningservice.FullHomeDeepCleaning fullHomeDeepCleaning;
+   OneBHK oneBHK;
+   TwoBHK twoBHK;
+   ThreeBHK threeBHK;
+   FourBHK fourBHK;
+   FiveBHK fiveBHK;
 
-    String[] tabTitle = {"Full Home Deep Cleaning"};
-    int[] unreadCount = {0};
+
+    String[] tabTitle = {"1 BHK Home Cleaning",
+            "2 BHK Home Cleaning",
+            "3 BHK Home Cleaning",
+            "4 BHK Home Cleaning",
+            "5 BHK Home Cleaning"
+    };
+    int[] unreadCount = {0,0,0,0,0};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,14 +112,30 @@ public class ViewAllHomeCleaning extends AppCompatActivity {
     public void switchToTab(String tab) {
         if (tab.equals("0")) {
             viewPager.setCurrentItem(0);
+        }else if(tab.equals("1")){
+            viewPager.setCurrentItem(1);
+        }else if(tab.equals("2")){
+            viewPager.setCurrentItem(2);
+        }else if(tab.equals("3")){
+            viewPager.setCurrentItem(3);
+        }else if(tab.equals("4")){
+            viewPager.setCurrentItem(4);
         }
     }
 
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        fullHomeDeepCleaning = new com.sundram.urbanclapclone.fagments.cleaningservice.FullHomeDeepCleaning();
-        adapter.addFragment(fullHomeDeepCleaning, "Home Cleaning");
+       oneBHK = new OneBHK();
+       twoBHK = new TwoBHK();
+       threeBHK = new ThreeBHK();
+       fourBHK = new FourBHK();
+       fiveBHK = new FiveBHK();
+        adapter.addFragment(oneBHK, "Home Cleaning");
+        adapter.addFragment(twoBHK, "Home Cleaning");
+        adapter.addFragment(threeBHK, "Home Cleaning");
+        adapter.addFragment(fourBHK, "Home Cleaning");
+        adapter.addFragment(fiveBHK, "Home Cleaning");
 
         viewPager.setAdapter(adapter);
     }

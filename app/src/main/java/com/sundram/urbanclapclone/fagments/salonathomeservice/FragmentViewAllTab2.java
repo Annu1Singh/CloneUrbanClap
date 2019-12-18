@@ -36,7 +36,7 @@ public class FragmentViewAllTab2 extends Fragment implements SectionViewAllServi
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        tab_two_fragment = inflater.inflate(R.layout.fragment_fragment_view_all_tab2, container, false);
+        tab_two_fragment = inflater.inflate(R.layout.fragment_fragment_view_all_tab1, container, false);
         view_section_heading = tab_two_fragment.findViewById(R.id.view_section_heading);
         view_section_heading.setText("RICA Waxing");
 

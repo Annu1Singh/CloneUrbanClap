@@ -36,7 +36,7 @@ public class FragmentViewAllTab5 extends Fragment implements SectionViewAllServi
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        tab_five_fragment = inflater.inflate(R.layout.fragment_fragment_view_all_tab5, container, false);
+        tab_five_fragment = inflater.inflate(R.layout.fragment_fragment_view_all_tab1, container, false);
         view_section_heading = tab_five_fragment.findViewById(R.id.view_section_heading);
         view_section_heading.setText("Manicure and Pedicure");
 

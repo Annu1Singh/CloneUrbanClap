@@ -1,6 +1,9 @@
 package com.sundram.urbanclapclone.viewallserviceactivity.salonathome;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -10,11 +13,13 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 import com.sundram.urbanclapclone.R;
 import com.sundram.urbanclapclone.SalonAtHome;
+import com.sundram.urbanclapclone.ViewCartActivity;
 import com.sundram.urbanclapclone.adapter.SectionViewAllServiceListAdapter;
 import com.sundram.urbanclapclone.adapter.ViewPagerAdapter;
 import com.sundram.urbanclapclone.fagments.salonathomeservice.FragmentViewAllTab1;
@@ -25,13 +30,14 @@ import com.sundram.urbanclapclone.fagments.salonathomeservice.FragmentViewAllTab
 import com.sundram.urbanclapclone.fagments.salonathomeservice.FragmentViewAllTab6;
 import com.sundram.urbanclapclone.fagments.salonathomeservice.FragmentViewAllTab7;
 
-public class ViewAllServiceActivity extends AppCompatActivity implements SectionViewAllServiceListAdapter.OnServiceItemClick {
+public class ViewAllServiceActivity extends AppCompatActivity implements View.OnClickListener, SectionViewAllServiceListAdapter.OnServiceItemClick {
 
     //This is our tablayout
     private TabLayout tabLayout;
     private Toolbar toolbarViewAll;
     //This is our viewPager
     private ViewPager viewPager;
+    SalonAtHome home = new SalonAtHome(this);
     //Fragments
     FragmentViewAllTab1 fragmentViewAllTab1;
     FragmentViewAllTab2 fragmentViewAllTab2;
@@ -51,6 +57,8 @@ public class ViewAllServiceActivity extends AppCompatActivity implements Section
             "Threading"};
     int[] unreadCount = {0, 0, 0, 0, 0, 0, 0};
 
+    TextView view_cart;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,11 +66,15 @@ public class ViewAllServiceActivity extends AppCompatActivity implements Section
         toolbarViewAll = findViewById(R.id.toolbarViewAll);
         setSupportActionBar(toolbarViewAll);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Salon At Home");
+
+        view_cart = findViewById(R.id.view_cart);
+        view_cart.setOnClickListener(this);
+        //getSupportActionBar().setTitle("Salon At Home");
         //Initializing viewPager
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         viewPager.setOffscreenPageLimit(3);
         setupViewPager(viewPager);
+
 
         //Initializing the tablayout
         tabLayout = (TabLayout) findViewById(R.id.tablayout);
@@ -94,21 +106,24 @@ public class ViewAllServiceActivity extends AppCompatActivity implements Section
         });
 
         //snippets for getting the current tab
-         final Intent intent = getIntent();
-         ///String hey = getIntent().getStringExtra("TabNumber");
+        final Intent intent = getIntent();
+        ///String hey = getIntent().getStringExtra("TabNumber");
         if (intent.hasExtra("TabNumber")) {
             String tab = intent.getExtras().getString("TabNumber");
             Log.e("TabNumberFriendList", tab);
             switchToTab(tab);
         }
+
+
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case android.R.id.home:
-               startActivity(new Intent(ViewAllServiceActivity.this, SalonAtHome.class));
-               finish();
+                startActivity(new Intent(ViewAllServiceActivity.this, SalonAtHome.class));
+                finish();
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -181,16 +196,21 @@ public class ViewAllServiceActivity extends AppCompatActivity implements Section
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(ViewAllServiceActivity.this,SalonAtHome.class));
+        startActivity(new Intent(ViewAllServiceActivity.this, SalonAtHome.class));
         finish();
     }
 
     @Override
     public void onClick(int position) {
-        switch (position){
-            case 0:
-                Toast.makeText(this,"hey",Toast.LENGTH_LONG).show();
-                break;
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.view_cart:
+                Intent i = new Intent(ViewAllServiceActivity.this, ViewCartActivity.class);
+                startActivity(i);
         }
     }
 }

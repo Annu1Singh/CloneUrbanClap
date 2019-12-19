@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -25,6 +26,12 @@ public class SalonAtHome extends AppCompatActivity implements View.OnClickListen
     TextView login_tv, grid_heading_tv, back_tv;
     CollapsingToolbarLayout collapsingToolbarLayout;
     String tabNumber;
+    Context context;
+
+    public SalonAtHome(Context context){
+        this.context=context;
+    }
+
     @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {

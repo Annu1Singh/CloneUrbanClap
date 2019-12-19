@@ -1,5 +1,9 @@
 package com.sundram.urbanclapclone.fagments.salonathomeservice;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,12 +14,14 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.sundram.urbanclapclone.R;
 import com.sundram.urbanclapclone.adapter.SectionViewAllServiceListAdapter;
 import com.sundram.urbanclapclone.datamodel.SectionViewAllServiceListModel;
+import com.sundram.urbanclapclone.viewallserviceactivity.salonathome.ViewAllServiceActivity;
 
 import java.util.ArrayList;
 
@@ -31,6 +37,7 @@ public class FragmentViewAllTab1 extends Fragment implements View.OnClickListene
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Nullable
@@ -43,17 +50,16 @@ public class FragmentViewAllTab1 extends Fragment implements View.OnClickListene
         view_section_heading.setText("Waxing");
 
         fragment_tab_one_recycler = tab_one_fragment.findViewById(R.id.fragment_tab_one_recycler);
-
         list = new ArrayList<>();
-        fragment_tab_one_recycler.setLayoutManager(new LinearLayoutManager(getActivity()));
-        adapterList = new SectionViewAllServiceListAdapter(getActivity(), list, this);
+        fragment_tab_one_recycler.setLayoutManager(new LinearLayoutManager(getContext()));
+        adapterList = new SectionViewAllServiceListAdapter(getContext(), list, this);
         fragment_tab_one_recycler.setAdapter(adapterList);
         setDataToRecycler();
         return tab_one_fragment;
     }
 
     public void setDataToRecycler() {
-        list.add(new SectionViewAllServiceListModel("Service Name", "120", "40", "Wax", "60 min", R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Wax Name", "120", "40", "Wax", "60 min", R.drawable.waxing));
         list.add(new SectionViewAllServiceListModel("Service Name", "180", "40", "Wax", "60 min", R.drawable.waxing));
         list.add(new SectionViewAllServiceListModel("Service Name", "190", "40", "Wax", "60 min", R.drawable.waxing));
         list.add(new SectionViewAllServiceListModel("Service Name", "200", "40", "Wax", "60 min", R.drawable.waxing));
@@ -65,7 +71,6 @@ public class FragmentViewAllTab1 extends Fragment implements View.OnClickListene
     public void onClick(int position) {
 
     }
-
 
     @Override
     public void onClick(View v) {

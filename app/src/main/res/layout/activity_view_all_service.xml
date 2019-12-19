@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -9,29 +10,56 @@
         android:layout_height="match_parent">
 
         <com.google.android.material.appbar.AppBarLayout
-            android:layout_alignParentTop="true"
             android:id="@+id/appbarViewAll"
-            android:theme="@style/collapsabletoolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:theme="@style/collapsabletoolbar">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbarViewAll"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="?attr/actionBarSize"/>
+                android:minHeight="?attr/actionBarSize">
+
+                <RelativeLayout
+                    android:gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="Salon At Home"
+                        android:textStyle="normal"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:padding="@dimen/margin_5"
+                        android:layout_marginRight="@dimen/margin_12"
+                        android:layout_centerVertical="true"
+                        android:id="@+id/view_cart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:drawableLeft="@drawable/ic_shopping_cart_black" />
+                </RelativeLayout>
+            </androidx.appcompat.widget.Toolbar>
+
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tablayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:theme="@style/AppTheme1"
                 app:tabGravity="fill"
                 app:tabIndicatorColor="@color/colorAccent"
                 app:tabMode="scrollable"
-                android:theme="@style/AppTheme1"
                 app:tabSelectedTextColor="@color/colorTextPrimary"
                 app:tabTextColor="@color/colorTextDisable" />
         </com.google.android.material.appbar.AppBarLayout>
-
 
 
         <androidx.viewpager.widget.ViewPager
@@ -40,6 +68,7 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/appbarViewAll"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
 
     </RelativeLayout>
 

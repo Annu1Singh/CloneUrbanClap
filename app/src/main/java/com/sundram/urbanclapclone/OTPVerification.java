@@ -55,13 +55,13 @@ public class OTPVerification extends AppCompatActivity implements View.OnClickLi
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i = new Intent(OTPVerification.this, LocationOnBoarding.class);
+                Intent i = new Intent(OTPVerification.this, DashBoard.class);
                 startActivity(i);
                 Toast.makeText(OTPVerification.this, "OTP verified..", Toast.LENGTH_LONG).show();
                 finish();
                 viewDialog.hideDialog();
             }
-        }, 3000);
+        }, 2000);
     }
 
     @Override
@@ -69,6 +69,5 @@ public class OTPVerification extends AppCompatActivity implements View.OnClickLi
         Intent ii = new Intent(OTPVerification.this,OtpGeneratorActivity.class);
         startActivity(ii);
         finish();
-        super.onBackPressed();
     }
 }

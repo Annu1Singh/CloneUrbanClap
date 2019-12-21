@@ -89,7 +89,9 @@
                     android:id="@+id/home_screen_list_item_recyclerView"
                     />
 
-                <include layout="@layout/home_ins_protection_prg" />
+                <include
+                    layout="@layout/home_ins_protection_prg"
+                    tools:visibility="gone" />
 
                 <include layout="@layout/what_users_saying_section" />
 

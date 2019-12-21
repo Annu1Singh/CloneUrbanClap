@@ -14,7 +14,7 @@ import android.widget.Toast;
 public class OtpGeneratorActivity extends AppCompatActivity implements View.OnClickListener {
 
     ViewDialog viewDialog;
-    TextView otpDenerator_tv, tv_skip_now;
+    TextView otpDenerator_tv, tv_skip_now, client_details;
 
     @Override
     protected void onStart() {
@@ -32,6 +32,8 @@ public class OtpGeneratorActivity extends AppCompatActivity implements View.OnCl
         viewDialog = new ViewDialog(this);
         otpDenerator_tv.setOnClickListener(this);
         tv_skip_now.setOnClickListener(this);
+        client_details = findViewById(R.id.client_details);
+        client_details.setOnClickListener(this);
 
     }
 
@@ -46,6 +48,9 @@ public class OtpGeneratorActivity extends AppCompatActivity implements View.OnCl
             case R.id.login_button_text:
                 otpSentBTN();
                 break;
+            case R.id.client_details:
+                startActivity(new Intent(OtpGeneratorActivity.this,ClientDetailsActivity.class));
+                finish();
         }
     }
     public void otpSentBTN(){

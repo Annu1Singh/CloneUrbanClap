@@ -28,10 +28,6 @@ public class SalonAtHome extends AppCompatActivity implements View.OnClickListen
     String tabNumber;
     Context context;
 
-    public SalonAtHome(Context context){
-        this.context=context;
-    }
-
     @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,13 +70,13 @@ public class SalonAtHome extends AppCompatActivity implements View.OnClickListen
     }
 
     public void setGridSectionDetails() {
-        arrayList.add(new DataModel("Waxing", R.drawable.facial));
-        arrayList.add(new DataModel("RICA Waxing", R.drawable.facial));
-        arrayList.add(new DataModel("Honey Waxing", R.drawable.facial));
+        arrayList.add(new DataModel("Waxing", R.drawable.waxing));
+        arrayList.add(new DataModel("RICA Waxing", R.drawable.rica_waxing));
+        arrayList.add(new DataModel("Honey Waxing", R.drawable.waxing));
         arrayList.add(new DataModel("Facial, Bleach and Detan", R.drawable.facial));
-        arrayList.add(new DataModel("Manicure & Pedicure", R.drawable.facial));
-        arrayList.add(new DataModel("Hair Care", R.drawable.facial));
-        arrayList.add(new DataModel("Threading", R.drawable.facial));
+        arrayList.add(new DataModel("Manicure & Pedicure", R.drawable.medicure));
+        arrayList.add(new DataModel("Hair Care", R.drawable.hair));
+        arrayList.add(new DataModel("Threading", R.drawable.threading));
         recyclerViewAdapter.notifyDataSetChanged();
 
     }

@@ -1,6 +1,7 @@
 package com.sundram.urbanclapclone.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,7 +9,24 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.sundram.urbanclapclone.AcServiceAndRepair;
+import com.sundram.urbanclapclone.BathroomCleaning;
+import com.sundram.urbanclapclone.CarpenterActivity;
+import com.sundram.urbanclapclone.CarpetCleanigActivity;
+import com.sundram.urbanclapclone.ElectricianActivity;
+import com.sundram.urbanclapclone.FullHomeDeepCleaning;
+import com.sundram.urbanclapclone.GyserServiceAndRepair;
+import com.sundram.urbanclapclone.KitchenCleaningActivity;
+import com.sundram.urbanclapclone.MicroWaveRepair;
+import com.sundram.urbanclapclone.PestControl;
+import com.sundram.urbanclapclone.PlumberActivity;
 import com.sundram.urbanclapclone.R;
+import com.sundram.urbanclapclone.RefrigeratorRepair;
+import com.sundram.urbanclapclone.RoandWaterActivity;
+import com.sundram.urbanclapclone.SalonAtHome;
+import com.sundram.urbanclapclone.ServiceListItem;
+import com.sundram.urbanclapclone.SofaCleaning;
+import com.sundram.urbanclapclone.WashingmachineRepair;
 import com.sundram.urbanclapclone.datamodel.ServiceName;
 
 import java.util.ArrayList;
@@ -24,6 +42,7 @@ public class ListViewAdapter extends BaseAdapter {
     private List<ServiceName> serviceNameList = null;
     private ArrayList<ServiceName> arraylist;
     private ListView listView;
+
     public ListViewAdapter(Context context, List<ServiceName> serviceNameList) {
         mContext = context;
         this.serviceNameList = serviceNameList;
@@ -64,6 +83,83 @@ public class ListViewAdapter extends BaseAdapter {
         }
         // Set the results into TextViews
         holder.name.setText(serviceNameList.get(position).getServiceName());
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (serviceNameList.get(position).getServiceName().equals("Plumber")){
+                    Intent plumber = new Intent(mContext,PlumberActivity.class);
+                    mContext.startActivity(plumber);
+                    //mContext.startActivity(mContext,PlumberActivity.class);
+                }
+                if (serviceNameList.get(position).getServiceName().equals("Carpenter")){
+                    Intent carpenter = new Intent(mContext,CarpenterActivity.class);
+                    mContext.startActivity(carpenter);
+                }
+                if (serviceNameList.get(position).getServiceName().equals("Electrician")){
+                    Intent electrician = new Intent(mContext,ElectricianActivity.class);
+                    mContext.startActivity(electrician);
+                }
+                if (serviceNameList.get(position).getServiceName().equals("Salon at home")){
+                    Intent salonAtHome = new Intent(mContext,SalonAtHome.class);
+                    mContext.startActivity(salonAtHome);
+                }
+                if (serviceNameList.get(position).getServiceName().equals("Bathroom Cleaning")){
+                    Intent salonAtHome = new Intent(mContext, BathroomCleaning.class);
+                    mContext.startActivity(salonAtHome);
+                }
+                if (serviceNameList.get(position).getServiceName().equals("Sofa Cleaning")){
+                    Intent salonAtHome = new Intent(mContext, SofaCleaning.class);
+                    mContext.startActivity(salonAtHome);
+                }
+                if (serviceNameList.get(position).getServiceName().equals("Carpet Cleaning")){
+                    Intent salonAtHome = new Intent(mContext, CarpetCleanigActivity.class);
+                    mContext.startActivity(salonAtHome);
+                }
+                if (serviceNameList.get(position).getServiceName().equals("Kitchen Cleaning")){
+                    Intent salonAtHome = new Intent(mContext, KitchenCleaningActivity.class);
+                    mContext.startActivity(salonAtHome);
+                }
+                if (serviceNameList.get(position).getServiceName().equals("Full Home Cleaning")){
+                    Intent salonAtHome = new Intent(mContext, FullHomeDeepCleaning.class);
+                    mContext.startActivity(salonAtHome);
+                }
+                if (serviceNameList.get(position).getServiceName().equals("Pest control service")){
+                    Intent salonAtHome = new Intent(mContext, PestControl.class);
+                    mContext.startActivity(salonAtHome);
+                }
+                if (serviceNameList.get(position).getServiceName().equals("Refrigerator Repair")){
+                    Intent salonAtHome = new Intent(mContext, RefrigeratorRepair.class);
+                    mContext.startActivity(salonAtHome);
+                }
+                if (serviceNameList.get(position).getServiceName().equals("Microwave Repair")){
+                    Intent salonAtHome = new Intent(mContext, MicroWaveRepair.class);
+                    mContext.startActivity(salonAtHome);
+                }
+                if (serviceNameList.get(position).getServiceName().equals("Cleaning Service")){
+                    Intent salonAtHome = new Intent(mContext, ServiceListItem.class);
+                    mContext.startActivity(salonAtHome);
+                }
+                   if (serviceNameList.get(position).getServiceName().equals("AC Service and Repair")){
+                    Intent salonAtHome = new Intent(mContext, AcServiceAndRepair.class);
+                    mContext.startActivity(salonAtHome);
+                }
+                if (serviceNameList.get(position).getServiceName().equals("Geyser Service and Repair")){
+                    Intent salonAtHome = new Intent(mContext, GyserServiceAndRepair.class);
+                    mContext.startActivity(salonAtHome);
+                }
+                if (serviceNameList.get(position).getServiceName().equals("RO and Water Purifier Service and Repair")){
+                    Intent salonAtHome = new Intent(mContext, RoandWaterActivity.class);
+                    mContext.startActivity(salonAtHome);
+                }
+                if (serviceNameList.get(position).getServiceName().equals("Washing machine Service and Repair")){
+                    Intent salonAtHome = new Intent(mContext, WashingmachineRepair.class);
+                    mContext.startActivity(salonAtHome);
+                }
+
+            }
+        });
+
         return view;
     }
 

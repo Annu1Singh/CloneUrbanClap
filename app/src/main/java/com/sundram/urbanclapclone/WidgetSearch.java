@@ -3,6 +3,7 @@ package com.sundram.urbanclapclone;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SearchView;
 
@@ -30,8 +31,12 @@ public class WidgetSearch extends AppCompatActivity implements SearchView.OnQuer
         // Generate sample data
 
         serviceNameList = new String[]{"Plumber", "Carpenter", "Electrician",
-                "Salon at Home", "Cleaning Service", "Pest control service", "Refrigerator Repair", "Microwave epair",
-                "Microwave Repair", "Washing machine Service and Repair"};
+                "Salon at Home", "Bathroom Cleaning", "Sofa Cleaning",
+                "Carpet Cleaning", "Kitchen Cleaning", "Full Home Cleaning",
+                "Pest control service", "Refrigerator Repair", "Microwave Repair",
+                "Cleaning Service","Electrician","Plumber","Carpenter",
+                "AC Service and Repair","Geyser Service and Repair","RO and Water Purifier Service and Repair" ,
+                "Washing machine Service and Repair"};
 
         // Locate the ListView in listview_main.xml
         list = (ListView) findViewById(R.id.listview);
@@ -55,7 +60,6 @@ public class WidgetSearch extends AppCompatActivity implements SearchView.OnQuer
 
     @Override
     public boolean onQueryTextSubmit(String query) {
-
         return false;
     }
 
@@ -65,8 +69,7 @@ public class WidgetSearch extends AppCompatActivity implements SearchView.OnQuer
         if (!text.equals("")) {
             adapter.filter(text);
             list.setVisibility(View.VISIBLE);
-        }else
-        {
+        } else {
             list.setVisibility(View.GONE);
         }
         return false;

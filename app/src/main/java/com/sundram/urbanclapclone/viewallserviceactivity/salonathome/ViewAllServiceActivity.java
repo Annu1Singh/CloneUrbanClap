@@ -30,6 +30,8 @@ import com.sundram.urbanclapclone.fagments.salonathomeservice.FragmentViewAllTab
 import com.sundram.urbanclapclone.fagments.salonathomeservice.FragmentViewAllTab6;
 import com.sundram.urbanclapclone.fagments.salonathomeservice.FragmentViewAllTab7;
 
+import java.util.List;
+
 public class ViewAllServiceActivity extends AppCompatActivity implements View.OnClickListener, SectionViewAllServiceListAdapter.OnServiceItemClick {
 
     //This is our tablayout
@@ -37,7 +39,6 @@ public class ViewAllServiceActivity extends AppCompatActivity implements View.On
     private Toolbar toolbarViewAll;
     //This is our viewPager
     private ViewPager viewPager;
-    SalonAtHome home = new SalonAtHome(this);
     //Fragments
     FragmentViewAllTab1 fragmentViewAllTab1;
     FragmentViewAllTab2 fragmentViewAllTab2;
@@ -57,7 +58,7 @@ public class ViewAllServiceActivity extends AppCompatActivity implements View.On
             "Threading"};
     int[] unreadCount = {0, 0, 0, 0, 0, 0, 0};
 
-    TextView view_cart;
+    TextView view_cart,login_button_text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,15 +68,21 @@ public class ViewAllServiceActivity extends AppCompatActivity implements View.On
         setSupportActionBar(toolbarViewAll);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        view_cart = findViewById(R.id.view_cart);
-        view_cart.setOnClickListener(this);
-        //getSupportActionBar().setTitle("Salon At Home");
+
+        getSupportActionBar().setTitle("Salon At Home");
         //Initializing viewPager
         viewPager = (ViewPager) findViewById(R.id.viewpager);
-        viewPager.setOffscreenPageLimit(3);
+       // viewPager.setOffscreenPageLimit(3);
         setupViewPager(viewPager);
+        login_button_text = findViewById(R.id.login_button_text);
+        login_button_text.setText("Check Out");
+        login_button_text.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(ViewAllServiceActivity.this,"Not Working....",Toast.LENGTH_LONG).show();
 
-
+            }
+        });
         //Initializing the tablayout
         tabLayout = (TabLayout) findViewById(R.id.tablayout);
         tabLayout.setupWithViewPager(viewPager);
@@ -208,9 +215,7 @@ public class ViewAllServiceActivity extends AppCompatActivity implements View.On
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.view_cart:
-                Intent i = new Intent(ViewAllServiceActivity.this, ViewCartActivity.class);
-                startActivity(i);
         }
     }
+
 }

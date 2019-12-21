@@ -20,6 +20,7 @@ import com.sundram.urbanclapclone.datamodel.SectionViewAllServiceListModel;
 import com.sundram.urbanclapclone.viewallserviceactivity.salonathome.ViewAllServiceActivity;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SectionViewAllServiceListAdapter extends RecyclerView.Adapter<SectionViewAllServiceListAdapter.ListHolder> {
 
@@ -48,6 +49,31 @@ public class SectionViewAllServiceListAdapter extends RecyclerView.Adapter<Secti
     public void onBindViewHolder(@NonNull SectionViewAllServiceListAdapter.ListHolder holder, int position) {
             SectionViewAllServiceListModel datas = mList.get(position);
             holder.setData(datas);
+
+            holder.minus_tvs.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int x = Integer.parseInt(holder.add_txt_tvs.getText().toString());
+                    if (x!=0) {
+                        String quantity = holder.add_txt_tvs.getText().toString();
+                        holder.add_txt_tvs.setText(String.valueOf(x - 1));
+
+                    }
+                }
+            });
+
+            holder.plus_tvs.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int x = Integer.parseInt(holder.add_txt_tvs.getText().toString());
+                    holder.add_txt_tvs.setText(String.valueOf(x + 1));
+
+                    String quantity = holder.add_txt_tvs.getText().toString();
+                    Intent intent = new Intent("message");
+
+                    intent.putExtra("quantity",grandTotal(quantity));
+                }
+            });
     }
 
     @Override
@@ -67,8 +93,8 @@ public class SectionViewAllServiceListAdapter extends RecyclerView.Adapter<Secti
             productImage = itemView.findViewById(R.id.view_all_service_list_item_image);
 
 
-           // minus_tvs = itemView.findViewById(R.id.minus_tv);
-          //  add_txt_tvs = itemView.findViewById(R.id.add_txt_tv);
+            minus_tvs = itemView.findViewById(R.id.minus_tv);
+            add_txt_tvs = itemView.findViewById(R.id.add_tv);
             plus_tvs = itemView.findViewById(R.id.plus_tv);
 
             serviceName = itemView.findViewById(R.id.title_tv);
@@ -105,5 +131,16 @@ public class SectionViewAllServiceListAdapter extends RecyclerView.Adapter<Secti
 
     public static interface OnServiceItemClick {
         public void onClick(int position);
+    }
+
+
+    private int grandTotal(String items){
+
+        int totalPrice = 0;
+        for(int i = 0 ; i < items.length(); i++) {
+            totalPrice += Integer.parseInt(items);
+        }
+
+        return totalPrice;
     }
 }

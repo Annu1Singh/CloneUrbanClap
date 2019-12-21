@@ -8,15 +8,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
+import com.google.android.material.textfield.TextInputLayout;
 import com.sundram.urbanclapclone.viewallserviceactivity.salonathome.ViewAllServiceActivity;
 
-public class ViewCartActivity extends AppCompatActivity {
+public class ViewCartActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     RecyclerView addCartRecyclerview;
     Toolbar viewCartToolbar;
-
+    TextView goBack, cartText;
+    TextInputLayout textInputLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +31,11 @@ public class ViewCartActivity extends AppCompatActivity {
 
     public void init(){
         viewCartToolbar = findViewById(R.id.viewCartToolbar);
+        goBack = findViewById(R.id.goBack);
+        textInputLayout = findViewById(R.id.textInputLayout);
+        goBack.setOnClickListener(this);
+        cartText = findViewById(R.id.cartText);
+
     }
 
     public void setToolbar() {
@@ -44,5 +53,17 @@ public class ViewCartActivity extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.goBack:
+                if (cartText.getText().toString().equals("Cart is Empty")){
+                    startActivity(new Intent(ViewCartActivity.this,DashBoard.class));
+                }else{
+                    //jump to checkout activity
+                }
+        }
     }
 }

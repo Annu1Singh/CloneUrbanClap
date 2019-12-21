@@ -59,12 +59,12 @@ public class PlumberActivity extends AppCompatActivity implements View.OnClickLi
 
     public void setGridSectionDetailss() {
         // arrayList.add(new DataModel("Quick Book", R.drawable.plumber));
-        arrayList.add(new DataModel("Tap & Mixers", R.drawable.plumber));
-        arrayList.add(new DataModel("Blockage", R.drawable.plumber));
-        arrayList.add(new DataModel("Bath Fitings", R.drawable.plumber));
-        arrayList.add(new DataModel("Toilet", R.drawable.plumber));
-        arrayList.add(new DataModel("Water Tank", R.drawable.plumber));
-        arrayList.add(new DataModel("Motor", R.drawable.plumber));
+        arrayList.add(new DataModel("Tap & Mixers", R.drawable.tap));
+        arrayList.add(new DataModel("Blockage", R.drawable.blokage));
+        arrayList.add(new DataModel("Bath Fitings", R.drawable.bathfitting));
+        arrayList.add(new DataModel("Toilet", R.drawable.toilet));
+        arrayList.add(new DataModel("Water Tank", R.drawable.watertank));
+        arrayList.add(new DataModel("Motor", R.drawable.motor));
         //   arrayList.add(new DataModel("Altered Nozzle", R.drawable.plumber));
         //    arrayList.add(new DataModel("Looking For Something else ?", R.drawable.plumber));
         recyclerViewAdapter.notifyDataSetChanged();

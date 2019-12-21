@@ -8,10 +8,27 @@
     android:padding="@dimen/margin_10">
 
     <RelativeLayout
+        android:id="@+id/first_relativelayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         android:clipToPadding="true">
+
+        <TextView
+            android:id="@+id/client_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/btnbground"
+            android:clickable="true"
+            android:elevation="@dimen/margin_10"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:padding="@dimen/margin_8"
+            android:text="Work with us."
+            android:textAllCaps="false"
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/tv_skip_now"
@@ -34,26 +51,34 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
+        <RelativeLayout
+            android:layout_marginTop="@dimen/margin_80"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+           >
 
-            <ImageView
+            <TextView
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:layout_margin="@dimen/margin_22"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentTop="true"
+                android:textColor="@color/black"
+                android:text="Customer Login"
+                android:fontFamily="sans-serif"
+                android:id="@+id/otpGeneratorHeading"
                 android:layout_width="wrap_content"
-                android:layout_height="150dp"
-                android:layout_gravity="center"
-                android:src="@drawable/custom_splash"
-                android:visibility="invisible" />
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
 
             <include
+                android:layout_below="@id/otpGeneratorHeading"
                 android:id="@+id/splash_image"
                 layout="@layout/mobile_number_input_ui"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="-20dp" />
+                android:layout_height="wrap_content" />
 
             <include
+                android:layout_below="@id/splash_image"
                 android:id="@+id/secondary_login_button"
                 layout="@layout/login_button_layout"
                 android:layout_width="match_parent"
@@ -61,6 +86,6 @@
                 android:layout_margin="@dimen/margin_10"
                 android:layout_marginTop="@dimen/margin_24" />
 
-        </LinearLayout>
+        </RelativeLayout>
     </ScrollView>
 </LinearLayout>

@@ -59,12 +59,26 @@
         <item name="android:textColor">@color/grey_txt_darkest_dark</item>
         <item name="android:textColorHint">@color/grey_txt_light</item>
         <item name="android:background">@android:color/transparent</item>
-        <item name="android:layout_width">fill_parent</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:singleLine">true</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:imeOptions">actionNext</item>
     </style>
     <!--login_edittext ui end-->
+
+    <!--login_edittext ui-->
+    <style name="login_edittext_address_requirememnts" parent="@style/AppTheme">
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">sans-serif</item>
+        <item name="android:textSize">@dimen/text_size_14sp</item>
+        <item name="android:textColor">@color/grey_txt_darkest_dark</item>
+        <item name="android:textColorHint">@color/grey_txt_light</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">80dp</item>
+    </style>
+    <!--login_edittext ui end-->
+
+
 
     <style name="add_address_til_hint" parent="@style/TextAppearance.AppCompat">
         <item name="android:textSize">12.0sp</item>

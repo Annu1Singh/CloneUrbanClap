@@ -57,7 +57,7 @@ public class LocationOnBoarding extends AppCompatActivity implements ConnectionC
     IconTextView iconTextView;
     RelativeLayout location_onboarding_select_city, location_onboarding_auto_detect_view;
     String currentLocation;
-    TextView textView2;
+    TextView textView2, search_location;
     LocationHelper locationHelper;
     // LogCat tag
     private static final String TAG = MyLocationUsingHelper.class.getSimpleName();
@@ -129,7 +129,6 @@ public class LocationOnBoarding extends AppCompatActivity implements ConnectionC
             public void onClick(View v) {
                 Intent back = new Intent(LocationOnBoarding.this, OtpGeneratorActivity.class);
                 startActivity(back);
-                finish();
             }
         });
 
@@ -144,6 +143,15 @@ public class LocationOnBoarding extends AppCompatActivity implements ConnectionC
             // Building the GoogleApi client
             buildGoogleApiClient();
         }
+
+        search_location = findViewById(R.id.search_location);
+        search_location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LocationOnBoarding.this,GoogleMapWithSearchView.class));
+                finish();
+            }
+        });
 
     }
 

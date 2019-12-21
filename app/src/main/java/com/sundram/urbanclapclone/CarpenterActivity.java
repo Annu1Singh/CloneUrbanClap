@@ -49,14 +49,14 @@ public class CarpenterActivity extends AppCompatActivity implements View.OnClick
 
     public void setGridSectionDetailss() {
         //arrayList.add(new DataModel("Quick Book", R.drawable.plumber));
-        arrayList.add(new DataModel("Drill & Hang", R.drawable.carpenter));
-        arrayList.add(new DataModel("Door", R.drawable.carpenter));
-        arrayList.add(new DataModel("Drawer & Cupboard", R.drawable.carpenter));
-        arrayList.add(new DataModel("Window", R.drawable.carpenter));
-        arrayList.add(new DataModel("Bed", R.drawable.carpenter));
-        arrayList.add(new DataModel("Curtain Blinds", R.drawable.carpenter));
-        arrayList.add(new DataModel("Furniture Repair", R.drawable.carpenter));
-        arrayList.add(new DataModel("TV", R.drawable.carpenter));
+        arrayList.add(new DataModel("Drill & Hang", R.drawable.drillandhang));
+        arrayList.add(new DataModel("Door", R.drawable.door));
+        arrayList.add(new DataModel("Drawer & Cupboard", R.drawable.drawer));
+        arrayList.add(new DataModel("Window", R.drawable.window));
+        arrayList.add(new DataModel("Bed", R.drawable.bed));
+        arrayList.add(new DataModel("Curtain Blinds", R.drawable.curtain));
+    //    arrayList.add(new DataModel("Furniture Repair", R.drawable.carpenter));
+        arrayList.add(new DataModel("TV", R.drawable.tvframe));
        // arrayList.add(new DataModel("Furniture Assembly", R.drawable.plumber));
     //    arrayList.add(new DataModel("Miscellaneous", R.drawable.plumber));
      //   arrayList.add(new DataModel("Looking for something else ?", R.drawable.plumber));
@@ -117,11 +117,6 @@ public class CarpenterActivity extends AppCompatActivity implements View.OnClick
                 Intent intent6 = new Intent(this, ViewAllCarpenter.class);
                 intent6.putExtra("TabNumber", "6");
                 startActivity(intent6);
-                break;
-            case 7:
-                Intent intent7 = new Intent(this, ViewAllCarpenter.class);
-                intent7.putExtra("TabNumber", "7");
-                startActivity(intent7);
                 break;
         }
     }

@@ -60,16 +60,16 @@ public class ElectricianActivity extends AppCompatActivity implements View.OnCli
 
     public void setGridSectionDetails() {
         // arrayList.add(new DataModel("Quick Book",R.drawable.electronic));
-        arrayList.add(new DataModel("Switch and Socket", R.drawable.electronic));
-        arrayList.add(new DataModel("Fan", R.drawable.electronic));
-        arrayList.add(new DataModel("Light", R.drawable.electronic));
+        arrayList.add(new DataModel("Switch and Socket", R.drawable.socket));
+        arrayList.add(new DataModel("Fan", R.drawable.fan));
+        arrayList.add(new DataModel("Light", R.drawable.light));
         //  arrayList.add(new DataModel("Chandelier",R.drawable.electronic));
-        arrayList.add(new DataModel("MCB & Fuse", R.drawable.electronic));
-        arrayList.add(new DataModel("Inverter & Stabilizer", R.drawable.electronic));
+        arrayList.add(new DataModel("MCB & Fuse", R.drawable.mcb_fuse));
+        arrayList.add(new DataModel("Inverter & Stabilizer", R.drawable.inverter));
       //  arrayList.add(new DataModel("Appliance", R.drawable.electronic));
-        arrayList.add(new DataModel("Wiring", R.drawable.electronic));
-        arrayList.add(new DataModel("Door Bell", R.drawable.electronic));
-        arrayList.add(new DataModel("Room Heater", R.drawable.electronic));
+        arrayList.add(new DataModel("Wiring", R.drawable.wiring));
+        arrayList.add(new DataModel("Door Bell", R.drawable.bell));
+        arrayList.add(new DataModel("Room Heater", R.drawable.room_heater));
         //  arrayList.add(new DataModel("Looking For Something else ?",R.drawable.electronic));
         recyclerViewAdapter.notifyDataSetChanged();
 

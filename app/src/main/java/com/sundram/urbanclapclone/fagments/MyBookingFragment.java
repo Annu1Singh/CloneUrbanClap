@@ -41,7 +41,8 @@ public class MyBookingFragment extends Fragment implements View.OnClickListener 
         toolbar = myBookingView.findViewById(R.id.custom_toolbar_wedget);
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
        // ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar.setTitle(getString(R.string.my_booking));
+       // toolbar.setTitle(getString(R.string.my_booking));
+        toolbar.setTitle("View Cart");
         //end
 
         bookASerice_btn= myBookingView.findViewById(R.id.bookASerice_btn);

@@ -41,7 +41,7 @@
         <item>BTN</item>
     </string-array>
     <!--country name array end-->
-    <string name="aboutus">RuraClap helps you find the right service professionals for activities important to you. Whether you are looking to decorate your home, get candid pictures of your wedding, plan your kid’s birthday or get healthier, we are a sure shot destination for your service needs. Our vision is to use technology and smart processes to structure the highly unorganized services market in India. App Name aspires to make hiring a service professional as easy and straightforward as Amazon or Flipkart have made buying products.</string>
+    <string name="aboutus">App Name helps you find the right service professionals for activities important to you. Whether you are looking to decorate your home, get candid pictures of your wedding, plan your kid’s birthday or get healthier, we are a sure shot destination for your service needs. Our vision is to use technology and smart processes to structure the highly unorganized services market in India. App Name aspires to make hiring a service professional as easy and straightforward as Amazon or Flipkart have made buying products.</string>
 
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -82,7 +82,10 @@
     <string name="my_booking">My Booking</string>
     <string name="dummy_rupee"><del>Rupee 855</del></string>
     <string name="service_list_item">Service list item</string>
-    <string name="booking_txt">You can start a new booking by the <b>home icon on bottom navigation..</b></string>
+    <string name="booking_txt">You can add a new service by the clicking <b>home icon on bottom navigation..</b></string>
 
     <string name="quotedesc">Welcome! Where should we deliver to?</string>
+
+    <string name="map_key" translatable="false">AIzaSyCu2eDI_3SiNmPXEq6Uf0s2e0UaO3c0d4U</string>
+
 </resources>

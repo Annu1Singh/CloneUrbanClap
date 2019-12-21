@@ -29,6 +29,7 @@ public class SofaCleaning extends AppCompatActivity implements View.OnClickListe
         //setting up the title of collapsableToolbarLayout
         collapsingToolbarLayout = findViewById(R.id.collpasableToolbarLayout);
         collapsingToolbarLayout.setTitle("Sofa Cleaning Services");
+      //  collapsingToolbarLayout.setBackgroundResource(R.drawable.sofa_cleaning);
         back_tv = findViewById(R.id.back_tv);
         back_tv.setOnClickListener(this);
         login_button_text_tv.setOnClickListener(this);

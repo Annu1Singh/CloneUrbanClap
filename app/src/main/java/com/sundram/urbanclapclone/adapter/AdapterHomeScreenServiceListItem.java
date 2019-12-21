@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -51,9 +52,11 @@ public class AdapterHomeScreenServiceListItem extends RecyclerView.Adapter<Adapt
         TextView service_name_tV, service_name_one_tv, service_name_two_tv, service_name_three_tv;
         CardView home_screen_item_single_card_ui;
         OnServiceItemClick onServiceItemClick;
+        ImageView home_screen_service_image;
 
         public ItemViewHolder(@NonNull View itemView,OnServiceItemClick onServiceItemClick) {
             super(itemView);
+            home_screen_service_image = itemView.findViewById(R.id.home_screen_service_image);
             service_name_tV = itemView.findViewById(R.id.service_name_tv);
             service_name_one_tv = itemView.findViewById(R.id.service_name_tv_one);
             service_name_two_tv = itemView.findViewById(R.id.service_name_tv_two);
@@ -68,6 +71,7 @@ public class AdapterHomeScreenServiceListItem extends RecyclerView.Adapter<Adapt
             service_name_one_tv.setText(serviceName.getService_txt_one());
             service_name_two_tv.setText(serviceName.getService_txt_two());
             service_name_three_tv.setText(serviceName.getService_txt_three());
+            home_screen_service_image.setImageResource(serviceName.getDrawable());
         }
 
         @Override

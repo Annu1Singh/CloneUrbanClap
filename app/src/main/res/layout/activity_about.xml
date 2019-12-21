@@ -37,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/black87"
-            android:text="About RuralClap"
+            android:text="About App Name"
             />
         <View
             android:layout_width="match_parent"

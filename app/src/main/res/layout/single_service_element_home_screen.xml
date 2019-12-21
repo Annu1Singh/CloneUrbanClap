@@ -129,13 +129,15 @@
                 android:padding="@dimen/margin_4">
 
                 <ImageView
+                    android:id="@+id/home_screen_service_image"
                     android:layout_width="150dp"
                     android:layout_height="97dp"
-                    android:background="@drawable/banner_services"
+                    android:background="@android:color/transparent"
                     android:scaleType="fitCenter"
-                    android:visibility="gone" />
+                    android:visibility="visible" />
 
                 <TextView
+                    android:visibility="gone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-condensed-medium"
@@ -144,6 +146,7 @@
                     android:textColor="#2196F3" />
 
                 <TextView
+                    android:visibility="gone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-condensed"

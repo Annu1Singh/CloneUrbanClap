@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/windowBackground">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -18,21 +19,24 @@
             android:layout_height="wrap_content"
             android:background="@color/primaryDarker"
             android:elevation="@dimen/margin_4"
+            app:titleTextColor="@color/white"
+            app:title="User Profile"
             android:fitsSystemWindows="true"
             android:theme="@style/AppTheme1">
 
             <TextView
+                android:visibility="gone"
                 android:id="@+id/textView_projectname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLength="20"
                 android:maxLines="1"
-                android:text="My Profile"
+                android:text="User Profile"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/text_size_22sp" />
 
-            <RelativeLayout
+         <!--   <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -50,7 +54,7 @@
                     android:textColor="@color/white"
                     android:visibility="invisible" />
 
-            </RelativeLayout>
+            </RelativeLayout> -->
         </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -63,6 +67,7 @@
         android:padding="@dimen/margin_5">
 
         <TextView
+            android:visibility="gone"
             android:id="@+id/downloadUrbanClap"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -101,7 +106,17 @@
             android:text="@string/share_urbanclap"
             android:textSize="@dimen/text_size_16sp" />
 
-
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/custome_toolbar_loginbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="@dimen/margin_10"
+            android:background="@drawable/border_grey_light"
+            android:padding="@dimen/margin_10"
+            android:text="@string/login"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

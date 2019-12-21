@@ -12,7 +12,7 @@
         android:id="@+id/action_my_booking"
         android:enabled="true"
         android:icon="@drawable/ic_library_books_black"
-        android:title="My Bookings"
+        android:title="View Bookings"
          />
 
     <item

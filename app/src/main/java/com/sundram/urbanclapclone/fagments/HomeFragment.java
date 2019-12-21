@@ -162,23 +162,23 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
         arrayList.add(new ServiceName("Beauty Services at Home",
                 "Wax | Facial |Packages",
                 "Facial",
-                "Packages"));
+                "Packages",R.drawable.beauty_service_mobile));
         arrayList.add(new ServiceName("Cleaning Services",
                 "Bathroom | Sofa | Kitchen",
                 "Sofa",
-                "Kitchen"));
+                "Kitchen",R.drawable.cleaning));
         arrayList.add(new ServiceName("Plumber, Electrician, Carpenter",
                 "Service in 60 minutes",
                 "in",
-                "60 minutes"));
+                "60 minutes",R.drawable.plumber));
         arrayList.add(new ServiceName("Appliance & Electronic Repair",
                 "90 Days Services Gurantee",
                 "Service",
-                "Gurantee"));
+                "Gurantee",R.drawable.appliance));
         arrayList.add(new ServiceName("Pest Control Services",
                 "Guranteed Removal Certified Safe Chemicals",
                 "Certified Safe",
-                "Chemicals"));
+                "Chemicals",R.drawable.pest_control_service));
         homeScreeenListAdapter.notifyDataSetChanged();
 
     }
@@ -218,7 +218,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
                 getActivity().finish();
                 viewDialog.hideDialog();
             }
-        }, 2000);
+        }, 1000);
     }
 
     //Cleaning Service intent
@@ -233,7 +233,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
                 getActivity().finish();
                 viewDialog.hideDialog();
             }
-        }, 2000);
+        }, 1000);
     }
 
     //PEC Service intent
@@ -248,7 +248,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
                 getActivity().finish();
                 viewDialog.hideDialog();
             }
-        }, 2000);
+        }, 1000);
     }
 
     //appliance Service intent
@@ -263,7 +263,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
                 getActivity().finish();
                 viewDialog.hideDialog();
             }
-        }, 2000);
+        }, 1000);
     }
 
     //Cleaning Service intent
@@ -278,6 +278,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
                 getActivity().finish();
                 viewDialog.hideDialog();
             }
-        }, 2000);
+        }, 1000);
     }
 }

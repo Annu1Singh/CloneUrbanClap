@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:background="@color/primaryDarker"
             android:elevation="@dimen/margin_4"
-            app:title="My Booking"
+            app:title="View Cart"
             app:titleTextColor="@color/white"
             android:theme="@style/AppTheme1">
         </androidx.appcompat.widget.Toolbar>
@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:fontFamily="sans-serif-thin"
-            android:text="Whoops, No Bookings!"
+            android:text="Whoops, No Item Present in Cart!"
             android:textSize="@dimen/text_size_20sp"
             android:textStyle="bold" />
         <TextView

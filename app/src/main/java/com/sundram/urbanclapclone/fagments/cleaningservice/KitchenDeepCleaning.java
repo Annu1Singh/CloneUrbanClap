@@ -54,14 +54,14 @@ public class KitchenDeepCleaning extends Fragment implements SectionViewAllServi
     }
 
     public void setDataToRecycler(){
-        list.add(new SectionViewAllServiceListModel("Chimney Deep Cleaning","120","40","Kitchen Cleaning","60 min",R.drawable.kitchen_cleaning));
-        list.add(new SectionViewAllServiceListModel("Kitchen Cleaning(Without Chimney)","180","40","Kitchen Cleaning","60 min",R.drawable.kitchen_cleaning));
-        list.add(new SectionViewAllServiceListModel("Kitchen Cleaning(With Chimney)","190","40","Kitchen Cleaning","60 min",R.drawable.kitchen_cleaning));
-        list.add(new SectionViewAllServiceListModel("Trolley and Shelf Cleaning","200","40","Kitchen Cleaning","60 min",R.drawable.kitchen_cleaning));
+        list.add(new SectionViewAllServiceListModel("Chimney Deep Cleaning","120","40","Kitchen Cleaning","60 min",0,0,R.drawable.kitchen_cleaning));
+        list.add(new SectionViewAllServiceListModel("Kitchen Cleaning(Without Chimney)","180","40","Kitchen Cleaning","60 min",0,0,R.drawable.kitchen_cleaning));
+        list.add(new SectionViewAllServiceListModel("Kitchen Cleaning(With Chimney)","190","40","Kitchen Cleaning","60 min",0,0,R.drawable.kitchen_cleaning));
+        list.add(new SectionViewAllServiceListModel("Trolley and Shelf Cleaning","200","40","Kitchen Cleaning","60 min",0,0,R.drawable.kitchen_cleaning));
       }
 
     @Override
-    public void onClick(int position) {
+    public void onClick(String position) {
 
     }
 }

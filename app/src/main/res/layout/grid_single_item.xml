@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     android:elevation="@dimen/margin_2"
     android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
     android:focusable="true"
     android:background="@drawable/border_grey_light"
     android:layout_marginBottom="@dimen/margin_5"

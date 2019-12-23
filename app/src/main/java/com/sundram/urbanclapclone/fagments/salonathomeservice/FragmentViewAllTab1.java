@@ -59,17 +59,20 @@ public class FragmentViewAllTab1 extends Fragment implements View.OnClickListene
     }
 
     public void setDataToRecycler() {
-        list.add(new SectionViewAllServiceListModel("Wax Name", "120", "40", "Wax", "60 min", R.drawable.waxing));
-        list.add(new SectionViewAllServiceListModel("Service Name", "180", "40", "Wax", "60 min", R.drawable.waxing));
-        list.add(new SectionViewAllServiceListModel("Service Name", "190", "40", "Wax", "60 min", R.drawable.waxing));
-        list.add(new SectionViewAllServiceListModel("Service Name", "200", "40", "Wax", "60 min", R.drawable.waxing));
-        list.add(new SectionViewAllServiceListModel("Service Name", "300", "40", "Wax", "60 min", R.drawable.waxing));
-        list.add(new SectionViewAllServiceListModel("Service Name", "100", "40", "Wax", "60 min", R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Full Face Waxing", "120", "40", "Wax", "60 min",0,0, R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Full-arm Waxing", "180", "40", "Wax", "60 min",0,0, R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Half-arm Waxing", "190", "40", "Wax", "60 min",0,0, R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Underarms Waxing", "200", "40", "Wax", "60 min",0,0, R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Eyebrows Waxing", "300", "40", "Wax", "60 min",0,0, R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Chest  Waxing", "100", "40", "Wax", "60 min",0,0, R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Half-leg (lower)", "100", "40", "Wax", "60 min",0,0, R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Half-leg (upper)", "100", "40", "Wax", "60 min",0,0, R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Full-leg", "100", "40", "Wax", "60 min",0,0, R.drawable.waxing));
     }
 
     @Override
-    public void onClick(int position) {
-
+    public void onClick(String position) {
+      //  Toast.makeText(getActivity()," "+position,Toast.LENGTH_SHORT).show();
     }
 
     @Override

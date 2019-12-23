@@ -15,6 +15,7 @@ import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -47,6 +48,7 @@ import com.sundram.urbanclapclone.LocationUtil.PermissionUtils;
 import com.sundram.urbanclapclone.fagments.HomeFragment;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -74,13 +76,16 @@ public class LocationOnBoarding extends AppCompatActivity implements ConnectionC
     double latitude;
     double longitude;
 
+    DecimalFormat decimalFormat;
     // list of permissions
 
     ArrayList<String> permissions = new ArrayList<>();
     PermissionUtils permissionUtils;
+    ProgressDialog pd;
 
     boolean isPermissionGranted;
     ProgressDialog progressDialog;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,7 +93,10 @@ public class LocationOnBoarding extends AppCompatActivity implements ConnectionC
         iconTextView = findViewById(R.id.location_onboarding_back_back_btn);
         location_onboarding_select_city = findViewById(R.id.location_onboarding_select_city);
         location_onboarding_auto_detect_view = findViewById(R.id.location_onboarding_auto_detect_view);
-
+        //setting up the limit of the decimal
+        //decimalFormat = new DecimalFormat();
+        /// decimalFormat.setMaximumFractionDigits(3);
+        pd = new ProgressDialog(LocationOnBoarding.this);
         textView2 = findViewById(R.id.textView2);
         locationHelper = new LocationHelper(this);
         locationHelper.checkpermission();
@@ -104,40 +112,42 @@ public class LocationOnBoarding extends AppCompatActivity implements ConnectionC
         location_onboarding_auto_detect_view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getLocation();
+               // pd.requestWindowFeature(Window.FEATURE_NO_TITLE);
+               // pd.setMessage("Please wait");
+                //getLocation();
 
                 if (mLastLocation != null) {
-                    latitude = mLastLocation.getLatitude();
-                    longitude = mLastLocation.getLongitude();
+                   gettingLongitudeAndLatitude();
                     getAddress();
-                  //  Toast.makeText(LocationOnBoarding.this,currentLocation,Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(LocationOnBoarding.this,DashBoard.class));
+                    //  Toast.makeText(LocationOnBoarding.this,currentLocation,Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(LocationOnBoarding.this, DashBoard.class));
                     SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(LocationOnBoarding.this);
                     sp.edit().putString("address", currentLocation).apply();
                     finish();
-                }else {
+                } else {
                     Toast.makeText(LocationOnBoarding.this,
                             "Couldn't get the location. Make sure location is enabled on the device for this application",
                             Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
+//when press back button
         iconTextView.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             @Override
             public void onClick(View v) {
                 Intent back = new Intent(LocationOnBoarding.this, OtpGeneratorActivity.class);
                 startActivity(back);
+                finish();
             }
         });
 
-        location_onboarding_select_city.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(LocationOnBoarding.this,"Not Working",Toast.LENGTH_LONG).show();
-            }
-        });
+//        location_onboarding_select_city.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(LocationOnBoarding.this,"Not Working",Toast.LENGTH_LONG).show();
+//            }
+//        });
         // check availability of play services
         if (checkPlayServices()) {
             // Building the GoogleApi client
@@ -148,13 +158,17 @@ public class LocationOnBoarding extends AppCompatActivity implements ConnectionC
         search_location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LocationOnBoarding.this,GoogleMapWithSearchView.class));
+                startActivity(new Intent(LocationOnBoarding.this, GoogleMapWithSearchView.class));
                 finish();
             }
         });
 
     }
 
+    public void gettingLongitudeAndLatitude(){
+        latitude = mLastLocation.getLatitude();
+        longitude = mLastLocation.getLongitude();
+    }
     private void getLocation() {
 
         if (isPermissionGranted) {
@@ -198,7 +212,6 @@ public class LocationOnBoarding extends AppCompatActivity implements ConnectionC
             String state = locationAddress.getAdminArea();
             String country = locationAddress.getCountryName();
             String postalCode = locationAddress.getPostalCode();
-
 
 
             if (!TextUtils.isEmpty(address)) {
@@ -356,38 +369,40 @@ public class LocationOnBoarding extends AppCompatActivity implements ConnectionC
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                                            @NonNull int[] grantResults) {
         // redirects to utils
-        permissionUtils.onRequestPermissionsResult(requestCode,permissions,grantResults);
+        permissionUtils.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
     }
-
-
 
 
     @Override
     public void PermissionGranted(int request_code) {
-        Log.i("PERMISSION","GRANTED");
-        isPermissionGranted=true;
+        Log.i("PERMISSION", "GRANTED");
+        isPermissionGranted = true;
     }
 
     @Override
     public void PartialPermissionGranted(int request_code, ArrayList<String> granted_permissions) {
-        Log.i("PERMISSION PARTIALLY","GRANTED");
+        Log.i("PERMISSION PARTIALLY", "GRANTED");
     }
 
     @Override
     public void PermissionDenied(int request_code) {
-        Log.i("PERMISSION","DENIED");
+        Log.i("PERMISSION", "DENIED");
     }
 
     @Override
     public void NeverAskAgain(int request_code) {
-        Log.i("PERMISSION","NEVER ASK AGAIN");
+        Log.i("PERMISSION", "NEVER ASK AGAIN");
     }
 
-    public void showToast(String message)
-    {
-        Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
+    public void showToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
-
+    @Override
+    public void onBackPressed() {
+        Intent back = new Intent(LocationOnBoarding.this,OtpGeneratorActivity.class);
+        startActivity(back);
+        finish();
+    }
 }

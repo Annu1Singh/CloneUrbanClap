@@ -37,7 +37,6 @@ public class PECActivity extends AppCompatActivity implements View.OnClickListen
         Intent back = new Intent(PECActivity.this,DashBoard.class);
         startActivity(back);
         finish();
-        super.onBackPressed();
     }
 
     @Override

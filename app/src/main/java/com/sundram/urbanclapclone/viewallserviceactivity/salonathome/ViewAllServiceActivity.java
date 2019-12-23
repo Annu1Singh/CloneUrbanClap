@@ -49,9 +49,9 @@ public class ViewAllServiceActivity extends AppCompatActivity implements View.On
     FragmentViewAllTab7 fragmentViewAllTab7;
 
     String[] tabTitle = {
-            "Waxing",
-            "RICA Waxing",
-            "Honey Waxing",
+            "Hard Waxing",
+            "Fruit Waxing",
+            "Honey/Soft Waxing",
             "Facial, Bleach and Detan",
             "Manicure & Pedicure",
             "Hair Care",
@@ -129,8 +129,7 @@ public class ViewAllServiceActivity extends AppCompatActivity implements View.On
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                startActivity(new Intent(ViewAllServiceActivity.this, SalonAtHome.class));
-                finish();
+                onBackPressed();
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -207,10 +206,6 @@ public class ViewAllServiceActivity extends AppCompatActivity implements View.On
         finish();
     }
 
-    @Override
-    public void onClick(int position) {
-
-    }
 
     @Override
     public void onClick(View v) {
@@ -218,4 +213,9 @@ public class ViewAllServiceActivity extends AppCompatActivity implements View.On
         }
     }
 
+    @Override
+    public void onClick(String position) {
+        String text = position;
+        Toast.makeText(ViewAllServiceActivity.this," "+text,Toast.LENGTH_SHORT).show();
+    }
 }

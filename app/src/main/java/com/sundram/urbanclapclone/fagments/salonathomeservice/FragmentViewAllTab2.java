@@ -51,15 +51,15 @@ public class FragmentViewAllTab2 extends Fragment implements SectionViewAllServi
         return tab_two_fragment;
     }
     public void setDataToRecycler(){
-        list.add(new SectionViewAllServiceListModel("RICA Wax Name","120","40","RICA Wax","60 min",R.drawable.waxing));
-        list.add(new SectionViewAllServiceListModel("Service Name","180","40","RICA Wax","60 min",R.drawable.waxing));
-        list.add(new SectionViewAllServiceListModel("Service Name","190","40","RICA Wax","60 min",R.drawable.waxing));
-        list.add(new SectionViewAllServiceListModel("Service Name","200","40","RICA Wax","60 min",R.drawable.waxing));
-        list.add(new SectionViewAllServiceListModel("Service Name","300","40","RICA Wax","60 min",R.drawable.waxing));
-        list.add(new SectionViewAllServiceListModel("Service Name","100","40","RICA Wax","60 min",R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Full Face RICA Waxing", "120", "40", "Wax", "60 min",0,0, R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Full-arm RICA Waxing", "180", "40", "Wax", "60 min",0,0, R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Half-arm RICA Waxing", "190", "40", "Wax", "60 min",0,0, R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Underarms RICA Waxing", "200", "40", "Wax", "60 min",0,0, R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Eyebrows RICA Waxing", "300", "40", "Wax", "60 min",0,0, R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Chest  RICA Waxing", "100", "40", "Wax", "60 min",0,0, R.drawable.waxing));
     }
     @Override
-    public void onClick(int position) {
+    public void onClick(String position) {
 
 
     }

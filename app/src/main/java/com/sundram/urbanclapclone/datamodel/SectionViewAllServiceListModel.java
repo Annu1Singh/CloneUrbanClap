@@ -8,6 +8,24 @@ public class SectionViewAllServiceListModel {
     private String typeOfService;
     private String serviceTime;
     private int drawable;
+    private double totalPrice;
+    private int count;
+
+    public double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(double totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
 
     public String getServiceName() {
         return serviceName;
@@ -66,4 +84,14 @@ public class SectionViewAllServiceListModel {
         this.drawable = drawable;
     }
 
+    public SectionViewAllServiceListModel(String serviceName, String rupee, String offRupe, String typeOfService, String serviceTime, double totalPrice, int count, int drawable) {
+        this.serviceName = serviceName;
+        this.rupee = rupee;
+        this.offRupe = offRupe;
+        this.typeOfService = typeOfService;
+        this.serviceTime = serviceTime;
+        this.totalPrice = totalPrice;
+        this.count = count;
+        this.drawable = drawable;
+    }
 }

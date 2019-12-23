@@ -40,7 +40,7 @@ public class ViewAllBathRoomServices extends AppCompatActivity {
         toolbarViewAll = findViewById(R.id.toolbarViewAll);
         setSupportActionBar(toolbarViewAll);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Sofa Cleanig Services");
+        getSupportActionBar().setTitle("Bathroom Cleanig Services");
         //Initializing viewPager
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         viewPager.setOffscreenPageLimit(3);

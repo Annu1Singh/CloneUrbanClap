@@ -64,30 +64,11 @@
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <LinearLayout
-        android:id="@+id/primary_login_button"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="vertical">
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="@dimen/margin_1"
-            android:background="@color/grey_border" />
-
-        <include
-            layout="@layout/login_button_layout"
-            android:layout_width="fill_parent"
-            android:layout_height="@dimen/margin_56"
-            android:layout_margin="@dimen/margin_8" />
-    </LinearLayout>
 
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_alignWithParentIfMissing="true"
-        android:layout_above="@id/primary_login_button"
         android:layout_below="@id/appbar">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -127,86 +108,16 @@
 
                 <include layout="@layout/mobile_number_input_ui" />
             </LinearLayout>
-
-            <android.widget.EditText
-                android:id="@+id/et_debug_number"
-                style="@style/login_edittext"
-                android:layout_width="0.0dip"
-                android:layout_height="@dimen/margin_48"
-                android:layout_marginTop="@dimen/margin_16"
-                android:background="@drawable/border_grey_light"
-                android:hint="Debug Number"
-                android:includeFontPadding="false"
-                android:inputType="phone"
-                android:maxEms="10"
-                android:maxLength="10"
-                android:paddingLeft="@dimen/margin_16"
-                android:paddingTop="@dimen/margin_16"
-                android:paddingRight="@dimen/margin_16"
-                android:paddingBottom="@dimen/margin_16"
-                android:visibility="gone"
-                app:layout_constraintLeft_toLeftOf="@id/tv_login_screen_heading"
-                app:layout_constraintRight_toRightOf="@id/tv_login_screen_heading"
-                app:layout_constraintTop_toBottomOf="@id/login_fields_container" />
-
-            <LinearLayout
-                android:id="@+id/login_justification_container"
-                android:layout_width="0.0dip"
-                android:layout_height="fill_parent"
-                android:layout_marginTop="@dimen/margin_32"
-                android:orientation="vertical"
-                android:visibility="gone"
-                app:layout_constraintLeft_toLeftOf="@id/login_fields_container"
-                app:layout_constraintRight_toRightOf="@id/login_fields_container"
-                app:layout_constraintTop_toBottomOf="@id/et_debug_number">
-
-                <android.widget.TextView
-                    android:textSize="@dimen/text_size_14sp"
-                    android:fontFamily="sans-serif"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/margin_4"
-                    android:text="@string/number_use"
-                    android:textColor="@color/dark_light_grey" />
-
-                <include
-                    android:id="@+id/tv_contact_you_text"
-                    layout="@layout/bullet_item"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="0.0dip" />
-
-                <include
-                    android:id="@+id/tv_service_update"
-                    layout="@layout/bullet_item"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="0.0dip" />
-
-                <include
-                    android:id="@+id/tv_customer_care"
-                    layout="@layout/bullet_item"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="0.0dip" />
-            </LinearLayout>
-
             <include
                 android:id="@+id/secondary_login_button"
                 layout="@layout/login_button_layout"
                 android:layout_width="0.0dip"
                 android:layout_height="@dimen/margin_48"
                 android:layout_marginTop="@dimen/margin_24"
-                android:visibility="gone"
+                android:visibility="visible"
                 app:layout_constraintLeft_toLeftOf="@id/login_fields_container"
                 app:layout_constraintRight_toRightOf="@id/login_fields_container"
                 app:layout_constraintTop_toBottomOf="@id/login_fields_container" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-
-    <FrameLayout
-        android:id="@+id/internal_login_signup_framelayout"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_below="@id/appbar" />
 </RelativeLayout>

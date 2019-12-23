@@ -47,7 +47,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onBackPressed() {
         Intent back = new Intent(this, DashBoard.class);
         startActivity(back);
-        super.onBackPressed();
         finish();
     }
 

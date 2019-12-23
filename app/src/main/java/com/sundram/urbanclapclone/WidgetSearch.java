@@ -34,7 +34,7 @@ public class WidgetSearch extends AppCompatActivity implements SearchView.OnQuer
                 "Salon at Home", "Bathroom Cleaning", "Sofa Cleaning",
                 "Carpet Cleaning", "Kitchen Cleaning", "Full Home Cleaning",
                 "Pest control service", "Refrigerator Repair", "Microwave Repair",
-                "Cleaning Service","Electrician","Plumber","Carpenter",
+                "Cleaning Service","Electrician", "Carpenter",
                 "AC Service and Repair","Geyser Service and Repair","RO and Water Purifier Service and Repair" ,
                 "Washing machine Service and Repair"};
 
@@ -79,6 +79,6 @@ public class WidgetSearch extends AppCompatActivity implements SearchView.OnQuer
     public void onBackPressed() {
         Intent back = new Intent(WidgetSearch.this, DashBoard.class);
         startActivity(back);
-        super.onBackPressed();
+        finish();
     }
 }

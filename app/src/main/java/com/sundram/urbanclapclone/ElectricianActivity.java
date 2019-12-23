@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.sundram.urbanclapclone.adapter.RecyclerViewAdapter;
 import com.sundram.urbanclapclone.datamodel.DataModel;
+import com.sundram.urbanclapclone.viewallserviceactivity.pecservice.ViewAllCarpenter;
 import com.sundram.urbanclapclone.viewallserviceactivity.pecservice.ViewAllElectrician;
 
 import java.util.ArrayList;
@@ -76,14 +77,6 @@ public class ElectricianActivity extends AppCompatActivity implements View.OnCli
     }
 
     @Override
-    public void onBackPressed() {
-        Intent back = new Intent(ElectricianActivity.this, PECActivity.class);
-        startActivity(back);
-        finish();
-        super.onBackPressed();
-    }
-
-    @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.back_tv:
@@ -100,45 +93,43 @@ public class ElectricianActivity extends AppCompatActivity implements View.OnCli
     public void onClick(int position) {
         switch (position) {
             case 0:
-                Intent intent0 = new Intent(ElectricianActivity.this, ViewAllElectrician.class);
-                intent0.putExtra("TabNumber", "0");
-                startActivity(intent0);
+               jumpToIntent("0");
                 break;
             case 1:
-                Intent intent1 = new Intent(ElectricianActivity.this, ViewAllElectrician.class);
-                intent1.putExtra("TabNumber", "1");
-                startActivity(intent1);
+                jumpToIntent("1");
                 break;
             case 2:
-                Intent intent2 = new Intent(ElectricianActivity.this, ViewAllElectrician.class);
-                intent2.putExtra("TabNumber", "2");
-                startActivity(intent2);
+                jumpToIntent("2");
                 break;
             case 3:
-                Intent intent3 = new Intent(ElectricianActivity.this, ViewAllElectrician.class);
-                intent3.putExtra("TabNumber", "3");
-                startActivity(intent3);
+                jumpToIntent("3");
                 break;
             case 4:
-                Intent intent4 = new Intent(ElectricianActivity.this, ViewAllElectrician.class);
-                intent4.putExtra("TabNumber", "4");
-                startActivity(intent4);
+                jumpToIntent("4");
                 break;
             case 5:
-                Intent intent5 = new Intent(ElectricianActivity.this, ViewAllElectrician.class);
-                intent5.putExtra("TabNumber", "5");
-                startActivity(intent5);
+                jumpToIntent("5");
                 break;
             case 6:
-                Intent intent6 = new Intent(ElectricianActivity.this, ViewAllElectrician.class);
-                intent6.putExtra("TabNumber", "6");
-                startActivity(intent6);
+                jumpToIntent("6");
                 break;
             case 7:
-                Intent intent7 = new Intent(ElectricianActivity.this, ViewAllElectrician.class);
-                intent7.putExtra("TabNumber", "7");
-                startActivity(intent7);
+                jumpToIntent("7");
                 break;
         }
+    }
+
+    public Intent jumpToIntent(String tabNumber) {
+        Intent jump = new Intent(ElectricianActivity.this, ViewAllElectrician.class);
+        jump.putExtra("TabNumber", tabNumber);
+        startActivity(jump);
+        finish();
+        return jump;
+    }
+    @Override
+    public void onBackPressed() {
+        Intent back = new Intent(ElectricianActivity.this, PECActivity.class);
+        startActivity(back);
+        finish();
     }
 }

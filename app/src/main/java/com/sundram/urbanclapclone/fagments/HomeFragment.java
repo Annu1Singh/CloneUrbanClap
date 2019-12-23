@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
+import com.joanzapata.iconify.widget.IconTextView;
 import com.sundram.urbanclapclone.ApplianceAndEcRepair;
 import com.sundram.urbanclapclone.GuranteeActivity;
 import com.sundram.urbanclapclone.LocationOnBoarding;
@@ -42,7 +44,7 @@ import me.relex.circleindicator.CircleIndicator;
 public class HomeFragment extends Fragment implements View.OnClickListener, AdapterHomeScreenServiceListItem.OnServiceItemClick {
 
     private Toolbar toolbar;
-    private RelativeLayout include_searchView;
+    private IconTextView include_searchView;
     private View thisFragment;
     private ViewFlipper viewFlipper;
     private CircleIndicator indicator;
@@ -52,6 +54,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
     RecyclerView home_screen_list_item_recyclerView;
     AdapterHomeScreenServiceListItem homeScreeenListAdapter;
     ArrayList<ServiceName> arrayList;
+    SharedPreferences sp;
 
     private int images[] = {R.drawable.service_bgs,
             R.drawable.carpet_cleaning,
@@ -89,8 +92,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
         //end
 
         //setting up the carusel in home fragment
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        String value = sp.getString("address", "DefaultValue");
+        gettingSharedPrefrence();
         //Toast.makeText(getActivity(),value,Toast.LENGTH_LONG).show();
 
         for (int image : images) {
@@ -101,13 +103,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
         viewDialog = new ViewDialog(getActivity());
         //setting up the listners
         isn_cardview.setOnClickListener(this);
+        isn_cardview.setVisibility(View.GONE);
         include_searchView.setOnClickListener(this);
-        home_screen_selected_city.setText(value);
+
         //end
         //setting up the recycler view
         arrayList = new ArrayList<ServiceName>();
 
-        home_screen_list_item_recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        home_screen_list_item_recyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2));
         homeScreeenListAdapter = new AdapterHomeScreenServiceListItem(getActivity(), arrayList, this);
         home_screen_list_item_recyclerView.setAdapter(homeScreeenListAdapter);
         setDataServiceListItem();
@@ -116,6 +119,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
 
         return thisFragment;
     }
+
+    public void gettingSharedPrefrence(){
+        sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        String value = sp.getString("address", "Some problems are there..");
+        home_screen_selected_city.setText(value);
+    }
+
 
     //getting ids of all the view
     public void initVar() {
@@ -159,26 +169,26 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
 
     //setting the data into service list item of home
     public void setDataServiceListItem() {
-        arrayList.add(new ServiceName("Beauty Services at Home",
-                "Wax | Facial |Packages",
-                "Facial",
-                "Packages",R.drawable.beauty_service_mobile));
+        arrayList.add(new ServiceName("Beauty Services",
+                "Wax | Manicure | Detan",
+                "",
+                "", R.drawable.beauty_service_mobile));
         arrayList.add(new ServiceName("Cleaning Services",
-                "Bathroom | Sofa | Kitchen",
+                "Home | Carpet | Kitchen",
                 "Sofa",
-                "Kitchen",R.drawable.cleaning));
+                "Kitchen", R.drawable.cleaning));
         arrayList.add(new ServiceName("Plumber, Electrician, Carpenter",
-                "Service in 60 minutes",
-                "in",
-                "60 minutes",R.drawable.plumber));
-        arrayList.add(new ServiceName("Appliance & Electronic Repair",
-                "90 Days Services Gurantee",
-                "Service",
-                "Gurantee",R.drawable.appliance));
-        arrayList.add(new ServiceName("Pest Control Services",
-                "Guranteed Removal Certified Safe Chemicals",
-                "Certified Safe",
-                "Chemicals",R.drawable.pest_control_service));
+                "Service in 120 minutes",
+                "",
+                "", R.drawable.plumber));
+        arrayList.add(new ServiceName("Appliance Repair and Service",
+                "100 Days Services Gurantee",
+                "0",
+                "0", R.drawable.appliance));
+        arrayList.add(new ServiceName("Insect Prevent Services",
+                "100% Assurance that prevent insects",
+                "0",
+                "0", R.drawable.pest_control_service));
         homeScreeenListAdapter.notifyDataSetChanged();
 
     }
@@ -280,4 +290,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
             }
         }, 1000);
     }
+
+
 }

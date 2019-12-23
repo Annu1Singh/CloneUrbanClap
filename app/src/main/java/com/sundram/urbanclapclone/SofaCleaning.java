@@ -36,13 +36,6 @@ public class SofaCleaning extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    public void onBackPressed() {
-        Intent back = new Intent(SofaCleaning.this, ServiceListItem.class);
-        startActivity(back);
-        finish();
-    }
-
-    @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.back_tv:
@@ -53,5 +46,12 @@ public class SofaCleaning extends AppCompatActivity implements View.OnClickListe
                 finish();
                 break;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent back = new Intent(SofaCleaning.this, ServiceListItem.class);
+        startActivity(back);
+        finish();
     }
 }

@@ -45,6 +45,7 @@ public class PestControl extends AppCompatActivity implements View.OnClickListen
             case R.id.login_button_text:
                 Intent ii = new Intent(PestControl.this, ViewAllPestControl.class);
                 startActivity(ii);
+                finish();
                 break;
         }
     }

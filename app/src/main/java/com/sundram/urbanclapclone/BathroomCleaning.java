@@ -52,6 +52,7 @@ public class BathroomCleaning extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.login_button_text:
                 startActivity(new Intent(BathroomCleaning.this, ViewAllBathRoomServices.class));
+                finish();
                 break;
         }
     }

@@ -77,47 +77,41 @@ public class CarpenterActivity extends AppCompatActivity implements View.OnClick
         Intent back = new Intent(CarpenterActivity.this,PECActivity.class);
         startActivity(back);
         finish();
-        super.onBackPressed();
     }
 
     @Override
     public void onClick(int position) {
         switch (position) {
             case 0:
-                Intent intent = new Intent(this, ViewAllCarpenter.class);
-                intent.putExtra("TabNumber", "0");
-                startActivity(intent);
+                 jumpToIntent("0");
                 break;
             case 1:
-                Intent intent1 = new Intent(this, ViewAllCarpenter.class);
-                intent1.putExtra("TabNumber", "1");
-                startActivity(intent1);
+                jumpToIntent("1");
                 break;
             case 2:
-                Intent intent2 = new Intent(this, ViewAllCarpenter.class);
-                intent2.putExtra("TabNumber", "2");
-                startActivity(intent2);
+                jumpToIntent("2");
                 break;
             case 3:
-                Intent intent3 = new Intent(this, ViewAllCarpenter.class);
-                intent3.putExtra("TabNumber", "3");
-                startActivity(intent3);
+                jumpToIntent("3");
                 break;
             case 4:
-                Intent intent4 = new Intent(this, ViewAllCarpenter.class);
-                intent4.putExtra("TabNumber", 4);
-                startActivity(intent4);
+                jumpToIntent("4");
                 break;
             case 5:
-                Intent intent5 = new Intent(this, ViewAllCarpenter.class);
-                intent5.putExtra("TabNumber", "5");
-                startActivity(intent5);
+                jumpToIntent("5");
                 break;
             case 6:
-                Intent intent6 = new Intent(this, ViewAllCarpenter.class);
-                intent6.putExtra("TabNumber", "6");
-                startActivity(intent6);
+                jumpToIntent("6");
                 break;
         }
     }
+
+    public Intent jumpToIntent(String tabNumber) {
+        Intent jump = new Intent(CarpenterActivity.this, ViewAllCarpenter.class);
+        jump.putExtra("TabNumber", tabNumber);
+        startActivity(jump);
+        finish();
+        return jump;
+    }
+
 }

@@ -49,15 +49,18 @@ public class FragmentViewAllTab5 extends Fragment implements SectionViewAllServi
         return tab_five_fragment;
     }
     public void setDataToRecycler(){
-        list.add(new SectionViewAllServiceListModel("Service Name","120","40","Medicure","60 min",R.drawable.medicure));
-        list.add(new SectionViewAllServiceListModel("Service Name","180","40","Pedicure","60 min",R.drawable.medicure));
-        list.add(new SectionViewAllServiceListModel("Service Name","190","40","Medicure","60 min",R.drawable.medicure));
-        list.add(new SectionViewAllServiceListModel("Service Name","200","40","medicure","60 min",R.drawable.medicure));
-        list.add(new SectionViewAllServiceListModel("Service Name","300","40","Pedicure","60 min",R.drawable.medicure));
-        list.add(new SectionViewAllServiceListModel("Service Name","100","40","Pedicure","60 min",R.drawable.medicure));
+        list.add(new SectionViewAllServiceListModel("Cut, File and Polish Hand","120","40","Menicure/Pedicure","60 min",R.drawable.medicure));
+        list.add(new SectionViewAllServiceListModel("Cut, File and Polish Feet","120","40","Menicure","60 min",R.drawable.medicure));
+        list.add(new SectionViewAllServiceListModel("Detan Pedicure","120","40","Menicure/Pedicure","60 min",R.drawable.medicure));
+        list.add(new SectionViewAllServiceListModel("Detan Manicure","120","40","Menicure/Pedicure","60 min",R.drawable.medicure));
+//        list.add(new SectionViewAllServiceListModel("Service Name","180","40","Pedicure","60 min",R.drawable.medicure));
+//        list.add(new SectionViewAllServiceListModel("Service Name","190","40","Medicure","60 min",R.drawable.medicure));
+//        list.add(new SectionViewAllServiceListModel("Service Name","200","40","medicure","60 min",R.drawable.medicure));
+//        list.add(new SectionViewAllServiceListModel("Service Name","300","40","Pedicure","60 min",R.drawable.medicure));
+//        list.add(new SectionViewAllServiceListModel("Service Name","100","40","Pedicure","60 min",R.drawable.medicure));
     }
     @Override
-    public void onClick(int position) {
+    public void onClick(String position) {
         
     }
 }

@@ -51,15 +51,19 @@ public class FragmentViewAllTab3 extends Fragment implements SectionViewAllServi
         return tab_three_fragment;
     }
     public void setDataToRecycler(){
-        list.add(new SectionViewAllServiceListModel("Service Name","120","40","Honey Wax","60 min",R.drawable.waxing));
-        list.add(new SectionViewAllServiceListModel("Service Name","180","40","Honey Wax","60 min",R.drawable.waxing));
-        list.add(new SectionViewAllServiceListModel("Service Name","190","40","Honey Wax","60 min",R.drawable.waxing));
-        list.add(new SectionViewAllServiceListModel("Service Name","200","40","Honey Wax","60 min",R.drawable.waxing));
-        list.add(new SectionViewAllServiceListModel("Service Name","300","40","Honey Wax","60 min",R.drawable.waxing));
-        list.add(new SectionViewAllServiceListModel("Service Name","100","40","Honey Wax","60 min",R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Full Face Honey Waxing", "120", "40", "Wax", "60 min",0,0, R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Full-arm Honey Waxing", "180", "40", "Wax", "60 min",0,0, R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Half-arm Honey Waxing", "190", "40", "Wax", "60 min",0,0, R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Underarms Honey Waxing", "200", "40", "Wax", "60 min",0,0, R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Eyebrows Honey Waxing", "300", "40", "Wax", "60 min",0,0, R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Chest Honey Waxing", "100", "40", "Wax", "60 min",0,0, R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Half-leg Honey Waxing(lower)", "100", "40", "Wax", "60 min",0,0, R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Half-leg Honey Waxing(upper)", "100", "40", "Wax", "60 min",0,0, R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Full-leg Honey Waxing", "100", "40", "Wax", "60 min",0,0, R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Stomach Honey Waxing", "100", "40", "Wax", "60 min",0,0, R.drawable.waxing));
     }
     @Override
-    public void onClick(int position) {
+    public void onClick(String position) {
         
     }
 }

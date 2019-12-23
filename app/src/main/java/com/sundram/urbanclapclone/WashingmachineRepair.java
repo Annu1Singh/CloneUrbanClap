@@ -123,6 +123,7 @@ public class WashingmachineRepair extends AppCompatActivity implements View.OnCl
         Intent jump = new Intent(WashingmachineRepair.this, ViewAllWashingService.class);
         jump.putExtra("TabNumber", tabNumber);
         startActivity(jump);
+        finish();
         return jump;
     }
 

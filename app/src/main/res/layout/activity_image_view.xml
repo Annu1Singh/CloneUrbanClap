@@ -4,16 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:theme="@style/SplashTheme"
-    android:background="@color/windowBackground"
-    tools:context=".SplashActivity">
+    android:background="@android:color/transparent"
+    tools:context=".ImageViewActivity">
+
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/boot"
-        android:layout_centerInParent="true"
-        />
-    
+        android:background="@android:color/transparent"
+        android:layout_margin="@dimen/margin_10"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fullScreenImageView"/>
 
 </RelativeLayout>

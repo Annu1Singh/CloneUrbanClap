@@ -113,7 +113,6 @@ public class MicroWaveRepair extends AppCompatActivity implements View.OnClickLi
         Intent back = new Intent(MicroWaveRepair.this,ApplianceAndEcRepair.class);
         startActivity(back);
         finish();
-        super.onBackPressed();
     }
 
     @Override
@@ -131,6 +130,7 @@ public class MicroWaveRepair extends AppCompatActivity implements View.OnClickLi
         Intent jump = new Intent(MicroWaveRepair.this, ViewAllMicrowaveRepair.class);
         jump.putExtra("TabNumber", tabNumber);
         startActivity(jump);
+        finish();
         return jump;
     }
 }

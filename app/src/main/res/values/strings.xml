@@ -12,7 +12,7 @@
     <string name="referral">Referral code?</string>
     <string name="referral_code">Referral code (if any)</string>
     <string name="uc_icon_bullet">½</string>
-    <string name="login_signup">Login / SignUp</string>
+    <string name="login_signup">Login</string>
     <string name="hi_nice_to_meet_you">Hi nice to meet you..</string>
     <string name="your_current_location">your current location</string>
     <string name="some_other_location">Some other location..</string>
@@ -50,7 +50,7 @@
     <string name="reviews">Reviews</string>
     <string name="urbanclap_insurance_protection_program">App Name Insurance Protection Program</string>
     <string name="learn_more">Learn more</string>
-    <string name="skill_india_mesage">Find professionals certified by Govt of India under Skill India Missiion</string>
+    <string name="skill_india_mesage">Our certified professionals workers.</string>
     <string name="booking_services">Booking Services</string>
     <string name="paying_for_services">Paying for services</string>
     <string name="a_guide_to_urbanclap">A guide to App Name</string>
@@ -86,6 +86,6 @@
 
     <string name="quotedesc">Welcome! Where should we deliver to?</string>
 
-    <string name="map_key" translatable="false">AIzaSyB_qsP8AOP_P0MdlPz-48TDaJYjTP3vbjo</string>
+    <string name="map_key" translatable="false">AIzaSyAfASCG9lC88jokeWKGpRzf77iT3zvedEw</string>
 
 </resources>

@@ -140,6 +140,7 @@ public class RoandWaterActivity extends AppCompatActivity implements View.OnClic
         Intent jump = new Intent(RoandWaterActivity.this, ViewAllRoAndWaterService.class);
         jump.putExtra("TabNumber", tabNumber);
         startActivity(jump);
+        finish();
         return jump;
     }
 
@@ -183,6 +184,5 @@ public class RoandWaterActivity extends AppCompatActivity implements View.OnClic
         Intent back = new Intent(RoandWaterActivity.this,ApplianceAndEcRepair.class);
         startActivity(back);
         finish();
-        super.onBackPressed();
     }
 }

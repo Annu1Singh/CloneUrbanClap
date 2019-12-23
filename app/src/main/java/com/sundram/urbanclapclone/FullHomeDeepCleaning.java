@@ -62,6 +62,8 @@ public class FullHomeDeepCleaning extends AppCompatActivity implements View.OnCl
             case R.id.login_button_text:
                 Intent jump = new Intent(FullHomeDeepCleaning.this, ViewAllHomeCleaning.class);
                 startActivity(jump);
+                finish();
+                break;
         }
     }
 
@@ -112,6 +114,5 @@ public class FullHomeDeepCleaning extends AppCompatActivity implements View.OnCl
         Intent back = new Intent(FullHomeDeepCleaning.this,ServiceListItem.class);
         startActivity(back);
         finish();
-        super.onBackPressed();
     }
 }

@@ -50,16 +50,14 @@ public class BathRoomCleaning extends Fragment implements SectionViewAllServiceL
         return bathRoomCleaningFragment;
     }
     public void setDataToRecycler(){
-        list.add(new SectionViewAllServiceListModel("Service Name","120","40","Bathroom Cleaning","60 min",R.drawable.bathroom));
-        list.add(new SectionViewAllServiceListModel("Service Name","180","40","Bathroom Cleaning","60 min",R.drawable.bathroom));
-        list.add(new SectionViewAllServiceListModel("Service Name","190","40","Bathroom Cleaning","60 min",R.drawable.bathroom));
-        list.add(new SectionViewAllServiceListModel("Service Name","200","40","Bathroom Cleaning","60 min",R.drawable.bathroom));
-        list.add(new SectionViewAllServiceListModel("Service Name","300","40","Bathroom Cleaning","60 min",R.drawable.bathroom));
-        list.add(new SectionViewAllServiceListModel("Service Name","100","40","Bathroom Cleaning","60 min",R.drawable.bathroom));
+        list.add(new SectionViewAllServiceListModel("One Bathroom Cleaning","120","40","Bathroom Cleaning","60 min",0,0,R.drawable.bathroom));
+        list.add(new SectionViewAllServiceListModel("Two Bathroom Cleaning","180","40","Bathroom Cleaning","60 min",0,0,R.drawable.bathroom));
+        list.add(new SectionViewAllServiceListModel("Three Bathroom Cleaning","190","40","Bathroom Cleaning","60 min",0,0,R.drawable.bathroom));
+        list.add(new SectionViewAllServiceListModel("Four Bathroom Cleaning","200","40","Bathroom Cleaning","60 min",0,0,R.drawable.bathroom));
     }
 
     @Override
-    public void onClick(int position) {
+    public void onClick(String position) {
         
     }
 }

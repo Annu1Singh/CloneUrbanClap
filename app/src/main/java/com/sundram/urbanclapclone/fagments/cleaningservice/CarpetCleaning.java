@@ -53,16 +53,14 @@ public class CarpetCleaning extends Fragment implements SectionViewAllServiceLis
     }
     
     public void setDataToRecycler(){
-        list.add(new SectionViewAllServiceListModel("Service Name","120","40","Carpet Cleaning","60 min",R.drawable.carpet_cleaning));
-        list.add(new SectionViewAllServiceListModel("Service Name","180","40","Carpet Cleaning","60 min",R.drawable.carpet_cleaning));
-        list.add(new SectionViewAllServiceListModel("Service Name","190","40","Carpet Cleaning","60 min",R.drawable.carpet_cleaning));
-        list.add(new SectionViewAllServiceListModel("Service Name","200","40","Carpet Cleaning","60 min",R.drawable.carpet_cleaning));
-        list.add(new SectionViewAllServiceListModel("Service Name","300","40","Carpet Cleaning","60 min",R.drawable.carpet_cleaning));
-        list.add(new SectionViewAllServiceListModel("Service Name","100","40","Carpet Cleaning","60 min",R.drawable.carpet_cleaning));
-    }
+        list.add(new SectionViewAllServiceListModel("25-50sq. ft.","899","300","Carpet Cleaning","60 min",0,0,R.drawable.carpet_cleaning));
+        list.add(new SectionViewAllServiceListModel("50-100sq. ft.","1299","200","Carpet Cleaning","60 min",0,0,R.drawable.carpet_cleaning));
+        list.add(new SectionViewAllServiceListModel("100-150sq. ft.","1499","300","Carpet Cleaning","60 min",0,0,R.drawable.carpet_cleaning));
+        list.add(new SectionViewAllServiceListModel("150-200 sq. ft.","1699","200","Carpet Cleaning","60 min",0,0,R.drawable.carpet_cleaning));
+       }
 
     @Override
-    public void onClick(int position) {
+    public void onClick(String position) {
         
     }
 }

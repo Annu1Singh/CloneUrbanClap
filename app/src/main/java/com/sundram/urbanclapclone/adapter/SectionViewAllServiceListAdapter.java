@@ -47,33 +47,10 @@ public class SectionViewAllServiceListAdapter extends RecyclerView.Adapter<Secti
 
     @Override
     public void onBindViewHolder(@NonNull SectionViewAllServiceListAdapter.ListHolder holder, int position) {
-            SectionViewAllServiceListModel datas = mList.get(position);
-            holder.setData(datas);
+        SectionViewAllServiceListModel datas = mList.get(position);
+        holder.setData(datas);
 
-            holder.minus_tvs.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int x = Integer.parseInt(holder.add_txt_tvs.getText().toString());
-                    if (x!=0) {
-                        String quantity = holder.add_txt_tvs.getText().toString();
-                        holder.add_txt_tvs.setText(String.valueOf(x - 1));
 
-                    }
-                }
-            });
-
-            holder.plus_tvs.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int x = Integer.parseInt(holder.add_txt_tvs.getText().toString());
-                    holder.add_txt_tvs.setText(String.valueOf(x + 1));
-
-                    String quantity = holder.add_txt_tvs.getText().toString();
-                    Intent intent = new Intent("message");
-
-                    intent.putExtra("quantity",grandTotal(quantity));
-                }
-            });
     }
 
     @Override
@@ -107,9 +84,9 @@ public class SectionViewAllServiceListAdapter extends RecyclerView.Adapter<Secti
 
             itemView.setOnClickListener(this);
 
-            //minus_tvs.setOnClickListener(this);
+            minus_tvs.setOnClickListener(this);
             //add_txt_tvs.setOnClickListener(this);
-            //plus_tvs.setOnClickListener(this);
+            plus_tvs.setOnClickListener(this);
 
         }
 
@@ -125,19 +102,38 @@ public class SectionViewAllServiceListAdapter extends RecyclerView.Adapter<Secti
 
         @Override
         public void onClick(View v) {
-            onServiceItemClick.onClick(getAdapterPosition());
+            if (v.getId() == plus_tvs.getId()) {
+                increment();
+
+
+            } else if (v.getId() == minus_tvs.getId()) {
+                decrement();
+
+            }
+        }
+
+        public void increment() {
+            int currentNos = Integer.parseInt(add_txt_tvs.getText().toString());
+            add_txt_tvs.setText(String.valueOf(++currentNos));
+            onServiceItemClick.onClick(add_txt_tvs.getText().toString());
+        }
+
+        public void decrement() {
+            int currentNos = Integer.parseInt(add_txt_tvs.getText().toString());
+            add_txt_tvs.setText(String.valueOf(--currentNos));
+            onServiceItemClick.onClick(add_txt_tvs.getText().toString());
         }
     }
 
-    public static interface OnServiceItemClick {
-        public void onClick(int position);
+    public interface OnServiceItemClick {
+         void onClick(String position);
     }
 
 
-    private int grandTotal(String items){
+    private int grandTotal(String items) {
 
         int totalPrice = 0;
-        for(int i = 0 ; i < items.length(); i++) {
+        for (int i = 0; i < items.length(); i++) {
             totalPrice += Integer.parseInt(items);
         }
 

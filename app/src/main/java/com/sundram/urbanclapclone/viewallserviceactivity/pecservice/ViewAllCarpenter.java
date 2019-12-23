@@ -42,7 +42,7 @@ public class ViewAllCarpenter extends AppCompatActivity {
             "Bed",
             "Curtain Blinds",
             "Furniture Repair",
-            "TV"};
+            "TV Frame and Install/Uninstall"};
     int[] unreadCount = {0, 0, 0, 0, 0, 0, 0, 0};
 
     //fragments

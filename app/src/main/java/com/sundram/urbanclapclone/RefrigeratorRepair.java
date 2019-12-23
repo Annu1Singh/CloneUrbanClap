@@ -119,6 +119,7 @@ public class RefrigeratorRepair extends AppCompatActivity implements View.OnClic
         Intent jump = new Intent(RefrigeratorRepair.this, ViewAllRefrigetorService.class);
         jump.putExtra("TabNumber", tabNumber);
         startActivity(jump);
+        finish();
         return jump;
     }
 

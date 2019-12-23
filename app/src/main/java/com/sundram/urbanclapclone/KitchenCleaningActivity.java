@@ -114,7 +114,6 @@ public class KitchenCleaningActivity extends AppCompatActivity implements View.O
         Intent back = new Intent(KitchenCleaningActivity.this, ServiceListItem.class);
         startActivity(back);
         finish();
-        super.onBackPressed();
     }
 
 }

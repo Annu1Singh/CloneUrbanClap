@@ -51,27 +51,18 @@
                 android:singleLine="true"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_size_14sp" />
-
-            <com.joanzapata.iconify.widget.IconTextView
-                android:id="@+id/toolbar_homescreen_down_arrow_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableTint="@android:color/white"
-                android:visibility="gone"
-                android:drawableLeft="@drawable/ic_arrow_drop_down_black"
-                android:textSize="@dimen/text_size_24sp" />
         </LinearLayout>
 
         <com.joanzapata.iconify.widget.IconTextView
-            android:id="@+id/search_icon"
+            android:id="@+id/include_searchView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="?selectableItemBackgroundBorderless"
             android:padding="@dimen/margin_16"
             android:drawableTint="@android:color/white"
             android:drawableEnd="@drawable/ic_search_black"
-            android:textSize="16.0sp"
-            android:visibility="invisible"
+            android:textSize="16sp"
+            android:visibility="visible"
             android:drawableRight="@drawable/ic_search_black" />
 
     </LinearLayout>

@@ -18,7 +18,7 @@
             android:background="@color/primaryDarker"
             android:elevation="@dimen/margin_4"
             android:fitsSystemWindows="true"
-            app:title="Customer Support"
+            app:title="F.A.Qs"
             app:titleTextColor="@color/white"
             android:theme="@style/AppTheme1">
         </androidx.appcompat.widget.Toolbar>

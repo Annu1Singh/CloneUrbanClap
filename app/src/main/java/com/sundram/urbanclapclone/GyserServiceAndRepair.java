@@ -133,6 +133,7 @@ public class GyserServiceAndRepair extends AppCompatActivity implements View.OnC
         Intent jump = new Intent(GyserServiceAndRepair.this, ViewAllGeyserService.class);
         jump.putExtra("TabNumber", tabNumber);
         startActivity(jump);
+        finish();
         return jump;
     }
 

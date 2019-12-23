@@ -54,14 +54,14 @@ public class SofaCleaning extends Fragment implements SectionViewAllServiceListA
     }
 
     public void setDataToRecycler(){
-        list.add(new SectionViewAllServiceListModel("2 Sofa Seat Cleaning","120","40","Sofa Cleaning","60 min",R.drawable.sofa_cleaning));
-        list.add(new SectionViewAllServiceListModel("3 Sofa Seat Cleaning","180","40","Sofa Cleaning","60 min",R.drawable.sofa_cleaning));
-        list.add(new SectionViewAllServiceListModel("4 Sofa Seat Cleaning","190","40","Sofa Cleaning","60 min",R.drawable.sofa_cleaning));
-        list.add(new SectionViewAllServiceListModel("5 Sofa Seat Cleaning","200","40","Sofa Cleaning","60 min",R.drawable.sofa_cleaning));
+        list.add(new SectionViewAllServiceListModel("2 Sofa Seat Cleaning","120","40","Sofa Cleaning","60 min",0,0,R.drawable.sofa_cleaning));
+        list.add(new SectionViewAllServiceListModel("3 Sofa Seat Cleaning","180","40","Sofa Cleaning","60 min",0,0,R.drawable.sofa_cleaning));
+        list.add(new SectionViewAllServiceListModel("4 Sofa Seat Cleaning","190","40","Sofa Cleaning","60 min",0,0,R.drawable.sofa_cleaning));
+        list.add(new SectionViewAllServiceListModel("5 Sofa Seat Cleaning","200","40","Sofa Cleaning","60 min",0,0,R.drawable.sofa_cleaning));
     }
 
     @Override
-    public void onClick(int position) {
+    public void onClick(String position) {
 
     }
 }

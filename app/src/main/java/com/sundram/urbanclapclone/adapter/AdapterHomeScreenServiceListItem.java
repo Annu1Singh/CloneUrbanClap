@@ -31,7 +31,7 @@ public class AdapterHomeScreenServiceListItem extends RecyclerView.Adapter<Adapt
     @NonNull
     @Override
     public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(mContext).inflate(R.layout.single_service_element_home_screen, parent, false);
+        View v = LayoutInflater.from(mContext).inflate(R.layout.new_single_service_element_home_screen, parent, false);
 
         return new ItemViewHolder(v,onServiceItemClick);
     }

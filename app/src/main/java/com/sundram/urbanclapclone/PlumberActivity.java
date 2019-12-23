@@ -79,6 +79,7 @@ public class PlumberActivity extends AppCompatActivity implements View.OnClickLi
             case R.id.login_button_text:
                 Intent jump = new Intent(PlumberActivity.this, ViewAllPlumber.class);
                 startActivity(jump);
+                finish();
                 break;
         }
     }
@@ -94,35 +95,31 @@ public class PlumberActivity extends AppCompatActivity implements View.OnClickLi
     public void onClick(int position) {
         switch (position) {
             case 0:
-                Intent intent = new Intent(this, ViewAllPlumber.class);
-                intent.putExtra("TabNumber", "0");
-                startActivity(intent);
+                jumpToIntent("0");
                 break;
             case 1:
-                Intent intent1 = new Intent(this, ViewAllPlumber.class);
-                intent1.putExtra("TabNumber", "1");
-                startActivity(intent1);
+                jumpToIntent("1");
                 break;
             case 2:
-                Intent intent2 = new Intent(this, ViewAllPlumber.class);
-                intent2.putExtra("TabNumber", "2");
-                startActivity(intent2);
+                jumpToIntent("2");
                 break;
             case 3:
-                Intent intent3 = new Intent(this, ViewAllPlumber.class);
-                intent3.putExtra("TabNumber", "3");
-                startActivity(intent3);
+                jumpToIntent("3");
                 break;
             case 4:
-                Intent intent4 = new Intent(this, ViewAllPlumber.class);
-                intent4.putExtra("TabNumber", 4);
-                startActivity(intent4);
+                jumpToIntent("4");
                 break;
             case 5:
-                Intent intent5 = new Intent(this, ViewAllPlumber.class);
-                intent5.putExtra("TabNumber", "5");
-                startActivity(intent5);
+                jumpToIntent("5");
                 break;
         }
+    }
+
+    public Intent jumpToIntent(String tabNumber) {
+        Intent jump = new Intent(PlumberActivity.this, ViewAllPlumber.class);
+        jump.putExtra("TabNumber", tabNumber);
+        startActivity(jump);
+        finish();
+        return jump;
     }
 }

@@ -38,9 +38,9 @@
 
                 <include layout="@layout/what_users_saying_section" />
 
-                <include layout="@layout/review_sction_layout"/>
-                <include layout="@layout/review_sction_layout"/>
-                <include layout="@layout/review_sction_layout"/>
+<!--                <include layout="@layout/review_sction_layout"/>-->
+<!--                <include layout="@layout/review_sction_layout"/>-->
+<!--                <include layout="@layout/review_sction_layout"/>-->
             </LinearLayout>
 
         </androidx.core.widget.NestedScrollView>

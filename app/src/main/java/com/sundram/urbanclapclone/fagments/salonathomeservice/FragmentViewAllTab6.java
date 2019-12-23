@@ -49,15 +49,17 @@ public class FragmentViewAllTab6 extends Fragment implements SectionViewAllServi
     }
 
     public void setDataToRecycler(){
-        list.add(new SectionViewAllServiceListModel("Service Name","120","40","Hair","60 min",R.drawable.hair));
-        list.add(new SectionViewAllServiceListModel("Service Name","180","40","Hair","60 min",R.drawable.hair));
-        list.add(new SectionViewAllServiceListModel("Service Name","190","40","Hair","60 min",R.drawable.hair));
-        list.add(new SectionViewAllServiceListModel("Service Name","200","40","Hair","60 min",R.drawable.hair));
-        list.add(new SectionViewAllServiceListModel("Service Name","300","40","Hair","60 min",R.drawable.hair));
-        list.add(new SectionViewAllServiceListModel("Service Name","100","40","Hair","60 min",R.drawable.hair));
+        list.add(new SectionViewAllServiceListModel("L'Oreal Hair Spa Small Length Treatment","1499","500","Hair Care","45 min",0,0,R.drawable.hair));
+        list.add(new SectionViewAllServiceListModel("L'Oreal Hair Spa Medium Length Treatment","749","151","Hair Care","45 min",0,0,R.drawable.hair));
+        list.add(new SectionViewAllServiceListModel("L'Oreal Hair Spa Large Length Treatment","899","200","Hair Care","45 min",0,0,R.drawable.hair));
+        list.add(new SectionViewAllServiceListModel("Hair Colouring for Small Length","200","40","Hair Care","60 min",0,0,R.drawable.hair));
+        list.add(new SectionViewAllServiceListModel("Hair Colouring for Medium Length","200","40","Hair Care","60 min",0,0,R.drawable.hair));
+        list.add(new SectionViewAllServiceListModel("Hair Colouring for Large Length","200","40","Hair Care","60 min",0,0,R.drawable.hair));
+        list.add(new SectionViewAllServiceListModel("Hair Cut Simple","400","40","Hair Care","60 min",0,0,R.drawable.hair));
+        list.add(new SectionViewAllServiceListModel("Hair Cut Advance","400","40","Hair Care","60 min",0,0,R.drawable.hair));
     }
     @Override
-    public void onClick(int position) {
+    public void onClick(String position) {
 
     }
 }

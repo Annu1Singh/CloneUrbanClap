@@ -187,6 +187,7 @@ public class AcServiceAndRepair extends AppCompatActivity implements View.OnClic
         Intent jump = new Intent(AcServiceAndRepair.this, ViewAllAcServices.class);
         jump.putExtra("TabNumber", tabNumber);
         startActivity(jump);
+        finish();
         return jump;
     }
 }

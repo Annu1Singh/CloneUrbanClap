@@ -17,7 +17,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".GoogleMapWithSearchView"></activity>
+        <activity android:name=".ImageViewActivity"></activity>
+        <activity
+            android:name=".GoogleMapWithSearchView"
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -129,9 +132,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/collapsabletoolbar" />
         <activity
-            android:name=".LocationSelectingActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".GyserServiceAndRepair"
             android:screenOrientation="portrait" />
         <activity
@@ -171,9 +171,6 @@
         <activity
             android:name=".About"
             android:parentActivityName=".DashBoard"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".HomeScreenActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".DashBoard"

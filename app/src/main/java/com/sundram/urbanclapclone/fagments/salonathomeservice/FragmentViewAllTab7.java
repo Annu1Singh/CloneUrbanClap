@@ -50,15 +50,15 @@ public class FragmentViewAllTab7 extends Fragment implements SectionViewAllServi
     }
 
     public void setDataToRecycler(){
-        list.add(new SectionViewAllServiceListModel("Service Name","120","40","Threading","60 min",R.drawable.threading));
-        list.add(new SectionViewAllServiceListModel("Service Name","180","40","Threading","60 min",R.drawable.threading));
-        list.add(new SectionViewAllServiceListModel("Service Name","190","40","Threading","60 min",R.drawable.threading));
-        list.add(new SectionViewAllServiceListModel("Service Name","200","40","Threading","60 min",R.drawable.threading));
-        list.add(new SectionViewAllServiceListModel("Service Name","300","40","Threading","60 min",R.drawable.threading));
-        list.add(new SectionViewAllServiceListModel("Service Name","100","40","Threading","60 min",R.drawable.threading));
+        list.add(new SectionViewAllServiceListModel("Lower Lips Threading","120","40","Threading","60 min",R.drawable.threading));
+        list.add(new SectionViewAllServiceListModel("Upper Lips Threading","180","40","Threading","60 min",R.drawable.threading));
+        list.add(new SectionViewAllServiceListModel("Eye Brow Threading","190","40","Threading","60 min",R.drawable.threading));
+        list.add(new SectionViewAllServiceListModel("Chin Threading","200","40","Threading","60 min",R.drawable.threading));
+        list.add(new SectionViewAllServiceListModel("Fore Head Threading","300","40","Threading","60 min",R.drawable.threading));
+        list.add(new SectionViewAllServiceListModel("Full Face Threading","100","40","Threading","60 min",R.drawable.threading));
     }
     @Override
-    public void onClick(int position) {
+    public void onClick(String position) {
 
     }
 }

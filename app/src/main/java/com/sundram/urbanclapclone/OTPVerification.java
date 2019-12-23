@@ -61,7 +61,7 @@ public class OTPVerification extends AppCompatActivity implements View.OnClickLi
                 finish();
                 viewDialog.hideDialog();
             }
-        }, 2000);
+        }, 1000);
     }
 
     @Override

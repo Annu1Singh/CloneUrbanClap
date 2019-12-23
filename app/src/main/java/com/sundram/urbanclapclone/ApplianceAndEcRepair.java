@@ -52,7 +52,6 @@ public class ApplianceAndEcRepair extends AppCompatActivity implements View.OnCl
         Intent back = new Intent(ApplianceAndEcRepair.this, DashBoard.class);
         startActivity(back);
         finish();
-        super.onBackPressed();
     }
 
     @Override

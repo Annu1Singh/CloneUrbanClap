@@ -48,15 +48,19 @@ public class FragmentViewAllTab4 extends Fragment implements SectionViewAllServi
         return tab_four_fragment;
     }
     public void setDataToRecycler(){
-        list.add(new SectionViewAllServiceListModel("Service Name","120","40","Facial","60 min",R.drawable.facial));
-        list.add(new SectionViewAllServiceListModel("Service Name","180","40","Bleach","60 min",R.drawable.facial));
-        list.add(new SectionViewAllServiceListModel("Service Name","190","40","Detan","60 min",R.drawable.facial));
-        list.add(new SectionViewAllServiceListModel("Service Name","200","40","Facial","60 min",R.drawable.facial));
-        list.add(new SectionViewAllServiceListModel("Service Name","300","40","Bleach","60 min",R.drawable.facial));
-        list.add(new SectionViewAllServiceListModel("Service Name","100","40","Detan","60 min",R.drawable.facial));
+        list.add(new SectionViewAllServiceListModel("Detan Full Face", "120", "40", "Wax", "60 min",0,0, R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("O3+ Full Face", "120", "40", "Wax", "60 min",0,0, R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Deatn Full-arm", "180", "40", "Wax", "60 min",0,0, R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Detan Half-arm", "190", "40", "Wax", "60 min",0,0, R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Detan Underarms", "200", "40", "Wax", "60 min",0,0, R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Detan Chest", "100", "40", "Wax", "60 min",0,0, R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Detan Half-leg(lower)", "100", "40", "Wax", "60 min",0,0, R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Dertan Half-leg(upper)", "100", "40", "Wax", "60 min",0,0, R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Detan ull-leg", "100", "40", "Wax", "60 min",0,0, R.drawable.waxing));
+        list.add(new SectionViewAllServiceListModel("Detan Stomach", "100", "40", "Wax", "60 min",0,0, R.drawable.waxing));
     }
     @Override
-    public void onClick(int position) {
+    public void onClick(String position) {
         switch (position){
 
         }

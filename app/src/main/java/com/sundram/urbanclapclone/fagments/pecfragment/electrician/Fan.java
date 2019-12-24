@@ -54,18 +54,23 @@ public class Fan extends Fragment implements PECAdapter.OnServiceItemClick {
     }
 
     public void setDataToRecycler() {
-        mList.add(new CarpenterDataModel("Ceiling Fan Regulator Replacement", "1254", "20"));
-        mList.add(new CarpenterDataModel("Decorative Ceiling Fan Installation", "1254", "20"));
-        mList.add(new CarpenterDataModel("Fan Installation", "1254", "20"));
-        mList.add(new CarpenterDataModel("Fan Repairing(Speed Issue)", "1254", "20"));
-        mList.add(new CarpenterDataModel("Fan Repairing(Noise Issue)", "1254", "20"));
-        mList.add(new CarpenterDataModel("Fan Uninstallation", "1254", "20"));
-        mList.add(new CarpenterDataModel("Fan Replacemnet", "1254", "20"));
+        mList.add(new CarpenterDataModel("Ceiling Fan Regulator Replacement","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Decorative Ceiling Fan Installation","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Fan Installation","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Fan Repairing(Speed Issue)","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Fan Repairing(Noise Issue)","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Fan Uninstallation","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Fan Replacemnet","", "1254", "20",0));
         adapter.notifyDataSetChanged();
     }
 
     @Override
     public void OnClick(int position) {
+
+    }
+
+    @Override
+    public void OnClick(String value) {
 
     }
 }

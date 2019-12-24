@@ -52,13 +52,18 @@ public class DoorBell extends Fragment implements PECAdapter.OnServiceItemClick 
     }
 
     public void setDataToRecycler() {
-        mList.add(new CarpenterDataModel("Door bell Installation", "1254", "20"));
-        mList.add(new CarpenterDataModel("Door Bell Uninstallation)", "1254", "20"));
+        mList.add(new CarpenterDataModel("Door bell Installation","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Door Bell Uninstallation)","", "1254", "20",0));
         adapter.notifyDataSetChanged();
     }
 
     @Override
     public void OnClick(int position) {
+
+    }
+
+    @Override
+    public void OnClick(String value) {
 
     }
 }

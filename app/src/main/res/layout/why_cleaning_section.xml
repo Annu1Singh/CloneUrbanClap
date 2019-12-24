@@ -20,7 +20,7 @@
             android:id="@+id/heading_why"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Why RC cleaning service ?"
+            android:text="Why App Name cleaning service ?"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
             android:textFontWeight="20" />
 

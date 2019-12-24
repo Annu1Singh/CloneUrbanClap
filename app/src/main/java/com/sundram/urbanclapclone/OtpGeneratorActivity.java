@@ -26,11 +26,12 @@ public class OtpGeneratorActivity extends AppCompatActivity implements View.OnCl
     TextView otpDenerator_tv, tv_skip_now, client_details;
     static TextView tv_check_connection;
     private BroadcastReceiver mNetworkReceiver;
-    @Override
-    protected void onStart() {
-        super.onStart();
-        overridePendingTransition(R.anim.fadein,R.anim.fadeout);
-    }
+
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        overridePendingTransition(R.anim.fadein,R.anim.fadeout);
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

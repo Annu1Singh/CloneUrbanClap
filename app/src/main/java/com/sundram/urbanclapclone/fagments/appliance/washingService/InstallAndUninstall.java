@@ -52,15 +52,20 @@ public class InstallAndUninstall extends Fragment implements PECAdapter.OnServic
         recyclerView.setAdapter(adapter);
     }
     public void setDataToRecycler() {
-        mList.add(new CarpenterDataModel("Installing of Front Load type Machine", "1254", "102"));
-        mList.add(new CarpenterDataModel("Uninstalling of Front Load type Machine", "1254", "201"));
-        mList.add(new CarpenterDataModel("Installing of Top Load type machine", "1254", "301"));
-        mList.add(new CarpenterDataModel("Uninstalling of Top Load type machine", "1254", "302"));
+        mList.add(new CarpenterDataModel("Installing of Front Load type Machine", "","1254", "102",0));
+        mList.add(new CarpenterDataModel("Uninstalling of Front Load type Machine", "","1254", "201",0));
+        mList.add(new CarpenterDataModel("Installing of Top Load type machine","" ,"1254", "301",0));
+        mList.add(new CarpenterDataModel("Uninstalling of Top Load type machine","", "1254", "302",0));
         adapter.notifyDataSetChanged();
     }
 
     @Override
     public void OnClick(int position) {
+
+    }
+
+    @Override
+    public void OnClick(String value) {
 
     }
 }

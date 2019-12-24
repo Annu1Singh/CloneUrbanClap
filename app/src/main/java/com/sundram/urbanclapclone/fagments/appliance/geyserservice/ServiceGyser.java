@@ -53,14 +53,19 @@ public class ServiceGyser extends Fragment implements PECAdapter.OnServiceItemCl
     }
 
     public void setDataToRecycler() {
-        mList.add(new CarpenterDataModel("Small(Less than 15 Litre)", "1254", "100"));
-        mList.add(new CarpenterDataModel("Medium(15-25 Litre)", "1254", "120"));
-        mList.add(new CarpenterDataModel("Unknown Size", "1254", "130"));
+        mList.add(new CarpenterDataModel("Small(Less than 15 Litre)","", "1254", "100",0));
+        mList.add(new CarpenterDataModel("Medium(15-25 Litre)","", "1254", "120",0));
+        mList.add(new CarpenterDataModel("Unknown Size","", "1254", "130",0));
         adapter.notifyDataSetChanged();
     }
 
     @Override
     public void OnClick(int position) {
+
+    }
+
+    @Override
+    public void OnClick(String value) {
 
     }
 }

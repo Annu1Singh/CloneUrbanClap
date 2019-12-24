@@ -54,20 +54,25 @@ public class Toilet extends Fragment implements PECAdapter.OnServiceItemClick {
     }
 
     public void setDataToRecycler() {
-        mList.add(new CarpenterDataModel("Jet Spray Installation and Repair", "1254", "20"));
-        mList.add(new CarpenterDataModel("Hand Held Jet Spray", "1254", "20"));
-        mList.add(new CarpenterDataModel("Toilet Seat Cover Replacement", "1254", "20"));
-        mList.add(new CarpenterDataModel("Standard Flush Tank Repair", "1254", "20"));
-        mList.add(new CarpenterDataModel("Concealed Flush Tank Repair", "1254", "20"));
-        mList.add(new CarpenterDataModel("Flush Tank Replacement", "1254", "20"));
-        mList.add(new CarpenterDataModel("Floor Mounted Western Toilet Installation", "1254", "20"));
-        mList.add(new CarpenterDataModel("Floor Mounted Western Toilet Replacement", "1254", "20"));
-        mList.add(new CarpenterDataModel("Indian Toilet Installation", "1254", "20"));
-        mList.add(new CarpenterDataModel("Indian Toilet Replacement", "1254", "20"));
+        mList.add(new CarpenterDataModel("Jet Spray Installation and Repair","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Hand Held Jet Spray","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Toilet Seat Cover Replacement","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Standard Flush Tank Repair","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Concealed Flush Tank Repair","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Flush Tank Replacement","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Floor Mounted Western Toilet Installation","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Floor Mounted Western Toilet Replacement","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Indian Toilet Installation", "1254","", "20",0));
+        mList.add(new CarpenterDataModel("Indian Toilet Replacement", "1254","", "20",0));
         adapter.notifyDataSetChanged();
     }
     @Override
     public void OnClick(int position) {
+
+    }
+
+    @Override
+    public void OnClick(String value) {
 
     }
 }

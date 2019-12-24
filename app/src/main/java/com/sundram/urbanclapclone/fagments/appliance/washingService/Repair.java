@@ -52,14 +52,19 @@ public class Repair extends Fragment implements PECAdapter.OnServiceItemClick {
         recyclerView.setAdapter(adapter);
     }
     public void setDataToRecycler() {
-        mList.add(new CarpenterDataModel("Repairing of Front Load type Machine", "1254", "99"));
-        mList.add(new CarpenterDataModel("Repairing of Top Load type machine", "1254", "99"));
-        mList.add(new CarpenterDataModel("Repairing of Not Know machine", "1254", "99"));
+        mList.add(new CarpenterDataModel("Repairing of Front Load type Machine","", "1254", "99",0));
+        mList.add(new CarpenterDataModel("Repairing of Top Load type machine","", "1254", "99",0));
+        mList.add(new CarpenterDataModel("Repairing of Not Know machine","", "1254", "99",0));
         adapter.notifyDataSetChanged();
     }
 
     @Override
     public void OnClick(int position) {
+
+    }
+
+    @Override
+    public void OnClick(String value) {
 
     }
 }

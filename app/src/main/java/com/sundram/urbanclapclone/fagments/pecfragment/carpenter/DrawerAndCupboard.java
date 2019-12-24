@@ -52,20 +52,25 @@ public class DrawerAndCupboard extends Fragment implements PECAdapter.OnServiceI
     }
 
     public void setDataToRecycler() {
-        mList.add(new CarpenterDataModel("Cabinet Hinge Installation(upto 2 hinges)", "1254", "20"));
-        mList.add(new CarpenterDataModel("Channel Replacement", "1254", "20"));
-        mList.add(new CarpenterDataModel("Handel Replacement", "1254", "20"));
-        mList.add(new CarpenterDataModel("Lock Installation", "1254", "20"));
-        mList.add(new CarpenterDataModel("Lock replacement", "1254", "20"));
-        mList.add(new CarpenterDataModel("Locak Repair", "1254", "20"));
-        mList.add(new CarpenterDataModel("Shelf Installation", "1254", "20"));
-        mList.add(new CarpenterDataModel("Sliding Door Repair", "1254", "20"));
-        mList.add(new CarpenterDataModel("Channel Repair", "1254", "20"));
+        mList.add(new CarpenterDataModel("Cabinet Hinge Installation(upto 2 hinges)","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Channel Replacement","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Handel Replacement","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Lock Installation","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Lock replacement","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Locak Repair","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Shelf Installation","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Sliding Door Repair","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Channel Repair","", "1254", "20",0));
         adapter.notifyDataSetChanged();
     }
 
     @Override
     public void OnClick(int position) {
+
+    }
+
+    @Override
+    public void OnClick(String value) {
 
     }
 }

@@ -55,12 +55,17 @@ public class RoomHeater extends Fragment implements PECAdapter.OnServiceItemClic
     }
 
     public void setDataToRecycler() {
-        mList.add(new CarpenterDataModel("Room Heater Repair", "1254", "20"));
+        mList.add(new CarpenterDataModel("Room Heater Repair","", "1254", "20",0));
         adapter.notifyDataSetChanged();
     }
 
     @Override
     public void OnClick(int position) {
+
+    }
+
+    @Override
+    public void OnClick(String value) {
 
     }
 }

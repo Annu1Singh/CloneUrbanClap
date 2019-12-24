@@ -52,12 +52,17 @@ public class Repair extends Fragment implements PECAdapter.OnServiceItemClick {
         recyclerView.setAdapter(adapter);
     }
     public void setDataToRecycler() {
-        mList.add(new CarpenterDataModel("RO Repair", "1254", "200"));
+        mList.add(new CarpenterDataModel("RO Repair","", "1254", "200",0));
         adapter.notifyDataSetChanged();
     }
 
     @Override
     public void OnClick(int position) {
+
+    }
+
+    @Override
+    public void OnClick(String value) {
 
     }
 }

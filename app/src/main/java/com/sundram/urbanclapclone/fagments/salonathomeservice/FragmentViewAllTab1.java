@@ -52,7 +52,9 @@ public class FragmentViewAllTab1 extends Fragment implements View.OnClickListene
         fragment_tab_one_recycler = tab_one_fragment.findViewById(R.id.fragment_tab_one_recycler);
         list = new ArrayList<>();
         fragment_tab_one_recycler.setLayoutManager(new LinearLayoutManager(getContext()));
+
         adapterList = new SectionViewAllServiceListAdapter(getContext(), list, this);
+
         fragment_tab_one_recycler.setAdapter(adapterList);
         setDataToRecycler();
         return tab_one_fragment;
@@ -72,7 +74,7 @@ public class FragmentViewAllTab1 extends Fragment implements View.OnClickListene
 
     @Override
     public void onClick(String position) {
-      //  Toast.makeText(getActivity()," "+position,Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getActivity()," "+position,Toast.LENGTH_SHORT).show();
     }
 
     @Override

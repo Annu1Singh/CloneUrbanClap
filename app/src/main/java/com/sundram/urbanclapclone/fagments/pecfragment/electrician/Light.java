@@ -55,16 +55,21 @@ public class Light extends Fragment implements PECAdapter.OnServiceItemClick {
     }
 
     public void setDataToRecycler() {
-        mList.add(new CarpenterDataModel("Ceiling Lights Installation", "1254", "20"));
-        mList.add(new CarpenterDataModel("Ceiling Lights Uninstallation", "1254", "20"));
-        mList.add(new CarpenterDataModel("Decorative Lights Installation", "1254", "20"));
-        mList.add(new CarpenterDataModel("CFL Tubes Replacement", "1254", "20"));
-        mList.add(new CarpenterDataModel("Lamp or Tubelinght", "1254", "20"));
+        mList.add(new CarpenterDataModel("Ceiling Lights Installation","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Ceiling Lights Uninstallation","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Decorative Lights Installation","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("CFL Tubes Replacement","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Lamp or Tubelinght","", "1254", "20",0));
         adapter.notifyDataSetChanged();
     }
 
     @Override
     public void OnClick(int position) {
+
+    }
+
+    @Override
+    public void OnClick(String value) {
 
     }
 }

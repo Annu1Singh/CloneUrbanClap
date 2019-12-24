@@ -53,12 +53,17 @@ public class GeyserRepair extends Fragment implements PECAdapter.OnServiceItemCl
     }
 
     public void setDataToRecycler() {
-        mList.add(new CarpenterDataModel("Geyser Repair", "1254", "200"));
+        mList.add(new CarpenterDataModel("Geyser Repair","", "1254", "200",0));
         adapter.notifyDataSetChanged();
     }
 
     @Override
     public void OnClick(int position) {
+
+    }
+
+    @Override
+    public void OnClick(String value) {
 
     }
 }

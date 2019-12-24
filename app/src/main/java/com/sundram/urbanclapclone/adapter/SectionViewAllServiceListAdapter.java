@@ -28,8 +28,13 @@ public class SectionViewAllServiceListAdapter extends RecyclerView.Adapter<Secti
     private Context mContext;
     private ArrayList<SectionViewAllServiceListModel> mList;
     private OnServiceItemClick onServiceItemClick;
-    private ViewAllServiceActivity viewAllServiceActivity = new ViewAllServiceActivity();
+    // private ViewAllServiceActivity viewAllServiceActivity = new ViewAllServiceActivity();
     int x = 0;
+
+    public SectionViewAllServiceListAdapter(Context mContext, OnServiceItemClick onServiceItemClick) {
+        this.mContext = mContext;
+        this.onServiceItemClick = onServiceItemClick;
+    }
 
     public SectionViewAllServiceListAdapter(Context mContext, ArrayList<SectionViewAllServiceListModel> mList, OnServiceItemClick onServiceItemClick) {
         this.mContext = mContext;
@@ -114,19 +119,23 @@ public class SectionViewAllServiceListAdapter extends RecyclerView.Adapter<Secti
 
         public void increment() {
             int currentNos = Integer.parseInt(add_txt_tvs.getText().toString());
-            add_txt_tvs.setText(String.valueOf(++currentNos));
-            onServiceItemClick.onClick(add_txt_tvs.getText().toString());
+            if (currentNos < 5) {
+                add_txt_tvs.setText(String.valueOf(++currentNos));
+                onServiceItemClick.onClick(add_txt_tvs.getText().toString());
+            }
         }
 
         public void decrement() {
             int currentNos = Integer.parseInt(add_txt_tvs.getText().toString());
-            add_txt_tvs.setText(String.valueOf(--currentNos));
-            onServiceItemClick.onClick(add_txt_tvs.getText().toString());
+            if (currentNos != 0) {
+                add_txt_tvs.setText(String.valueOf(--currentNos));
+                onServiceItemClick.onClick(add_txt_tvs.getText().toString());
+            }
         }
     }
 
     public interface OnServiceItemClick {
-         void onClick(String position);
+        void onClick(String position);
     }
 
 

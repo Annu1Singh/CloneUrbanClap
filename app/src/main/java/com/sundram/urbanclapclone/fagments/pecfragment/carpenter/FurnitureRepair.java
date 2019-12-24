@@ -55,13 +55,18 @@ public class FurnitureRepair extends Fragment implements PECAdapter.OnServiceIte
     }
 
     public void setDataToRecycler() {
-        mList.add(new CarpenterDataModel("Furniture Leg Cap Installation(Set of 2)", "1254", "20"));
-        mList.add(new CarpenterDataModel("Tabel or Chair Wheels Fitting(2 pair)", "1254", "20"));
+        mList.add(new CarpenterDataModel("Furniture Leg Cap Installation(Set of 2)", "","1254", "20",0));
+        mList.add(new CarpenterDataModel("Tabel or Chair Wheels Fitting(2 pair)","", "1254", "20",0));
         adapter.notifyDataSetChanged();
     }
 
     @Override
     public void OnClick(int position) {
+
+    }
+
+    @Override
+    public void OnClick(String value) {
 
     }
 }

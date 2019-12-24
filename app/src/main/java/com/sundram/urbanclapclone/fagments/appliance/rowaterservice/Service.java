@@ -52,13 +52,18 @@ public class Service extends Fragment implements PECAdapter.OnServiceItemClick {
         recyclerView.setAdapter(adapter);
     }
     public void setDataToRecycler() {
-        mList.add(new CarpenterDataModel("RO Service", "1254", ""));
-        mList.add(new CarpenterDataModel("RO Service With Filter Chnage", "1254", "300"));
+        mList.add(new CarpenterDataModel("RO Service","", "1254", "",0));
+        mList.add(new CarpenterDataModel("RO Service With Filter Chnage","", "1254", "300",0));
         adapter.notifyDataSetChanged();
     }
 
     @Override
     public void OnClick(int position) {
+
+    }
+
+    @Override
+    public void OnClick(String value) {
 
     }
 }

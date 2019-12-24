@@ -54,17 +54,22 @@ public class ThreeBHK extends Fragment implements PECAdapter.OnServiceItemClick 
     }
 
     public void setDataToRecycler() {
-        mList.add(new CarpenterDataModel("Cockroach", "1254", "20"));
-        mList.add(new CarpenterDataModel("Cockroach & Ant Control", "1254", "20"));
-        mList.add(new CarpenterDataModel("Ant Control", "1254", "20"));
-        mList.add(new CarpenterDataModel("Termite Control", "1254", "20"));
-        mList.add(new CarpenterDataModel("Bed Bug Control", "1254", "20"));
-        mList.add(new CarpenterDataModel("Mosquito Control", "1254", "20"));
+        mList.add(new CarpenterDataModel("Cockroach","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Cockroach & Ant Control","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Ant Control","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Termite Control","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Bed Bug Control","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Mosquito Control","", "1254", "20",0));
         adapter.notifyDataSetChanged();
     }
 
     @Override
     public void OnClick(int position) {
+
+    }
+
+    @Override
+    public void OnClick(String value) {
 
     }
 }

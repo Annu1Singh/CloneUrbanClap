@@ -53,15 +53,20 @@ public class FourBHK extends Fragment implements PECAdapter.OnServiceItemClick {
     }
 
     public void setDataToRecycler() {
-        mList.add(new CarpenterDataModel("Full Home Deep Cleaning", "4499", "150"));
-        mList.add(new CarpenterDataModel("Full Deep Cleaning & Sofa Set Shampoo", "1254", "20"));
-        mList.add(new CarpenterDataModel("Full Deep Cleaning & Ant Control", "1254", "20"));
-        mList.add(new CarpenterDataModel("Full Deep Cleaning & Mosquito Control", "1254", "20"));
+        mList.add(new CarpenterDataModel("Full Home Deep Cleaning","", "4499", "150",0));
+        mList.add(new CarpenterDataModel("Full Deep Cleaning & Sofa Set Shampoo","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Full Deep Cleaning & Ant Control","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Full Deep Cleaning & Mosquito Control","", "1254", "20",0));
         adapter.notifyDataSetChanged();
     }
 
     @Override
     public void OnClick(int position) {
+
+    }
+
+    @Override
+    public void OnClick(String value) {
 
     }
 }

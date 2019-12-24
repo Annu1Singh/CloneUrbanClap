@@ -52,14 +52,19 @@ public class InstallAndUninstall extends Fragment implements PECAdapter.OnServic
         recyclerView.setAdapter(adapter);
     }
     public void setDataToRecycler() {
-        mList.add(new CarpenterDataModel("RO Install", "1254", "200"));
-        mList.add(new CarpenterDataModel("RO Uninstall", "1254", "100"));
-        mList.add(new CarpenterDataModel("RO Install and Uninstall", "1254", "500"));
+        mList.add(new CarpenterDataModel("RO Install","", "1254", "200",0));
+        mList.add(new CarpenterDataModel("RO Uninstall","", "1254", "100",0));
+        mList.add(new CarpenterDataModel("RO Install and Uninstall","", "1254", "500",0));
         adapter.notifyDataSetChanged();
     }
 
     @Override
     public void OnClick(int position) {
+
+    }
+
+    @Override
+    public void OnClick(String value) {
 
     }
 }

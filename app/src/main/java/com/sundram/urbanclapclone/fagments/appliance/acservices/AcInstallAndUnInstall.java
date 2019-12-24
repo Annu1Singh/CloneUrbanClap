@@ -53,15 +53,20 @@ public class AcInstallAndUnInstall extends Fragment implements PECAdapter.OnServ
     }
 
     public void setDataToRecycler() {
-        mList.add(new CarpenterDataModel("Window AC Installation", "1254", "120"));
-        mList.add(new CarpenterDataModel("Window AC Uninstallation", "1254", "201"));
-        mList.add(new CarpenterDataModel("Split AC Installation", "1254", "200"));
-        mList.add(new CarpenterDataModel("Split AC Uninstallation", "1254", "220"));
+        mList.add(new CarpenterDataModel("Window AC Installation","", "1254", "120",0));
+        mList.add(new CarpenterDataModel("Window AC Uninstallation","", "1254", "201",0));
+        mList.add(new CarpenterDataModel("Split AC Installation","", "1254", "200",0));
+        mList.add(new CarpenterDataModel("Split AC Uninstallation","", "1254", "220",0));
         adapter.notifyDataSetChanged();
     }
 
     @Override
     public void OnClick(int position) {
+
+    }
+
+    @Override
+    public void OnClick(String value) {
 
     }
 }

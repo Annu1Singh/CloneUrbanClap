@@ -54,13 +54,18 @@ public class BathFitting extends Fragment implements PECAdapter.OnServiceItemCli
     }
 
     public void setDataToRecycler() {
-        mList.add(new CarpenterDataModel("Bath Accessory Installation", "1254", "20"));
-        mList.add(new CarpenterDataModel("Shower Installation - Wall Mounted or Handheld", "1254", "20"));
-        mList.add(new CarpenterDataModel("Shower Installation - Ceiling Mounted", "1254", "20"));
+        mList.add(new CarpenterDataModel("Bath Accessory Installation","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Shower Installation - Wall Mounted or Handheld","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Shower Installation - Ceiling Mounted","", "1254", "20",0));
         adapter.notifyDataSetChanged();
     }
     @Override
     public void OnClick(int position) {
+
+    }
+
+    @Override
+    public void OnClick(String value) {
 
     }
 }

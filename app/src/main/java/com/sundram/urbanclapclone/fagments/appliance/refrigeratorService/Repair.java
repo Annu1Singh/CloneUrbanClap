@@ -52,14 +52,19 @@ public class Repair extends Fragment implements PECAdapter.OnServiceItemClick {
         recyclerView.setAdapter(adapter);
     }
     public void setDataToRecycler() {
-        mList.add(new CarpenterDataModel("Refrigerator Repair(Colling Problme)", "1254", "200"));
-        mList.add(new CarpenterDataModel("Refrigerator Repair(Water leakage)", "1254", "100"));
-        mList.add(new CarpenterDataModel("Refrigerator Repair(ice Formation)", "1254", "300"));
+        mList.add(new CarpenterDataModel("Refrigerator Repair(Colling Problme)","", "1254", "200",0));
+        mList.add(new CarpenterDataModel("Refrigerator Repair(Water leakage)","", "1254", "100",0));
+        mList.add(new CarpenterDataModel("Refrigerator Repair(ice Formation)","", "1254", "300",0));
         adapter.notifyDataSetChanged();
     }
 
     @Override
     public void OnClick(int position) {
+
+    }
+
+    @Override
+    public void OnClick(String value) {
 
     }
 }

@@ -53,25 +53,30 @@ public class Door extends Fragment implements PECAdapter.OnServiceItemClick {
     }
 
     public void setDataToRecycler() {
-        mList.add(new CarpenterDataModel("Accessory Installation", "1254", "20"));
-        mList.add(new CarpenterDataModel("Door Latch(Aldrop Installation)", "1254", "20"));
-        mList.add(new CarpenterDataModel("Hinge Installation(upto 4 hinges)", "1254", "20"));
-        mList.add(new CarpenterDataModel("Hinge Installation(Including door dismantling)", "1254", "20"));
-        mList.add(new CarpenterDataModel("Lock Installation", "1254", "20"));
-        mList.add(new CarpenterDataModel("Lock Replacement", "1254", "20"));
-        mList.add(new CarpenterDataModel("Lock Repair", "1254", "20"));
-        mList.add(new CarpenterDataModel("Electronic / Digital Lock Installation", "1254", "20"));
-        mList.add(new CarpenterDataModel("Mesh Grill Door Installation", "1254", "20"));
-        mList.add(new CarpenterDataModel("Mesh Grill Door(Mesh Replacement)", "1254", "20"));
-        mList.add(new CarpenterDataModel("Overhead Door Closer Installation", "1254", "20"));
-        mList.add(new CarpenterDataModel("Overhead Door Closer Uninstallation", "1254", "20"));
-        mList.add(new CarpenterDataModel("Sliding Door Repair", "1254", "20"));
-        mList.add(new CarpenterDataModel("Surface Mounted Door Closer Installation", "1254", "20"));
+        mList.add(new CarpenterDataModel("Accessory Installation","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Door Latch(Aldrop Installation)","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Hinge Installation(upto 4 hinges)","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Hinge Installation(Including door dismantling)","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Lock Installation","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Lock Replacement","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Lock Repair","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Electronic / Digital Lock Installation","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Mesh Grill Door Installation","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Mesh Grill Door(Mesh Replacement)", "","1254", "20",0));
+        mList.add(new CarpenterDataModel("Overhead Door Closer Installation","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Overhead Door Closer Uninstallation","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Sliding Door Repair", "1254","", "20",0));
+        mList.add(new CarpenterDataModel("Surface Mounted Door Closer Installation","", "1254", "20",0));
         adapter.notifyDataSetChanged();
     }
 
     @Override
     public void OnClick(int position) {
+
+    }
+
+    @Override
+    public void OnClick(String value) {
 
     }
 }

@@ -54,14 +54,19 @@ public class Blockage extends Fragment implements PECAdapter.OnServiceItemClick 
     }
 
     public void setDataToRecycler() {
-        mList.add(new CarpenterDataModel("Balcony Pipe", "1254", "20"));
-        mList.add(new CarpenterDataModel("Drainage Pipe(Overgroung)", "1254", "20"));
-        mList.add(new CarpenterDataModel("Drainage Pipe(Undergroung)", "1254", "20"));
-        mList.add(new CarpenterDataModel("Toilet Pot", "1254", "20"));
+        mList.add(new CarpenterDataModel("Balcony Pipe","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Drainage Pipe(Overgroung)","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Drainage Pipe(Undergroung)","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Toilet Pot","", "1254", "20",0));
         adapter.notifyDataSetChanged();
     }
     @Override
     public void OnClick(int position) {
+
+    }
+
+    @Override
+    public void OnClick(String value) {
 
     }
 }

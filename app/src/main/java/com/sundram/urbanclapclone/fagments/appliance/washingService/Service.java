@@ -52,14 +52,19 @@ public class Service extends Fragment implements PECAdapter.OnServiceItemClick {
         recyclerView.setAdapter(adapter);
     }
     public void setDataToRecycler() {
-        mList.add(new CarpenterDataModel("Service of Front Load type Machine", "1254", "99"));
-        mList.add(new CarpenterDataModel("Service of Top Load type machine", "1254", "199"));
-        mList.add(new CarpenterDataModel("Service of Not Know machine", "1254", "199"));
+        mList.add(new CarpenterDataModel("Service of Front Load type Machine", "","1254", "99",0));
+        mList.add(new CarpenterDataModel("Service of Top Load type machine","", "1254", "199",0));
+        mList.add(new CarpenterDataModel("Service of Not Know machine","", "1254", "199",0));
         adapter.notifyDataSetChanged();
     }
 
     @Override
     public void OnClick(int position) {
+
+    }
+
+    @Override
+    public void OnClick(String value) {
 
     }
 }

@@ -55,13 +55,18 @@ public class Bed extends Fragment implements PECAdapter.OnServiceItemClick {
     }
 
     public void setDataToRecycler() {
-        mList.add(new CarpenterDataModel("Bed Support Repair", "1254", "20"));
-        mList.add(new CarpenterDataModel("Bed Repair(Excluding Support)", "1254", "20"));
+        mList.add(new CarpenterDataModel("Bed Support Repair","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Bed Repair(Excluding Support)","", "1254", "20",0));
         adapter.notifyDataSetChanged();
     }
 
     @Override
     public void OnClick(int position) {
+
+    }
+
+    @Override
+    public void OnClick(String value) {
 
     }
 }

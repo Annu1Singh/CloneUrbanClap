@@ -108,6 +108,7 @@
             android:orientation="horizontal">
 
             <TextView
+                android:foreground="?attr/selectableItemBackground"
                 android:id="@+id/minus_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -128,6 +129,7 @@
                     android:focusable="true"
                     android:padding="@dimen/margin_5" />
                 <TextView
+                    android:foreground="?attr/selectableItemBackground"
                     android:contextClickable="true"
                     android:id="@+id/plus_tv"
                     android:layout_width="wrap_content"

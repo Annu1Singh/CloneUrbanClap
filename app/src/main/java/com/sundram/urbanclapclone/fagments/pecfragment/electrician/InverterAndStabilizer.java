@@ -54,19 +54,24 @@ public class InverterAndStabilizer extends Fragment implements PECAdapter.OnServ
     }
 
     public void setDataToRecycler() {
-        mList.add(new CarpenterDataModel("Single Battery Inverter Installation", "1254", "20"));
-        mList.add(new CarpenterDataModel("Single Battery Inverter Uninstallation", "1254", "20"));
-        mList.add(new CarpenterDataModel("Double Battery Inverter Installation", "1254", "20"));
-        mList.add(new CarpenterDataModel("Double Battery Inverter Uninstallation", "1254", "20"));
-        mList.add(new CarpenterDataModel("Inverter Fuse Issue", "1254", "20"));
-        mList.add(new CarpenterDataModel("Inverter Service", "1254", "20"));
-        mList.add(new CarpenterDataModel("Stabilizer Installation", "1254", "20"));
-        mList.add(new CarpenterDataModel("Stabilizer Uninstallation and Repair", "1254", "20"));
+        mList.add(new CarpenterDataModel("Single Battery Inverter Installation","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Single Battery Inverter Uninstallation","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Double Battery Inverter Installation","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Double Battery Inverter Uninstallation","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Inverter Fuse Issue","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Inverter Service","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Stabilizer Installation","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Stabilizer Uninstallation and Repair","", "1254", "20",0));
         adapter.notifyDataSetChanged();
     }
 
     @Override
     public void OnClick(int position) {
+
+    }
+
+    @Override
+    public void OnClick(String value) {
 
     }
 }

@@ -55,13 +55,18 @@ public class Wiring extends Fragment implements PECAdapter.OnServiceItemClick {
     }
 
     public void setDataToRecycler() {
-        mList.add(new CarpenterDataModel("Internal Wiring", "1254", "20"));
-        mList.add(new CarpenterDataModel("Wiring with casing", "1254", "20"));
-        mList.add(new CarpenterDataModel("Wiring without casing", "1254", "20"));
+        mList.add(new CarpenterDataModel("Internal Wiring","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Wiring with casing","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Wiring without casing","", "1254", "20",0));
         adapter.notifyDataSetChanged();
     }
     @Override
     public void OnClick(int position) {
+
+    }
+
+    @Override
+    public void OnClick(String value) {
 
     }
 }

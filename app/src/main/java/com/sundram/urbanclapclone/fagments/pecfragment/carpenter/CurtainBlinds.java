@@ -52,9 +52,9 @@ public class CurtainBlinds extends Fragment implements PECAdapter.OnServiceItemC
         recyclerView.setAdapter(adapter);
     }
     public void setDataToRecycler() {
-        mList.add(new CarpenterDataModel("Blinds Measurement(upto 10 units)", "1254", "20"));
-        mList.add(new CarpenterDataModel("Non Motorized Blinds Fitting", "1254", "20"));
-        mList.add(new CarpenterDataModel("Motorized Blinds Fitting", "1254", "20"));
+        mList.add(new CarpenterDataModel("Blinds Measurement(upto 10 units)","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Non Motorized Blinds Fitting","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Motorized Blinds Fitting","", "1254", "20",0));
      //   mList.add(new CarpenterDataModel("Curtain", "1254", "20"));
        // mList.add(new CarpenterDataModel("Curtain", "1254", "20"));
         //adapter.notifyDataSetChanged();
@@ -62,6 +62,11 @@ public class CurtainBlinds extends Fragment implements PECAdapter.OnServiceItemC
 
     @Override
     public void OnClick(int position) {
+
+    }
+
+    @Override
+    public void OnClick(String value) {
 
     }
 }

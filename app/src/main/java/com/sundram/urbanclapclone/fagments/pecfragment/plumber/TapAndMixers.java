@@ -54,13 +54,18 @@ public class TapAndMixers extends Fragment implements PECAdapter.OnServiceItemCl
     }
 
     public void setDataToRecycler() {
-        mList.add(new CarpenterDataModel("Tap Installation", "1254", "20"));
-        mList.add(new CarpenterDataModel("Tap Repair", "1254", "20"));
-        mList.add(new CarpenterDataModel("Tap Replacement", "1254", "20"));
+        mList.add(new CarpenterDataModel("Tap Installation","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Tap Repair","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Tap Replacement","", "1254", "20",0));
         adapter.notifyDataSetChanged();
     }
     @Override
     public void OnClick(int position) {
+
+    }
+
+    @Override
+    public void OnClick(String value) {
 
     }
 }

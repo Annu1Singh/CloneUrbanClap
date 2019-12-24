@@ -47,6 +47,7 @@ public class ViewAllServiceActivity extends AppCompatActivity implements View.On
     FragmentViewAllTab5 fragmentViewAllTab5;
     FragmentViewAllTab6 fragmentViewAllTab6;
     FragmentViewAllTab7 fragmentViewAllTab7;
+    SectionViewAllServiceListAdapter adapter;
 
     String[] tabTitle = {
             "Hard Waxing",
@@ -70,15 +71,18 @@ public class ViewAllServiceActivity extends AppCompatActivity implements View.On
 
 
         getSupportActionBar().setTitle("Salon At Home");
+
+        adapter = new SectionViewAllServiceListAdapter(ViewAllServiceActivity.this,this);
         //Initializing viewPager
         viewPager = (ViewPager) findViewById(R.id.viewpager);
-       // viewPager.setOffscreenPageLimit(3);
+        viewPager.setOffscreenPageLimit(3);
         setupViewPager(viewPager);
         login_button_text = findViewById(R.id.login_button_text);
         login_button_text.setText("Check Out");
         login_button_text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Toast.makeText(ViewAllServiceActivity.this,"Not Working....",Toast.LENGTH_LONG).show();
 
             }
@@ -209,8 +213,8 @@ public class ViewAllServiceActivity extends AppCompatActivity implements View.On
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-        }
+//        switch (v.getId()) {
+//        }
     }
 
     @Override

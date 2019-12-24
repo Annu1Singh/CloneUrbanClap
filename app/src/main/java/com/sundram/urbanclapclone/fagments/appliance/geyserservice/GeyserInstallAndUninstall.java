@@ -53,13 +53,18 @@ public class GeyserInstallAndUninstall extends Fragment implements PECAdapter.On
     }
 
     public void setDataToRecycler() {
-        mList.add(new CarpenterDataModel("Geyser Install", "1254", "120"));
-        mList.add(new CarpenterDataModel("Geyser Uninstall", "1254", "150"));
+        mList.add(new CarpenterDataModel("Geyser Install","", "1254", "120",0));
+        mList.add(new CarpenterDataModel("Geyser Uninstall","", "1254", "150",0));
         adapter.notifyDataSetChanged();
     }
 
     @Override
     public void OnClick(int position) {
+
+    }
+
+    @Override
+    public void OnClick(String value) {
 
     }
 }

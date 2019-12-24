@@ -52,13 +52,18 @@ public class AcService extends Fragment implements PECAdapter.OnServiceItemClick
     }
 
     public void setDataToRecycler() {
-        mList.add(new CarpenterDataModel("Window AC Service", "1254", "500"));
-        mList.add(new CarpenterDataModel("Split AC Service", "1254", "300"));
+        mList.add(new CarpenterDataModel("Window AC Service","", "1254", "500",0));
+        mList.add(new CarpenterDataModel("Split AC Service","", "1254", "300",0));
         adapter.notifyDataSetChanged();
     }
 
     @Override
     public void OnClick(int position) {
+
+    }
+
+    @Override
+    public void OnClick(String value) {
 
     }
 }

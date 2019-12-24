@@ -107,6 +107,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
         include_searchView.setOnClickListener(this);
 
         //end
+       settingUptRecyclerView();
+        return thisFragment;
+    }
+
+    public void settingUptRecyclerView(){
         //setting up the recycler view
         arrayList = new ArrayList<ServiceName>();
 
@@ -116,18 +121,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
         setDataServiceListItem();
         //end
 
-
-        return thisFragment;
     }
-
-    public void gettingSharedPrefrence(){
-        sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        String value = sp.getString("address", "Some problems are there..");
-        home_screen_selected_city.setText(value);
-    }
-
 
     //getting ids of all the view
+
     public void initVar() {
         toolbar = thisFragment.findViewById(R.id.toolbar_home_screen);
         isn_cardview = thisFragment.findViewById(R.id.home_screen_item_single_card_ui_ins);
@@ -136,6 +133,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener, Adap
         home_screen_list_item_recyclerView = thisFragment.findViewById(R.id.home_screen_list_item_recyclerView);
         indicator = thisFragment.findViewById(R.id.indicator);
         home_screen_selected_city = thisFragment.findViewById(R.id.home_screen_selected_city);
+    }
+
+    public void gettingSharedPrefrence(){
+        sp = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        String value = sp.getString("address", "Some problems are there..");
+        home_screen_selected_city.setText(value);
     }
 
     public void addFilpperImage(int image) {

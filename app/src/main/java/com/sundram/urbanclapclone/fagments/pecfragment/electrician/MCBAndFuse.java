@@ -55,15 +55,20 @@ public class MCBAndFuse extends Fragment implements PECAdapter.OnServiceItemClic
     }
 
     public void setDataToRecycler() {
-        mList.add(new CarpenterDataModel("3 Phase Changeover Switch Installation", "1254", "20"));
-        mList.add(new CarpenterDataModel("Fuse Replacement", "1254", "20"));
-        mList.add(new CarpenterDataModel("Single Pole MCB Installation", "1254", "20"));
-        mList.add(new CarpenterDataModel("Sub meter installation", "1254", "20"));
+        mList.add(new CarpenterDataModel("3 Phase Changeover Switch Installation","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Fuse Replacement","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Single Pole MCB Installation","", "1254", "20",0));
+        mList.add(new CarpenterDataModel("Sub meter installation","", "1254", "20",0));
         adapter.notifyDataSetChanged();
     }
 
     @Override
     public void OnClick(int position) {
+
+    }
+
+    @Override
+    public void OnClick(String value) {
 
     }
 }

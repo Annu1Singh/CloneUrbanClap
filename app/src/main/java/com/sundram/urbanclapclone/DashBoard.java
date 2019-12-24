@@ -6,16 +6,23 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.BroadcastReceiver;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.graphics.Color;
+import android.net.ConnectivityManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.snackbar.Snackbar;
+import com.sundram.urbanclapclone.connectionchecker.NetworkChangeReceiver;
 import com.sundram.urbanclapclone.fagments.HelpCenterFragment;
 import com.sundram.urbanclapclone.fagments.HomeFragment;
 import com.sundram.urbanclapclone.fagments.MyBookingFragment;
@@ -26,6 +33,8 @@ public class DashBoard extends AppCompatActivity implements BottomNavigationView
     BottomNavigationView bottom_nav_view;
     Fragment fragment;
     HomeFragment homeFragment;
+    public static TextView tv_check_connection;
+    private BroadcastReceiver mNetworkReceiver;
   //  @Override
 //    protected void onStart() {
 //        super.onStart();
@@ -39,10 +48,12 @@ public class DashBoard extends AppCompatActivity implements BottomNavigationView
         homeFragment = new HomeFragment();
         bottom_nav_view = findViewById(R.id.bottom_nav_view);
         bottom_nav_view.setOnNavigationItemSelectedListener(this);
-
+        tv_check_connection = findViewById(R.id.tv_check_connection);
       //  String address = getIntent().getStringExtra("address");
         //Toast.makeText(DashBoard.this,address,Toast.LENGTH_LONG).show();
         // it makes default fragment
+        mNetworkReceiver = new NetworkChangeReceiver();
+        registerNetworkBroadcastForNougat();
         loadFragment(new HomeFragment());
 
     }
@@ -100,5 +111,50 @@ public class DashBoard extends AppCompatActivity implements BottomNavigationView
                 });
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
+    }
+
+    public static void dialog(boolean value){
+
+        if(value){
+            tv_check_connection.setText("Network Connected !!!");
+            tv_check_connection.setBackgroundColor(Color.GREEN);
+            tv_check_connection.setTextColor(Color.WHITE);
+
+            Handler handler = new Handler();
+            Runnable delayrunnable = new Runnable() {
+                @Override
+                public void run() {
+                    tv_check_connection.setVisibility(View.GONE);
+                }
+            };
+            handler.postDelayed(delayrunnable, 3000);
+        }else {
+            tv_check_connection.setVisibility(View.VISIBLE);
+            tv_check_connection.setText("Could not Connect to internet");
+            tv_check_connection.setBackgroundColor(Color.RED);
+            tv_check_connection.setTextColor(Color.WHITE);
+        }
+    }
+    private void registerNetworkBroadcastForNougat() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            registerReceiver(mNetworkReceiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            registerReceiver(mNetworkReceiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
+        }
+    }
+
+    protected void unregisterNetworkChanges() {
+        try {
+            unregisterReceiver(mNetworkReceiver);
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        unregisterNetworkChanges();
     }
 }

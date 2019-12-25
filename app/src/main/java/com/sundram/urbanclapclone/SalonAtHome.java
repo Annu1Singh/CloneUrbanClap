@@ -14,7 +14,6 @@ import android.widget.TextView;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.sundram.urbanclapclone.adapter.RecyclerViewAdapter;
 import com.sundram.urbanclapclone.datamodel.DataModel;
-import com.sundram.urbanclapclone.viewallserviceactivity.salonathome.ViewAllServiceActivity;
 
 import java.util.ArrayList;
 
@@ -107,7 +106,8 @@ public class SalonAtHome extends AppCompatActivity implements View.OnClickListen
         switch (position) {
             case 0:
                 Intent intent = new Intent(this, ViewAllServiceActivity.class);
-                intent.putExtra("TabNumber", "0");
+   //             ViewAllServiceActivity viewAllServiceActivity = new ViewAllServiceActivity();
+///                viewAllServiceActivity.settingUpTheHardWaxingSection();
                 startActivity(intent);
                 finish();
                 break;

@@ -4,6 +4,19 @@ public class DataModel {
 
     private String serviceName;
     private int drawable;
+    private String details;
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
+    }
+
+    public DataModel(String details) {
+        this.details = details;
+    }
 
     public DataModel() {
     }

@@ -80,16 +80,21 @@
                     android:drawableLeft="@drawable/ic_remove_black"
                     android:drawableTint="@color/light_royal_blue"
                     android:padding="@dimen/margin_8"
-                    android:visibility="visible" />
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/add_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/margin_8"
-                    android:text="0"/>
+                    android:textColor="@color/light_royal_blue"
+                    android:drawableTint="@color/light_royal_blue"
+                    android:drawableEnd="@drawable/ic_keyboard_arrow_right_black"
+                    android:text="Details"
+                    android:drawableRight="@drawable/ic_keyboard_arrow_right_black" />
 
                 <TextView
+                    android:visibility="gone"
                     android:id="@+id/plus_tv"
                     android:focusable="true"
                     android:clickable="true"

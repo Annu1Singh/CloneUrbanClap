@@ -35,7 +35,10 @@ public class SectionViewAllServiceListAdapter extends RecyclerView.Adapter<Secti
         this.mContext = mContext;
         this.onServiceItemClick = onServiceItemClick;
     }
-
+    public SectionViewAllServiceListAdapter(Context mContext, ArrayList<SectionViewAllServiceListModel> data) {
+        this.mContext = mContext;
+        this.mList=data;
+    }
     public SectionViewAllServiceListAdapter(Context mContext, ArrayList<SectionViewAllServiceListModel> mList, OnServiceItemClick onServiceItemClick) {
         this.mContext = mContext;
         this.mList = mList;
@@ -138,14 +141,4 @@ public class SectionViewAllServiceListAdapter extends RecyclerView.Adapter<Secti
         void onClick(String position);
     }
 
-
-    private int grandTotal(String items) {
-
-        int totalPrice = 0;
-        for (int i = 0; i < items.length(); i++) {
-            totalPrice += Integer.parseInt(items);
-        }
-
-        return totalPrice;
-    }
 }

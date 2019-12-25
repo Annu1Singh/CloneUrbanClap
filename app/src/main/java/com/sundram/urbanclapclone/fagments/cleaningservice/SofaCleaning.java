@@ -1,6 +1,7 @@
 package com.sundram.urbanclapclone.fagments.cleaningservice;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.sundram.urbanclapclone.Details.SofaCleaningDetails;
 import com.sundram.urbanclapclone.R;
 import com.sundram.urbanclapclone.adapter.SectionViewAllServiceListAdapter;
 import com.sundram.urbanclapclone.datamodel.SectionViewAllServiceListModel;
@@ -62,6 +64,26 @@ public class SofaCleaning extends Fragment implements SectionViewAllServiceListA
 
     @Override
     public void onClick(String position) {
+        switch (position){
+            case "0":
+                jumpIntent();
+                break;
+            case "1":
+                jumpIntent();
+                break;
+            case "2":
+                jumpIntent();
+                break;
+            case "3":
+                jumpIntent();
+                break;
+        }
+    }
+    public Intent jumpIntent(){
 
+        Intent jump = new Intent(getActivity(), SofaCleaningDetails.class);
+        startActivity(jump);
+        getActivity().finish();
+        return jump;
     }
 }

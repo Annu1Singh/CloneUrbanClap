@@ -121,7 +121,7 @@ public class ViewAllServiceActivity extends AppCompatActivity implements View.On
         ///String hey = getIntent().getStringExtra("TabNumber");
         if (intent.hasExtra("TabNumber")) {
             String tab = intent.getExtras().getString("TabNumber");
-            Log.e("TabNumberFriendList", tab);
+            Log.e("TabNumberServiceList", tab);
             switchToTab(tab);
         }
 
@@ -218,7 +218,7 @@ public class ViewAllServiceActivity extends AppCompatActivity implements View.On
     }
 
     @Override
-    public void onClick(String position) {
+    public void onClick(String position,int pos,View view) {
         String text = position;
         Toast.makeText(ViewAllServiceActivity.this," "+text,Toast.LENGTH_SHORT).show();
     }

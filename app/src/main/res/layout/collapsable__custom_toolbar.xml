@@ -40,6 +40,9 @@
             app:popupTheme="@style/collapsabletoolbar">
 
             <TextView
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
                 android:id="@+id/back_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

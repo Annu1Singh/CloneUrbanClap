@@ -15,7 +15,6 @@ import android.widget.Toast;
 import android.widget.VideoView;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
-import com.sundram.urbanclapclone.viewallserviceactivity.cleaning.ViewAllCarpetService;
 
 public class CarpetCleanigActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -71,7 +70,7 @@ public class CarpetCleanigActivity extends AppCompatActivity implements View.OnC
                 onBackPressed();
                 break;
             case R.id.login_button_text:
-                Intent jump = new Intent(CarpetCleanigActivity.this, ViewAllCarpetService.class);
+                Intent jump = new Intent(CarpetCleanigActivity.this, ViewAllCarpetCleaningService.class);
                 startActivity(jump);
                 finish();
                 break;

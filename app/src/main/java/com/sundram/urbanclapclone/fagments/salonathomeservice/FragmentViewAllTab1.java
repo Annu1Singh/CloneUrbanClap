@@ -25,7 +25,7 @@ import com.sundram.urbanclapclone.viewallserviceactivity.salonathome.ViewAllServ
 
 import java.util.ArrayList;
 
-public class FragmentViewAllTab1 extends Fragment implements View.OnClickListener, SectionViewAllServiceListAdapter.OnServiceItemClick {
+public class FragmentViewAllTab1 extends Fragment implements View.OnClickListener {
     int count = 0;
 
     private View tab_one_fragment;
@@ -53,7 +53,7 @@ public class FragmentViewAllTab1 extends Fragment implements View.OnClickListene
         list = new ArrayList<>();
         fragment_tab_one_recycler.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        adapterList = new SectionViewAllServiceListAdapter(getContext(), list, this);
+        adapterList = new SectionViewAllServiceListAdapter(getContext(), list);
 
         fragment_tab_one_recycler.setAdapter(adapterList);
         setDataToRecycler();
@@ -70,11 +70,6 @@ public class FragmentViewAllTab1 extends Fragment implements View.OnClickListene
         list.add(new SectionViewAllServiceListModel("Half-leg (lower)", "100", "40", "Wax", "60 min",0,0, R.drawable.waxing));
         list.add(new SectionViewAllServiceListModel("Half-leg (upper)", "100", "40", "Wax", "60 min",0,0, R.drawable.waxing));
         list.add(new SectionViewAllServiceListModel("Full-leg", "100", "40", "Wax", "60 min",0,0, R.drawable.waxing));
-    }
-
-    @Override
-    public void onClick(String position) {
-        //Toast.makeText(getActivity()," "+position,Toast.LENGTH_SHORT).show();
     }
 
     @Override

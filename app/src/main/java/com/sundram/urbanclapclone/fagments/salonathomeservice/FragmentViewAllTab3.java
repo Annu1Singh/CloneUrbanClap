@@ -19,7 +19,7 @@ import com.sundram.urbanclapclone.datamodel.SectionViewAllServiceListModel;
 import java.util.ArrayList;
 
 
-public class FragmentViewAllTab3 extends Fragment implements SectionViewAllServiceListAdapter.OnServiceItemClick {
+public class FragmentViewAllTab3 extends Fragment  {
 
     private View tab_three_fragment;
     private TextView view_section_heading;
@@ -45,7 +45,7 @@ public class FragmentViewAllTab3 extends Fragment implements SectionViewAllServi
         fragment_tab_one_recycler = tab_three_fragment.findViewById(R.id.fragment_tab_one_recycler);
         list = new ArrayList<>();
         fragment_tab_one_recycler.setLayoutManager(new LinearLayoutManager(getActivity()));
-        adapterList = new SectionViewAllServiceListAdapter(getActivity(),list,this);
+        adapterList = new SectionViewAllServiceListAdapter(getActivity(),list);
         fragment_tab_one_recycler.setAdapter(adapterList);
         setDataToRecycler();
         return tab_three_fragment;
@@ -61,9 +61,5 @@ public class FragmentViewAllTab3 extends Fragment implements SectionViewAllServi
         list.add(new SectionViewAllServiceListModel("Half-leg Honey Waxing(upper)", "100", "40", "Wax", "60 min",0,0, R.drawable.waxing));
         list.add(new SectionViewAllServiceListModel("Full-leg Honey Waxing", "100", "40", "Wax", "60 min",0,0, R.drawable.waxing));
         list.add(new SectionViewAllServiceListModel("Stomach Honey Waxing", "100", "40", "Wax", "60 min",0,0, R.drawable.waxing));
-    }
-    @Override
-    public void onClick(String position) {
-        
     }
 }

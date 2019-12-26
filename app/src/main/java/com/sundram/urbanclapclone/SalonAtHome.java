@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.sundram.urbanclapclone.adapter.RecyclerViewAdapter;
 import com.sundram.urbanclapclone.datamodel.DataModel;
+import com.sundram.urbanclapclone.methodscroll.Scroll;
 
 import java.util.ArrayList;
 
@@ -72,7 +74,7 @@ public class SalonAtHome extends AppCompatActivity implements View.OnClickListen
         arrayList.add(new DataModel("Hard Waxing", R.drawable.waxing));
         arrayList.add(new DataModel("Fruit Waxing", R.drawable.rica_waxing));
         arrayList.add(new DataModel("Honey/Soft Waxing", R.drawable.waxing));
-        arrayList.add(new DataModel("Facial and Detan", R.drawable.facial));
+        arrayList.add(new DataModel("Facial, Bleach and Detan", R.drawable.facial));
         arrayList.add(new DataModel("Manicure & Pedicure", R.drawable.medicure));
         arrayList.add(new DataModel("Hair Care", R.drawable.hair));
         arrayList.add(new DataModel("Threading", R.drawable.threading));
@@ -105,49 +107,34 @@ public class SalonAtHome extends AppCompatActivity implements View.OnClickListen
     public void onClick(int position) {
         switch (position) {
             case 0:
-                Intent intent = new Intent(this, ViewAllServiceActivity.class);
-   //             ViewAllServiceActivity viewAllServiceActivity = new ViewAllServiceActivity();
-///                viewAllServiceActivity.settingUpTheHardWaxingSection();
-                startActivity(intent);
-                finish();
+               jumpIntent("0");
                 break;
             case 1:
-                Intent intent1 = new Intent(this, ViewAllServiceActivity.class);
-                intent1.putExtra("TabNumber", "1");
-                startActivity(intent1);
-                finish();
+                jumpIntent("1");
                 break;
             case 2:
-                Intent intent2 = new Intent(this, ViewAllServiceActivity.class);
-                intent2.putExtra("TabNumber", "2");
-                startActivity(intent2);
-                finish();
+                jumpIntent("2");
                 break;
             case 3:
-                Intent intent3 = new Intent(this, ViewAllServiceActivity.class);
-                intent3.putExtra("TabNumber", "3");
-                startActivity(intent3);
-                finish();
+                jumpIntent("3");
                 break;
             case 4:
-                Intent intent4 = new Intent(this, ViewAllServiceActivity.class);
-                intent4.putExtra("TabNumber", 4);
-                startActivity(intent4);
-                finish();
+                jumpIntent("4");
                 break;
             case 5:
-                Intent intent5 = new Intent(this, ViewAllServiceActivity.class);
-                intent5.putExtra("TabNumber", "5");
-                startActivity(intent5);
-                finish();
+                jumpIntent("5");
                 break;
             case 6:
-                Intent intent6 = new Intent(this, ViewAllServiceActivity.class);
-                intent6.putExtra("TabNumber", "6");
-                startActivity(intent6);
-                finish();
+                jumpIntent("6");
                 break;
         }
     }
 
+    public Intent jumpIntent(String position){
+        Intent jumpIntent = new Intent(SalonAtHome.this, ViewAllServiceActivity.class);
+        jumpIntent.putExtra("TabNumber",position);
+        startActivity(jumpIntent);
+        finish();
+        return jumpIntent;
+    }
 }

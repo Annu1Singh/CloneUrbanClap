@@ -19,7 +19,7 @@ import com.sundram.urbanclapclone.datamodel.SectionViewAllServiceListModel;
 import java.util.ArrayList;
 
 
-public class FragmentViewAllTab6 extends Fragment implements SectionViewAllServiceListAdapter.OnServiceItemClick {
+public class FragmentViewAllTab6 extends Fragment  {
 
     private View tab_five_fragment;
     private TextView view_section_heading;
@@ -42,7 +42,7 @@ public class FragmentViewAllTab6 extends Fragment implements SectionViewAllServi
         fragment_tab_one_recycler = tab_five_fragment.findViewById(R.id.fragment_tab_one_recycler);
         list = new ArrayList<>();
         fragment_tab_one_recycler.setLayoutManager(new LinearLayoutManager(getActivity()));
-        adapterList = new SectionViewAllServiceListAdapter(getActivity(),list,this);
+        adapterList = new SectionViewAllServiceListAdapter(getActivity(),list);
         fragment_tab_one_recycler.setAdapter(adapterList);
         setDataToRecycler();
         return tab_five_fragment;
@@ -57,9 +57,5 @@ public class FragmentViewAllTab6 extends Fragment implements SectionViewAllServi
         list.add(new SectionViewAllServiceListModel("Hair Colouring for Large Length","200","40","Hair Care","60 min",0,0,R.drawable.hair));
         list.add(new SectionViewAllServiceListModel("Hair Cut Simple","400","40","Hair Care","60 min",0,0,R.drawable.hair));
         list.add(new SectionViewAllServiceListModel("Hair Cut Advance","400","40","Hair Care","60 min",0,0,R.drawable.hair));
-    }
-    @Override
-    public void onClick(String position) {
-
     }
 }

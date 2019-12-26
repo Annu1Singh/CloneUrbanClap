@@ -63,7 +63,7 @@ public class SofaCleaning extends Fragment implements SectionViewAllServiceListA
     }
 
     @Override
-    public void onClick(String position) {
+    public void onClick(String position,int pos,View view) {
         switch (position){
             case "0":
                 jumpIntent();

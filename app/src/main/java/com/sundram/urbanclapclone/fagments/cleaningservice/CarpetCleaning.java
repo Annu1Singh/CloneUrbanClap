@@ -21,7 +21,7 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CarpetCleaning extends Fragment implements SectionViewAllServiceListAdapter.OnServiceItemClick {
+public class CarpetCleaning extends Fragment{
 
     private  View carpetCleaningFragment;
     private TextView view_section_heading;
@@ -46,7 +46,7 @@ public class CarpetCleaning extends Fragment implements SectionViewAllServiceLis
 
         list = new ArrayList<>();
         fragment_tab_one_recycler.setLayoutManager(new LinearLayoutManager(getActivity()));
-        adapterList = new SectionViewAllServiceListAdapter(getActivity(),list,this);
+        adapterList = new SectionViewAllServiceListAdapter(getActivity(),list);
         fragment_tab_one_recycler.setAdapter(adapterList);
         setDataToRecycler();
         return carpetCleaningFragment;
@@ -59,8 +59,5 @@ public class CarpetCleaning extends Fragment implements SectionViewAllServiceLis
         list.add(new SectionViewAllServiceListModel("150-200 sq. ft.","1699","200","Carpet Cleaning","60 min",0,0,R.drawable.carpet_cleaning));
        }
 
-    @Override
-    public void onClick(String position) {
-        
-    }
+
 }

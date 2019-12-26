@@ -20,18 +20,19 @@ public class AdapterHorrizontalButton extends RecyclerView.Adapter<AdapterHorriz
     private ArrayList<DataModel> btnList;
     private Context mContext;
     private View btnView;
+    private onRecyclerViewItemClickListener onRecyclerViewItemClickListener;
 
-
-    public AdapterHorrizontalButton(ArrayList<DataModel> btnList, Context mContext) {
+    public AdapterHorrizontalButton(ArrayList<DataModel> btnList, Context mContext, onRecyclerViewItemClickListener onRecyclerViewItemClickListener) {
         this.mContext = mContext;
         this.btnList = btnList;
+        this.onRecyclerViewItemClickListener = onRecyclerViewItemClickListener;
     }
 
     @NonNull
     @Override
     public ButtonViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        btnView = LayoutInflater.from(mContext).inflate(R.layout.single_view_all_service_button_scrolling_btn,parent,false);
-        return new ButtonViewHolder(btnView);
+        btnView = LayoutInflater.from(mContext).inflate(R.layout.single_view_all_service_button_scrolling_btn, parent, false);
+        return new ButtonViewHolder(btnView, onRecyclerViewItemClickListener);
     }
 
     @Override
@@ -45,12 +46,31 @@ public class AdapterHorrizontalButton extends RecyclerView.Adapter<AdapterHorriz
         return btnList.size();
     }
 
-    public class ButtonViewHolder extends RecyclerView.ViewHolder{
+    public class ButtonViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         Button btn;
-        public ButtonViewHolder(@NonNull View itemView) {
+        onRecyclerViewItemClickListener onRecyclerViewItemClickListener;
+
+        public ButtonViewHolder(@NonNull View itemView,onRecyclerViewItemClickListener onRecyclerViewItemClickListener) {
             super(itemView);
+            this.onRecyclerViewItemClickListener=onRecyclerViewItemClickListener;
             btn = itemView.findViewById(R.id.horizontalBtn);
+            btn.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View v) {
+            if (onRecyclerViewItemClickListener != null) {
+                onRecyclerViewItemClickListener.onItemClickListener(v, getAdapterPosition());
+            }
+        }
+    }
+
+    public void setOnItemClickListener(onRecyclerViewItemClickListener mItemClickListener) {
+        this.onRecyclerViewItemClickListener = mItemClickListener;
+    }
+
+    public interface onRecyclerViewItemClickListener {
+        void onItemClickListener(View view, int position);
     }
 }

@@ -83,7 +83,7 @@ public class ElectricianActivity extends AppCompatActivity implements View.OnCli
                 onBackPressed();
                 break;
             case R.id.login_button_text:
-                startActivity(new Intent(ElectricianActivity.this, ViewAllElectrician.class));
+                startActivity(new Intent(ElectricianActivity.this, ViewAllElectricianServices.class));
                 finish();
                 break;
         }

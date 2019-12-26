@@ -21,7 +21,7 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BathRoomCleaning extends Fragment implements SectionViewAllServiceListAdapter.OnServiceItemClick {
+public class BathRoomCleaning extends Fragment{
 
     private  View bathRoomCleaningFragment;
     private TextView view_section_heading;
@@ -43,7 +43,7 @@ public class BathRoomCleaning extends Fragment implements SectionViewAllServiceL
         
         list = new ArrayList<>();
         fragment_tab_one_recycler.setLayoutManager(new LinearLayoutManager(getActivity()));
-        adapterList = new SectionViewAllServiceListAdapter(getActivity(),list,this);
+        adapterList = new SectionViewAllServiceListAdapter(getActivity(),list);
         fragment_tab_one_recycler.setAdapter(adapterList);
         setDataToRecycler();
       
@@ -56,8 +56,4 @@ public class BathRoomCleaning extends Fragment implements SectionViewAllServiceL
         list.add(new SectionViewAllServiceListModel("Four Bathroom Cleaning","200","40","Bathroom Cleaning","60 min",0,0,R.drawable.bathroom));
     }
 
-    @Override
-    public void onClick(String position) {
-        
-    }
 }

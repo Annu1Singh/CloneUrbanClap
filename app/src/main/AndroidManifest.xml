@@ -18,9 +18,33 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <activity
+            android:name=".ViewAllElectricianServices"
+            android:screenOrientation="portrait" />
 
-        <activity android:name=".ViewAllServiceActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ViewAllFullHomeDeepCleaning"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ViewAllKitchenDeepCleaning"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ViewAllCarpetCleaningService"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ViewAllBathroomCleaningService"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ViewAllSofaCleaningService"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ViewAllServiceActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".Details.SofaCleaningDetails"

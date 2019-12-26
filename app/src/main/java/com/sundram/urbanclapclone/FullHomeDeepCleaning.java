@@ -15,7 +15,6 @@ import android.widget.Toast;
 import android.widget.VideoView;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
-import com.sundram.urbanclapclone.viewallserviceactivity.cleaning.ViewAllHomeCleaning;
 
 public class FullHomeDeepCleaning extends AppCompatActivity implements View.OnClickListener {
 
@@ -60,7 +59,7 @@ public class FullHomeDeepCleaning extends AppCompatActivity implements View.OnCl
                 onBackPressed();
                 break;
             case R.id.login_button_text:
-                Intent jump = new Intent(FullHomeDeepCleaning.this, ViewAllHomeCleaning.class);
+                Intent jump = new Intent(FullHomeDeepCleaning.this, ViewAllFullHomeDeepCleaning.class);
                 startActivity(jump);
                 finish();
                 break;

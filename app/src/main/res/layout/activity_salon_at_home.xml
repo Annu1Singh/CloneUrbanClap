@@ -59,6 +59,7 @@
                     android:layout_width="match_parent" />
 
                 <include
+                    android:visibility="gone"
                     android:layout_margin="@dimen/margin_5"
                     layout="@layout/full_filled_section_layout"
                     android:layout_height="wrap_content"

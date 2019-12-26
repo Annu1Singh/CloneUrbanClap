@@ -57,8 +57,6 @@ public class SectionViewAllServiceListAdapter extends RecyclerView.Adapter<Secti
     public void onBindViewHolder(@NonNull SectionViewAllServiceListAdapter.ListHolder holder, int position) {
         SectionViewAllServiceListModel datas = mList.get(position);
         holder.setData(datas);
-
-
     }
 
     @Override
@@ -69,15 +67,15 @@ public class SectionViewAllServiceListAdapter extends RecyclerView.Adapter<Secti
     public class ListHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private ImageView productImage;
-        private TextView serviceName, rupee, rupeeOff, type_of_service, timeOfService, minus_tvs, add_txt_tvs, plus_tvs;
+        private TextView serviceName, rupee, rupeeOff, type_of_service, timeOfService, minus_tvs, add_txt_tvs, plus_tvs, totalPrice_tvs;
         private OnServiceItemClick onServiceItemClick;
-
+        int totalQuantit=0;
         public ListHolder(@NonNull View itemView, OnServiceItemClick onServiceItemClick) {
             super(itemView);
 
             productImage = itemView.findViewById(R.id.view_all_service_list_item_image);
 
-
+            totalPrice_tvs = itemView.findViewById(R.id.totalPrice_tv);
             minus_tvs = itemView.findViewById(R.id.minus_tv);
             add_txt_tvs = itemView.findViewById(R.id.add_tv);
             plus_tvs = itemView.findViewById(R.id.plus_tv);
@@ -103,28 +101,27 @@ public class SectionViewAllServiceListAdapter extends RecyclerView.Adapter<Secti
             productImage.setImageResource(data.getDrawable());
             serviceName.setText(data.getServiceName());
             rupee.setText(" \u20B9  " + data.getRupee());
-            rupeeOff.setText(" \u20B9 " + data.getOffRupe() + " off");
+            rupeeOff.setText("| \u20B9 " + data.getOffRupe() + " off");
             type_of_service.setText(data.getTypeOfService());
             timeOfService.setText(data.getServiceTime());
+
         }
 
         @Override
         public void onClick(View v) {
             if (v.getId() == plus_tvs.getId()) {
                 increment();
-
-
             } else if (v.getId() == minus_tvs.getId()) {
                 decrement();
-
             }
+      //      onServiceItemClick.onClick(getAdapterPosition(),v);
         }
 
         public void increment() {
             int currentNos = Integer.parseInt(add_txt_tvs.getText().toString());
             if (currentNos < 5) {
                 add_txt_tvs.setText(String.valueOf(++currentNos));
-                onServiceItemClick.onClick(add_txt_tvs.getText().toString());
+                onServiceItemClick.onClick(add_txt_tvs.getText().toString(),getAdapterPosition(),itemView);
             }
         }
 
@@ -132,13 +129,13 @@ public class SectionViewAllServiceListAdapter extends RecyclerView.Adapter<Secti
             int currentNos = Integer.parseInt(add_txt_tvs.getText().toString());
             if (currentNos != 0) {
                 add_txt_tvs.setText(String.valueOf(--currentNos));
-                onServiceItemClick.onClick(add_txt_tvs.getText().toString());
+                onServiceItemClick.onClick(add_txt_tvs.getText().toString(),getAdapterPosition(),itemView);
             }
         }
     }
 
     public interface OnServiceItemClick {
-        void onClick(String position);
+        void onClick(String position,int pos,View view);
     }
 
 }

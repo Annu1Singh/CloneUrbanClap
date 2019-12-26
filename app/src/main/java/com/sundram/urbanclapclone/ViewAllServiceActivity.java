@@ -1,10 +1,14 @@
 package com.sundram.urbanclapclone;
 
 import android.content.Intent;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,12 +24,13 @@ import com.sundram.urbanclapclone.adapter.AdapterHorrizontalButton;
 import com.sundram.urbanclapclone.adapter.SectionViewAllServiceListAdapter;
 import com.sundram.urbanclapclone.datamodel.DataModel;
 import com.sundram.urbanclapclone.datamodel.SectionViewAllServiceListModel;
+import com.sundram.urbanclapclone.methodscroll.Scroll;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class ViewAllServiceActivity extends AppCompatActivity {
+public class ViewAllServiceActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Toolbar toolbarViewAll;
     private TextView login_button_text;
@@ -37,11 +42,15 @@ public class ViewAllServiceActivity extends AppCompatActivity {
 
     private ArrayList<SectionViewAllServiceListModel> hardWaxList, ricaWaxList, honeyWaxList, facialWaxList, manicureList, haircareList, threadingList;
     private RecyclerView hardWaxRecycler, ricaWaxRecycler, honeyWaxRecyclerview, facialRecyclerView, manicureRecyclerView, hairCareRecyclerView, threadingRecyclerView;
+    private TextView view_hardWax_heading, view_heading_rica_wax, view_honeyWaxHeading, facilaHeading, manicureHeading, haircareHeading, threadingHeading;
     private SectionViewAllServiceListAdapter hardWaxAdapter, ricaWaxAdapter, honeyWaxAdapter, facialAdapter, manicureAdapter, haircareAdapter, threadingAdapter;
 
-    private TextView view_hardWax_heading, view_heading_rica_wax, view_honeyWaxHeading, facilaHeading, manicureHeading, haircareHeading, threadingHeading;
 
     TextView nextBtn, prevBtn;
+
+    LinearLayout hardwax_Linearlayout;
+    int totalQuantity = 0;
+    Scroll scroll;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -51,42 +60,108 @@ public class ViewAllServiceActivity extends AppCompatActivity {
         setSupportActionBar(toolbarViewAll);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("View All Service");
+        scroll = new Scroll(ViewAllServiceActivity.this);
 
-//        setHorrizontalBtn();
-
-        prevBtn = findViewById(R.id.previoushorizontalBtn);
-
-        nextBtn = findViewById(R.id.nexthorizontalBtn);
+//
+//        prevBtn = findViewById(R.id.previoushorizontalBtn);
+//
+//        nextBtn = findViewById(R.id.nexthorizontalBtn);
+        hardwax_Linearlayout = findViewById(R.id.hardwaxLinearlayout);
         nestedScrollView = findViewById(R.id.nestedScrollView);
+        btnRecyclerView = findViewById(R.id.horizontal_scrolling_btn_recyclerView);
+//        prevBtn.setOnClickListener(this);
+//        nextBtn.setOnClickListener(this);
         login_button_text = findViewById(R.id.login_button_text);
         login_button_text.setText("Check Out");
+        setHorrizontalBtn();
         settingUpTheHardWaxingSection();
 
+        //snippets for getting the current tab
+        final Intent intent = getIntent();
+        ///String hey = getIntent().getStringExtra("TabNumber");
+        if (intent.hasExtra("TabNumber")) {
+            String tab = intent.getExtras().getString("TabNumber");
+            Log.e("TabNumberServiceList", tab);
+            switchToTab(tab);
+        }
     }
 
-//    public void setHorrizontalBtn() {
-//        btnRecyclerView = findViewById(R.id.horizontal_scrolling_btn_recyclerView);
-//        btnList = new ArrayList<>();
-//        btnRecyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false));
-//        btnList.add(new DataModel("Hard Waxing Service"));
-//        btnList.add(new DataModel("Fruit Waxing Service"));
-//        btnList.add(new DataModel("Honey/Soft Waxing Service"));
-//        btnList.add(new DataModel("Facial, Bleach and Detan Service"));
-//        btnList.add(new DataModel("Manicure & Pedicure Care"));
-//        btnList.add(new DataModel("Hair Care"));
-//        btnList.add(new DataModel("Threading Care"));
-//        btnAdapter = new AdapterHorrizontalButton(btnList, this);
-//        btnRecyclerView.setAdapter(btnAdapter);
-//        btnAdapter.notifyDataSetChanged();
-//    }
+    //snippets for switching the tab
+    public void switchToTab(String tab) {
+        if (tab.equals("0")) {
+            scroll.scrollToRow(nestedScrollView, hardwax_Linearlayout, view_hardWax_heading);
+        } else if (tab.equals("1")) {
+            scroll.scrollToRow(nestedScrollView, hardwax_Linearlayout, view_heading_rica_wax);
+        } else if (tab.equals("2")) {
+            scroll.scrollToRow(nestedScrollView, hardwax_Linearlayout, view_honeyWaxHeading);
+        } else if (tab.equals("3")) {
+            scroll.scrollToRow(nestedScrollView, hardwax_Linearlayout, facilaHeading);
+        } else if (tab.equals("4")) {
+            scroll.scrollToRow(nestedScrollView, hardwax_Linearlayout, manicureHeading);
+        } else if (tab.equals("5")) {
+            scroll.scrollToRow(nestedScrollView, hardwax_Linearlayout, haircareHeading);
+        } else if (tab.equals("6")) {
+            scroll.scrollToRow(nestedScrollView, hardwax_Linearlayout, threadingHeading);
+        }
+    }
 
-//    private void focusOnView(){
-//        new Handler().post(new Runnable() {
+    public void setHorrizontalBtn() {
+        btnList = new ArrayList<>();
+        btnRecyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false));
+        btnList.add(new DataModel("Hard Waxing Service"));
+        btnList.add(new DataModel("Fruit Waxing Service"));
+        btnList.add(new DataModel("Honey/Soft Waxing Service"));
+        btnList.add(new DataModel("Facial, Bleach and Detan Service"));
+        btnList.add(new DataModel("Manicure & Pedicure Care"));
+        btnList.add(new DataModel("Hair Care"));
+        btnList.add(new DataModel("Threading Care"));
+
+        btnAdapter = new AdapterHorrizontalButton(btnList, this, new AdapterHorrizontalButton.onRecyclerViewItemClickListener() {
+            @Override
+            public void onItemClickListener(View view, int position) {
+                switch (position) {
+                    case 0:
+                        scroll.scrollToRow(nestedScrollView, hardwax_Linearlayout, view_hardWax_heading);
+                        //    horizontalScrollToRow(btnRecyclerView,(Button)view);
+                        break;
+                    case 1:
+                        scroll.scrollToRow(nestedScrollView, hardwax_Linearlayout, view_heading_rica_wax);
+                        //   horizontalScrollToRow(btnRecyclerView,(Button)view);
+                        break;
+                    case 2:
+                        scroll.scrollToRow(nestedScrollView, hardwax_Linearlayout, view_honeyWaxHeading);
+                        break;
+                    case 3:
+                        scroll.scrollToRow(nestedScrollView, hardwax_Linearlayout, facilaHeading);
+                        break;
+                    case 4:
+                        scroll.scrollToRow(nestedScrollView, hardwax_Linearlayout, manicureHeading);
+                        break;
+                    case 5:
+                        scroll.scrollToRow(nestedScrollView, hardwax_Linearlayout, haircareHeading);
+                        break;
+                    case 6:
+                        scroll.scrollToRow(nestedScrollView, hardwax_Linearlayout, threadingHeading);
+                        break;
+                }
+            }
+        });
+
+        btnRecyclerView.setAdapter(btnAdapter);
+        btnAdapter.notifyDataSetChanged();
+    }
+
+
+//    public void horizontalScrollToRow(final RecyclerView recyclerView,Button textView){
+//        long delay =100;
+//        recyclerView.postDelayed(new Runnable() {
 //            @Override
 //            public void run() {
-//                nestedScrollView.scrollTo(0,nestedScrollView.getMaxScrollAmount());
+//                Rect textViewtRect = new Rect();
+//                textView.getHitRect(textViewtRect);
+//                recyclerView.scrollTo(0,(int)textViewtRect.top);
 //            }
-//        });
+//        },delay);
 //    }
 
     public void settingUpTheHardWaxingSection() {
@@ -106,8 +181,14 @@ public class ViewAllServiceActivity extends AppCompatActivity {
         hardWaxList.add(new SectionViewAllServiceListModel("Full-leg", "100", "40", "Wax", "60 min", 0, 0, R.drawable.waxing));
         hardWaxAdapter = new SectionViewAllServiceListAdapter(this, hardWaxList, new SectionViewAllServiceListAdapter.OnServiceItemClick() {
             @Override
-            public void onClick(String position) {
-                login_button_text.setVisibility(View.VISIBLE);
+            public void onClick(String position, int pos,View itemView) {
+                Toast.makeText(ViewAllServiceActivity.this,"totalQuantity = "+position,Toast.LENGTH_LONG).show();
+                if (!position.equals("0")) {// !position.equals("0") is use to show or hide the visibility of bottom button
+                    login_button_text.setVisibility(View.VISIBLE);
+                    Toast.makeText(ViewAllServiceActivity.this,""+pos,Toast.LENGTH_SHORT).show();
+                } else {
+                    login_button_text.setVisibility(View.GONE);
+                }
             }
         });
         hardWaxRecycler.setAdapter(hardWaxAdapter);
@@ -132,8 +213,15 @@ public class ViewAllServiceActivity extends AppCompatActivity {
         ricaWaxList.add(new SectionViewAllServiceListModel("Full-leg", "100", "40", "Wax", "60 min", 0, 0, R.drawable.waxing));
         ricaWaxAdapter = new SectionViewAllServiceListAdapter(this, ricaWaxList, new SectionViewAllServiceListAdapter.OnServiceItemClick() {
             @Override
-            public void onClick(String position) {
-                login_button_text.setVisibility(View.VISIBLE);
+            public void onClick(String position,int pos,View view) {
+                if (!position.equals("0")) {
+
+                    login_button_text.setVisibility(View.VISIBLE);
+                    //    totalQuantity=totalQuantity+Integer.parseInt(position);
+                    //    Toast.makeText(ViewAllServiceActivity.this,"Tottal Quantity = "+totalQuantity,Toast.LENGTH_LONG).show();
+                } else {
+                    login_button_text.setVisibility(View.GONE);
+                }
             }
         });
         ricaWaxRecycler.setAdapter(ricaWaxAdapter);
@@ -161,8 +249,12 @@ public class ViewAllServiceActivity extends AppCompatActivity {
 
         honeyWaxAdapter = new SectionViewAllServiceListAdapter(this, honeyWaxList, new SectionViewAllServiceListAdapter.OnServiceItemClick() {
             @Override
-            public void onClick(String position) {
-                login_button_text.setVisibility(View.VISIBLE);
+            public void onClick(String position,int pos,View view) {
+                if (!position.equals("0")) {
+                    login_button_text.setVisibility(View.VISIBLE);
+                } else {
+                    login_button_text.setVisibility(View.GONE);
+                }
             }
         });
         honeyWaxRecyclerview.setAdapter(honeyWaxAdapter);
@@ -190,8 +282,12 @@ public class ViewAllServiceActivity extends AppCompatActivity {
 
         facialAdapter = new SectionViewAllServiceListAdapter(this, facialWaxList, new SectionViewAllServiceListAdapter.OnServiceItemClick() {
             @Override
-            public void onClick(String position) {
-                login_button_text.setVisibility(View.VISIBLE);
+            public void onClick(String position,int pos,View view) {
+                if (!position.equals("0")) {
+                    login_button_text.setVisibility(View.VISIBLE);
+                } else {
+                    login_button_text.setVisibility(View.GONE);
+                }
             }
         });
         facialRecyclerView.setAdapter(facialAdapter);
@@ -213,8 +309,12 @@ public class ViewAllServiceActivity extends AppCompatActivity {
 
         manicureAdapter = new SectionViewAllServiceListAdapter(this, facialWaxList, new SectionViewAllServiceListAdapter.OnServiceItemClick() {
             @Override
-            public void onClick(String position) {
-                login_button_text.setVisibility(View.VISIBLE);
+            public void onClick(String position,int pos,View view) {
+                if (!position.equals("0")) {
+                    login_button_text.setVisibility(View.VISIBLE);
+                } else {
+                    login_button_text.setVisibility(View.GONE);
+                }
             }
         });
         manicureRecyclerView.setAdapter(manicureAdapter);
@@ -240,8 +340,13 @@ public class ViewAllServiceActivity extends AppCompatActivity {
 
         haircareAdapter = new SectionViewAllServiceListAdapter(this, haircareList, new SectionViewAllServiceListAdapter.OnServiceItemClick() {
             @Override
-            public void onClick(String position) {
+            public void onClick(String position,int pos,View view) {
                 Toast.makeText(ViewAllServiceActivity.this, "" + position, Toast.LENGTH_LONG).show();
+                if (!position.equals("0")) {
+                    login_button_text.setVisibility(View.VISIBLE);
+                } else {
+                    login_button_text.setVisibility(View.GONE);
+                }
             }
         });
         hairCareRecyclerView.setAdapter(haircareAdapter);
@@ -265,8 +370,12 @@ public class ViewAllServiceActivity extends AppCompatActivity {
 
         threadingAdapter = new SectionViewAllServiceListAdapter(this, threadingList, new SectionViewAllServiceListAdapter.OnServiceItemClick() {
             @Override
-            public void onClick(String position) {
-                login_button_text.setVisibility(View.VISIBLE);
+            public void onClick(String position,int pos,View view) {
+                if (!position.equals("0")) {
+                    login_button_text.setVisibility(View.VISIBLE);
+                } else {
+                    login_button_text.setVisibility(View.GONE);
+                }
             }
         });
         threadingRecyclerView.setAdapter(threadingAdapter);
@@ -288,5 +397,10 @@ public class ViewAllServiceActivity extends AppCompatActivity {
     public void onBackPressed() {
         startActivity(new Intent(ViewAllServiceActivity.this, SalonAtHome.class));
         finish();
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }

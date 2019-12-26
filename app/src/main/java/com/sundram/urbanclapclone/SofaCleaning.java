@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
-import com.sundram.urbanclapclone.viewallserviceactivity.cleaning.ViewAllSofaCleaningServices;
 
 public class SofaCleaning extends AppCompatActivity implements View.OnClickListener {
 
@@ -42,7 +41,7 @@ public class SofaCleaning extends AppCompatActivity implements View.OnClickListe
                 onBackPressed();
                 break;
             case R.id.login_button_text:
-                startActivity(new Intent(this, ViewAllSofaCleaningServices.class));
+                startActivity(new Intent(this, ViewAllSofaCleaningService.class));
                 finish();
                 break;
         }

@@ -22,7 +22,7 @@ public class SplashActivity extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             @Override
             public void run() {
-                Intent i = new Intent(SplashActivity.this, DashBoard.class);
+                Intent i = new Intent(SplashActivity.this, OtpGeneratorActivity.class);
                 startActivity(i);
                 overridePendingTransition(R.anim.fadein,R.anim.fadeout);
                 finish();
